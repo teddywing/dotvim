@@ -1,0 +1,6 @@
+# Vim files
+.VimballRecord
+.netrwhist
+
+# Custom
+projects/

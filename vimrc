@@ -1,0 +1,348 @@
+" Teddy Wing
+" http://www.teddywing.com
+"
+" 2010.11.06
+"
+" CHANGELOG:
+"   2014.04.03:
+"       * Add Shift-Tab mapping to exit Insert mode
+"
+"   2014.04.11:
+"       * Preserve indentation on blank lines
+"
+"   2014.04.12:
+"       * Add leader and symbols for showing invisible characters
+"         (http://vimcasts.org/episodes/show-invisibles/)
+"       * Remove `set expandtab`
+"       * Add `set softtabstop=4`
+"       * Add function from Vimcasts to set tab width
+"       * Add normal mode mapping to toggle expandtab
+"       * Add <leader>[ and ] indentation to retain selection when indenting
+"       * Add `set hidden`
+"       * Add `set list`
+"       * Add soft wrap
+"       * Source .vimrc whenever it has been saved
+"
+"   2014.04.15:
+"       * Add pathogen
+"       * Add twilight256 colour scheme
+"       * Add NERD Tree
+"       * Add Command-T
+"       * Remap Command-T from <leader>t to <leader>d
+"       * Set switchbuf=usetab,newtab
+"       * Map Control-h to :update
+"
+"   2014.04.16:
+"       * Set NERDTree sort order such that all files & directories are sorted
+"         alphabetically, instead of directories appearing above files.
+"       * Set NERDTree default width to 24 columns
+"       * Map j -> gj and k -> gk for moving on wrapped lines
+"       * Set noendofline
+"       * Add project-level indentation settings for Flashnotes
+"       * Remove <leader>t <nop> mapping because Command-T will not overwrite 
+"         a pre-existing mapping
+"       * Install TabBar for buffer tabs, add mappings to access tabs using 
+"         <leader> commands
+"       * Map Shift-Tab to Esc in normal mode in addition to Insert & Visual
+"       * Install commentary.vim and set comment strings for Ruby, JavaScript, 
+"         SCSS, HTML, Python
+"
+"   2014.04.17:
+"       * Remove `set :noendofline` as it wasn't doing what I wanted it to do
+"       * Add & set PreserveNoEOL plugin to preserve file EOL
+"       * Move commentary.vim autocmds into an augroup
+"       * Always show status line
+"       * Make custom status line
+"       * Change `vb` setting to unabbreviated form, `visualbell`
+"       * Change 'set' to 'setlocal' in my autocommands
+"
+"   2014.04.18:
+"       * Add mappings for easier buffer switching (leader-j, leader-k, 
+"         leader-bx)
+"       * Use 'a' instead of 'i' in my Control-h save mapping because we want 
+"         to return to the same cursor position
+"       * Map <leader>bl to list buffers
+"
+"   2014.04.19:
+"       * Set `timeoutlen` to 500 milliseconds
+"
+"   2014.04.20:
+"       * Install EasyGrep plugin and add configuration for EasyGrepCommand=1, 
+"         EasyGrepRecursive=1, EasyGrepEveryMatch=1, 
+"         EasyGrepReplaceAllPerFile=1
+"       * Set grepprg=ack
+"       * Add an extra line of spacing between sections and '===' underlines 
+"         below main headings
+"       * Move project-specific settings into ~/.vim/projects and source all 
+"         files in that directory
+"
+
+
+" Pathogen
+" ========
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+call pathogen#helptags()
+
+
+
+" Default configuration
+" =====================
+set visualbell t_vb=      " Turn off error beep
+
+set autoindent
+set tabstop=4     " Use 4-space tabs
+set softtabstop=4 " Allow delete to remove indent when expandtab is enabled
+set shiftwidth=4
+" set expandtab
+
+set wrap          " Soft wrap
+set linebreak     " Don't wrap in the middle of words. Only works when nolist is set
+
+set scrolloff=3   " Scroll offset: always keep 3 lines
+
+set showmatch     " Highlight matching braces etc.
+set hlsearch      " Highlight searches
+set incsearch     " Search for text as you enter it
+
+set ruler         " Show cursor position
+set number        " Show line numbers
+
+set list          " Show invisibles by default
+
+set hidden        " Don't raise errors when switching buffers with unsaved changes
+
+" Use tabs for buffers
+set switchbuf=usetab,newtab
+
+set timeoutlen=500    " If <leader>bl and <leader>b are both mapped, wait 0.5 
+                      " seconds instead of 1 second to fire <leader>b if no l 
+                      " is pressed subsequently
+
+set grepprg=ack   " Use ack instead of grep
+
+set laststatus=2  " Always show the status line
+
+" Statusline
+set statusline=%f     " Path to file
+set statusline+=\     " Separator
+set statusline+=%y    " Filetype
+set statusline+=\     " Separator
+set statusline+=%m    " File modified? flag
+set statusline+=%r    " Readonly? flag
+set statusline+=\     " Separator
+set statusline+=-b%n- " Buffer number as -b{buffer #}-
+set statusline+=\     " Separator
+set statusline+=%=    " Switch to right side
+set statusline+=%5l   " Line number (ensure space for 5 characters)
+set statusline+=,     " Comma separator
+set statusline+=%-8c  " Column number (ensure space for 8 characters)
+set statusline+=\     " Separator
+set statusline+=%4P   " Percent through file in window (ensure space for 4 characters)
+
+
+
+" Syntax highlighting (base)
+" ==========================
+syntax on         " Syntax highlighting
+
+hi Comment    ctermfg=green     guifg=#919191   cterm=none
+hi Constant   ctermfg=red       guifg=#1C4B80   cterm=none
+"hi Identifier 
+hi Statement  ctermfg=blue      guifg=#696EC0
+hi PreProc    ctermfg=brown     guifg=#73371C
+hi Type       ctermfg=cyan      guifg=#696EC0
+hi Special    ctermfg=red       guifg=#696EC0
+hi Normal     ctermfg=black     guifg=#dddddd   guibg=#09192F
+
+" Invisible character colours
+hi NonText    guifg=#4a4a59
+hi SpecialKey guifg=#4a4a59
+
+set guifont=Monaco\ 10
+
+
+" Set Twilight theme
+colorscheme twilight256
+
+
+
+" Plugins
+" =======
+
+" Command-T
+" Remap Command-T from <leader>t to <leader>d (BBEdit style)
+nnoremap <leader>d :CommandT<cr>
+
+
+" NERDTree
+" Alphabetical sort ordering
+let NERDTreeSortOrder = []
+let NERDTreeWinSize = 24
+
+" Toggle NERDTree with leader command
+nnoremap <leader>f :NERDTreeToggle<cr>
+
+
+" TabBar
+" j/k to switch to previous/next buffer tab
+nnoremap <leader>j :Tbbp<cr>
+nnoremap <leader>k :Tbbn<cr>
+
+" Leader+# to switch to a specific buffer tab
+nnoremap <leader>1 :TbBfSwitchTo 1<cr>:<bs>
+nnoremap <leader>2 :TbBfSwitchTo 2<cr>:<bs>
+nnoremap <leader>3 :TbBfSwitchTo 3<cr>:<bs>
+nnoremap <leader>4 :TbBfSwitchTo 4<cr>:<bs>
+nnoremap <leader>5 :TbBfSwitchTo 5<cr>:<bs>
+nnoremap <leader>6 :TbBfSwitchTo 6<cr>:<bs>
+nnoremap <leader>7 :TbBfSwitchTo 7<cr>:<bs>
+nnoremap <leader>8 :TbBfSwitchTo 8<cr>:<bs>
+nnoremap <leader>9 :TbBfSwitchTo 9<cr>:<bs>
+nnoremap <leader>0 :TbBfSwitchTo 10<cr>:<bs>
+
+inoremap <leader>1 :TbBfSwitchTo 1<cr>:<bs>a
+inoremap <leader>2 :TbBfSwitchTo 2<cr>:<bs>a
+inoremap <leader>3 :TbBfSwitchTo 3<cr>:<bs>a
+inoremap <leader>4 :TbBfSwitchTo 4<cr>:<bs>a
+inoremap <leader>5 :TbBfSwitchTo 5<cr>:<bs>a
+inoremap <leader>6 :TbBfSwitchTo 6<cr>:<bs>a
+inoremap <leader>7 :TbBfSwitchTo 7<cr>:<bs>a
+inoremap <leader>8 :TbBfSwitchTo 8<cr>:<bs>a
+inoremap <leader>9 :TbBfSwitchTo 9<cr>:<bs>a
+inoremap <leader>0 :TbBfSwitchTo 10<cr>:<bs>a
+
+
+" commentary.vim
+augroup commentaryvim
+	autocmd!
+	autocmd FileType ruby setlocal commentstring=#\ %s
+	autocmd FileType html setlocal commentstring=<!--\ %s\ -->
+	autocmd FileType javascript setlocal commentstring=//\ %s
+	autocmd FileType scss setlocal commentstring=//\ %s
+	autocmd FileType python setlocal commentstring=#\ %s
+augroup END
+
+
+" PreserveNoEOL
+let g:PreserveNoEOL = 1
+
+
+" EasyGrep
+let g:EasyGrepCommand = 1    " Use grep instead of vimgrep
+let g:EasyGrepRecursive = 1  " Recursive search enabled
+let g:EasyGrepEveryMatch = 1 " Multiple matches on the same line are distinct
+let g:EasyGrepReplaceAllPerFile = 1
+
+
+
+" Mappings
+" ========
+
+" Shift-Tab to enter normal mode from insert mode
+nnoremap <S-Tab> <Esc>
+inoremap <S-Tab> <Esc>
+vnoremap <S-Tab> <Esc>
+
+" Control-h to save (Why 'h'? Because it seemed to be a non-important combo 
+" across modes, and because bash by default doesn't let me map Control-s)
+nnoremap <c-h> <esc>:update<cr>
+inoremap <c-h> <esc>:update<cr>a
+vnoremap <c-h> <esc>:update<cr>v
+
+" Preserve indentation on empty lines
+" http://stackoverflow.com/a/7413117
+inoremap <CR> <CR>x<BS>
+nnoremap o ox<BS>
+nnoremap O Ox<BS>
+
+" Show invisibles with <leader>i
+nnoremap <leader>i :set list!<cr>
+
+" Use TextMate-style symbols for tabs and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+" Toggle between tab and space indentation
+nnoremap <leader>st :set expandtab! expandtab?<cr>
+
+" OS X-style indentation, retains selection when indenting
+" http://vimcasts.org/episodes/indentation-commands/
+nnoremap <leader>[ <<
+nnoremap <leader>] >>
+vnoremap <leader>[ <gv
+vnoremap <leader>] >gv
+
+" Allow easy moving to wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" Easier buffer switching
+nnoremap <leader>bl :ls<cr>
+nnoremap <leader>j :bnext<cr>
+nnoremap <leader>k :bprevious<cr>
+
+" Close buffer without closing split
+" http://stackoverflow.com/a/4468491
+nnoremap <leader>bx :bp \| bd #<cr>
+
+
+
+" Commands
+" ========
+
+" Set tabstop, softtabstop and shiftwidth to the same value
+" http://vimcasts.org/episodes/tabs-and-spaces/
+command! -nargs=* Stab call Stab()
+function! Stab()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+  call SummarizeTabs()
+endfunction
+  
+function! SummarizeTabs()
+  try
+    echohl ModeMsg
+    echon 'tabstop='.&l:ts
+    echon ' shiftwidth='.&l:sw
+    echon ' softtabstop='.&l:sts
+    if &l:et
+      echon ' expandtab'
+    else
+      echon ' noexpandtab'
+    endif
+  finally
+    echohl None
+  endtry
+endfunction
+
+
+" Swap between soft wrapping and no wrapping
+" http://vimcasts.org/episodes/soft-wrapping-text/
+command! -nargs=* Wrap set wrap linebreak nolist
+
+
+
+" Autocommands
+" ============
+
+" Source the vimrc file after saving it
+" http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/
+" if has("autocmd")
+"   autocmd bufwritepost .vimrc source $MYVIMRC
+" endif
+
+
+
+" Project Settings
+" ================
+
+" Source all files in the ~/.vim/projects directory
+" http://stackoverflow.com/a/4500936
+for f in split(glob('~/.vim/projects/*.vim'), '\n')
+	execute 'source' f
+endfor
+
