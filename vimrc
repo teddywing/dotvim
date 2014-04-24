@@ -76,6 +76,9 @@
 "       * Move project-specific settings into ~/.vim/projects and source all 
 "         files in that directory
 "
+"   2014.04.23:
+"       * Set EasyGrep to be case insensitive by default
+"
 
 
 " Pathogen
@@ -232,6 +235,7 @@ let g:PreserveNoEOL = 1
 let g:EasyGrepCommand = 1    " Use grep instead of vimgrep
 let g:EasyGrepRecursive = 1  " Recursive search enabled
 let g:EasyGrepEveryMatch = 1 " Multiple matches on the same line are distinct
+let g:EasyGrepIgnoreCase = 1
 let g:EasyGrepReplaceAllPerFile = 1
 
 
