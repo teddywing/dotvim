@@ -79,6 +79,9 @@
 "   2014.04.23:
 "       * Set EasyGrep to be case insensitive by default
 "
+"   2014.04.25:
+"       * Map <leader>/ to clear search highlighting
+"
 
 
 " Pathogen
@@ -288,6 +291,9 @@ nnoremap <leader>k :bprevious<cr>
 " Close buffer without closing split
 " http://stackoverflow.com/a/4468491
 nnoremap <leader>bx :bp \| bd #<cr>
+
+" Clear search highlighting
+nnoremap <leader>/ :nohlsearch<cr>
 
 
 
