@@ -83,6 +83,7 @@
 "       * Map <leader>/ to clear search highlighting
 "       * Map gj -> j and gk -> k so we can still skip wrapped lines if we want
 "       * Set ignorecase and smartcase
+"       * Add file encoding to statusline
 "
 
 
@@ -138,6 +139,10 @@ set laststatus=2  " Always show the status line
 set statusline=%f     " Path to file
 set statusline+=\     " Separator
 set statusline+=%y    " Filetype
+set statusline+=\     " Separator
+                      " File encoding
+                      " (http://vim.wikia.com/wiki/Show_fileencoding_and_bomb_in_the_status_line)
+set statusline+=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}
 set statusline+=\     " Separator
 set statusline+=%m    " File modified? flag
 set statusline+=%r    " Readonly? flag
