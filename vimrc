@@ -81,6 +81,7 @@
 "
 "   2014.04.25:
 "       * Map <leader>/ to clear search highlighting
+"       * Map gj -> j and gk -> k so we can still skip wrapped lines if we want
 "
 
 
@@ -282,6 +283,8 @@ vnoremap <leader>] >gv
 " Allow easy moving to wrapped lines
 nnoremap j gj
 nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 " Easier buffer switching
 nnoremap <leader>bl :ls<cr>
