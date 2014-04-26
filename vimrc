@@ -82,6 +82,7 @@
 "   2014.04.25:
 "       * Map <leader>/ to clear search highlighting
 "       * Map gj -> j and gk -> k so we can still skip wrapped lines if we want
+"       * Set ignorecase and smartcase
 "
 
 
@@ -127,6 +128,9 @@ set timeoutlen=500    " If <leader>bl and <leader>b are both mapped, wait 0.5
                       " is pressed subsequently
 
 set grepprg=ack   " Use ack instead of grep
+
+set ignorecase    " Case insensitive
+set smartcase     " Case insensitive unless an uppercase character is entered
 
 set laststatus=2  " Always show the status line
 
