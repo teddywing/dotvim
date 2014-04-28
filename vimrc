@@ -85,6 +85,11 @@
 "       * Set ignorecase and smartcase
 "       * Add file encoding to statusline
 "
+"   2014.04.28:
+"       * Add augroup for custom syntax highlighting by filetype
+"       * Add autocmd to set .json files to use JavaScript syntax highlighting 
+"         and have a json filetype
+"
 
 
 " Pathogen
@@ -356,6 +361,14 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " if has("autocmd")
 "   autocmd bufwritepost .vimrc source $MYVIMRC
 " endif
+
+" Filetype syntax highlighting
+augroup filetype_syntax_highlighting
+	autocmd!
+	
+	" Set JSON files to JavaScript syntax
+	autocmd BufRead,BufNewFile *.json set filetype=json syntax=javascript
+augroup END
 
 
 
