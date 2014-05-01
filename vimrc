@@ -90,6 +90,10 @@
 "       * Add autocmd to set .json files to use JavaScript syntax highlighting 
 "         and have a json filetype
 "
+"   2014.04.30:
+"       * Set backupdir, directory, and undodir to be within ~/.vim so that my 
+"         filesystem doesn't clutter with *.swp files and the like
+"
 
 
 " Pathogen
@@ -137,6 +141,12 @@ set grepprg=ack   " Use ack instead of grep
 
 set ignorecase    " Case insensitive
 set smartcase     " Case insensitive unless an uppercase character is entered
+
+" Store swap files in .vim/ directory
+" http://stackoverflow.com/a/15317146
+set backupdir=~/.vim/backup/backup//
+set directory=~/.vim/backup/swap//
+set undodir=~/.vim/backup/undo//
 
 set laststatus=2  " Always show the status line
 
