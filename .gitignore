@@ -2,5 +2,13 @@
 .VimballRecord
 .netrwhist
 
+# Swap & backup file storage local to ~/.vim
+/backup/backup/**
+/backup/swap/**
+/backup/undo/**
+
 # Custom
 /projects/
+
+# Defaults
+!.gitkeep
