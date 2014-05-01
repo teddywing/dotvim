@@ -94,6 +94,10 @@
 "       * Set backupdir, directory, and undodir to be within ~/.vim so that my 
 "         filesystem doesn't clutter with *.swp files and the like
 "
+"   2014.05.01:
+"       * Change status bar colour from white to green when switching into and 
+"         out of insert mode
+"
 
 
 " Pathogen
@@ -195,6 +199,18 @@ set guifont=Monaco\ 10
 
 " Set Twilight theme
 colorscheme twilight256
+
+
+" Change statusline color when entering & leaving Insert mode
+" Only when colourscheme is 'twilight256'
+if exists('g:colors_name') && g:colors_name ==# 'twilight256'
+	augroup statusline_color_on_mode_change
+		autocmd!
+		
+		autocmd InsertEnter * highlight statusline ctermfg=120 ctermbg=234
+		autocmd InsertLeave * highlight statusline ctermfg=15 ctermbg=235
+	augroup END
+endif
 
 
 
