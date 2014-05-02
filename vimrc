@@ -98,6 +98,10 @@
 "       * Change status bar colour from white to green when switching into and 
 "         out of insert mode
 "
+"   2014.05.02:
+"       * Add augroup for filetype indentation settings
+"       * Set gitcommit files to use 2-space indentation
+"
 
 
 " Pathogen
@@ -394,6 +398,15 @@ augroup filetype_syntax_highlighting
 	
 	" Set JSON files to JavaScript syntax
 	autocmd BufRead,BufNewFile *.json set filetype=json syntax=javascript
+augroup END
+
+
+" Indentation rules by file type
+augroup filetype_indentation
+	autocmd!
+	
+	" git commit messages
+	autocmd FileType gitcommit setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 
