@@ -101,6 +101,10 @@
 "   2014.05.02:
 "       * Add augroup for filetype indentation settings
 "       * Set gitcommit files to use 2-space indentation
+"       * Remove `switchbuf=usetab,newtab` setting because it doesn't work 
+"         with my current workflow. Now when I use EasyGrep the files opened 
+"         from the Quickfix window will open in the same tab instead of a new 
+"         tab, which is less of a surprise and context switch.
 "
 
 
@@ -137,9 +141,6 @@ set number        " Show line numbers
 set list          " Show invisibles by default
 
 set hidden        " Don't raise errors when switching buffers with unsaved changes
-
-" Use tabs for buffers
-set switchbuf=usetab,newtab
 
 set timeoutlen=500    " If <leader>bl and <leader>b are both mapped, wait 0.5 
                       " seconds instead of 1 second to fire <leader>b if no l 
