@@ -106,6 +106,9 @@
 "         from the Quickfix window will open in the same tab instead of a new 
 "         tab, which is less of a surprise and context switch.
 "
+"   2014.05.08:
+"       * Add Indent Guides plugin to show tab stops
+"
 
 
 " Pathogen
