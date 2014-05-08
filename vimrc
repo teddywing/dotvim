@@ -108,6 +108,9 @@
 "
 "   2014.05.08:
 "       * Add Indent Guides plugin to show tab stops
+"       * Remap Indent Guides toggle command to <leader>ts
+"       * Set Indent Guides size to 1 column (only works for expandtab)
+"       * Set custom colours for Indent Guides that are a little less intrusive
 "
 
 
@@ -289,6 +292,23 @@ let g:EasyGrepRecursive = 1  " Recursive search enabled
 let g:EasyGrepEveryMatch = 1 " Multiple matches on the same line are distinct
 let g:EasyGrepIgnoreCase = 1
 let g:EasyGrepReplaceAllPerFile = 1
+
+
+" Indent Guides
+let g:indent_guides_guide_size = 1           " Set guide size to 1 column
+let g:indent_guides_default_mapping = 0      " Remove default <leader>ig mapping
+
+" Set mapping to ts for "Tab Stop"
+nnoremap <leader>ts :IndentGuidesToggle<cr>
+
+" Set colours for indent guides
+if exists('g:colors_name') && g:colors_name ==# 'twilight256'
+	" Turn off automatic colours
+	let g:indent_guides_auto_colors = 0
+	
+	autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=238
+	autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
+endif
 
 
 
