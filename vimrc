@@ -112,6 +112,10 @@
 "       * Set Indent Guides size to 1 column (only works for expandtab)
 "       * Set custom colours for Indent Guides that are a little less intrusive
 "
+"   2014.05.11:
+"       * Add camelcasemotion plugin for moving inside camelCase and 
+"         under_score words
+"
 
 
 " Pathogen
