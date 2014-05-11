@@ -28,6 +28,7 @@ Currently requires:
 * [commentary.vim](https://github.com/tpope/vim-commentary): easy code commenting
 * [PreserveNoEOL](https://github.com/vim-scripts/PreserveNoEOL/): preserve EOLs
 * [EasyGrep](https://github.com/vim-scripts/EasyGrep): easy find and replace in project
+* [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides): show tab stops
 
 
 Disabled plugins:
