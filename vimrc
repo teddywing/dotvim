@@ -116,6 +116,9 @@
 "       * Add camelcasemotion plugin for moving inside camelCase and 
 "         under_score words
 "
+"   2014.05.12:
+"       * Map <leader>tn to :tabnew
+"
 
 
 " Pathogen
@@ -370,6 +373,8 @@ nnoremap <leader>bx :bp \| bd #<cr>
 " Clear search highlighting
 nnoremap <leader>/ :nohlsearch<cr>
 
+" Tabs
+nnoremap <leader>tn :tabnew<cr>
 
 
 " Commands
