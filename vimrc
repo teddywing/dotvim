@@ -119,6 +119,11 @@
 "   2014.05.12:
 "       * Map <leader>tn to :tabnew
 "
+"   2014.05.13:
+"       * Create function and command for "Copy Mode". A quick way to remove 
+"         line numbers and invisibles so that text can be selected and copied 
+"         at the OS level.
+"
 
 
 " Pathogen
@@ -413,6 +418,26 @@ endfunction
 " Swap between soft wrapping and no wrapping
 " http://vimcasts.org/episodes/soft-wrapping-text/
 command! -nargs=* Wrap set wrap linebreak nolist
+
+
+" Remove line numbers and invisibles so that text can be selected for an OS copy
+let b:copy_mode_enabled = 0
+let b:copy_mode_number = &l:number
+let b:copy_mode_list = &l:list
+function! CopyModeToggle()
+	if b:copy_mode_enabled
+		let &l:number = b:copy_mode_number
+		let &l:list = b:copy_mode_list
+		let b:copy_mode_enabled = 0
+	else
+		let b:copy_mode_number = &l:number
+		let b:copy_mode_list = &l:list
+		set nonumber nolist
+		let b:copy_mode_enabled = 1
+	endif
+endfunction
+
+command! CopyModeToggle call CopyModeToggle()
 
 
 
