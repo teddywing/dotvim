@@ -124,6 +124,9 @@
 "         line numbers and invisibles so that text can be selected and copied 
 "         at the OS level.
 "
+"   2014.05.14:
+"       * Add commentary.vim definition for the "htmldjango" filetype
+"
 
 
 " Pathogen
@@ -288,6 +291,7 @@ augroup commentaryvim
 	autocmd!
 	autocmd FileType ruby setlocal commentstring=#\ %s
 	autocmd FileType html setlocal commentstring=<!--\ %s\ -->
+	autocmd FileType htmldjango setlocal commentstring=<!--\ %s\ -->
 	autocmd FileType javascript setlocal commentstring=//\ %s
 	autocmd FileType scss setlocal commentstring=//\ %s
 	autocmd FileType python setlocal commentstring=#\ %s
