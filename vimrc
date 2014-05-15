@@ -127,6 +127,12 @@
 "   2014.05.14:
 "       * Add commentary.vim definition for the "htmldjango" filetype
 "
+"   2014.05.15:
+"       * Turn on filetype plugin so that I can have filetype-specific 
+"         settings in their own files instead of having them clutter my vimrc
+"       * Add a filetype plugin file for python, specifying PEP8 indentation 
+"         and ensuring indentation is not preserved on blank lines.
+"
 
 
 " Pathogen
@@ -177,6 +183,9 @@ set smartcase     " Case insensitive unless an uppercase character is entered
 set backupdir=~/.vim/backup/backup//
 set directory=~/.vim/backup/swap//
 set undodir=~/.vim/backup/undo//
+
+" Enable filetype-specific settings
+filetype plugin on
 
 set laststatus=2  " Always show the status line
 
