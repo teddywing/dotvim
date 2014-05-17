@@ -133,6 +133,11 @@
 "       * Add a filetype plugin file for python, specifying PEP8 indentation 
 "         and ensuring indentation is not preserved on blank lines.
 "
+"   2014.05.17:
+"       * Move JSON filetype detection from vimrc to ftdetect/json.vim. Now 
+"         that I know that such things exist, it's nice to keep things 
+"         organised.
+"
 
 
 " Pathogen
@@ -462,14 +467,6 @@ command! CopyModeToggle call CopyModeToggle()
 " if has("autocmd")
 "   autocmd bufwritepost .vimrc source $MYVIMRC
 " endif
-
-" Filetype syntax highlighting
-augroup filetype_syntax_highlighting
-	autocmd!
-	
-	" Set JSON files to JavaScript syntax
-	autocmd BufRead,BufNewFile *.json set filetype=json syntax=javascript
-augroup END
 
 
 " Indentation rules by file type
