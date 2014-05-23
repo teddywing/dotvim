@@ -137,6 +137,9 @@
 "       * Move JSON filetype detection from vimrc to ftdetect/json.vim. Now 
 "         that I know that such things exist, it's nice to keep things 
 "         organised.
+"       * Add autocmd to disable default ftplugins. Don't like a lot of the 
+"         default behaviours. Note that this doesn't work for some reason and 
+"         I can't figure out why or what to do. Keep searching.
 "
 
 
@@ -188,6 +191,12 @@ set smartcase     " Case insensitive unless an uppercase character is entered
 set backupdir=~/.vim/backup/backup//
 set directory=~/.vim/backup/swap//
 set undodir=~/.vim/backup/undo//
+
+" Disable all default ftplugins
+augroup disable_default_ftplugins
+	autocmd!
+	autocmd BufEnter * let b:did_ftplugin = 1
+augroup END
 
 " Enable filetype-specific settings
 filetype plugin on
