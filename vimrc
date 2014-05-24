@@ -141,6 +141,13 @@
 "         default behaviours. Note that this doesn't work for some reason and 
 "         I can't figure out why or what to do. Keep searching.
 "
+"   2014.05.23:
+"       * Get disabling of default ftplugins working. Turns out it shouldn't 
+"         have been in an autocmd as recommended in 
+"         http://vim.wikia.com/wiki/Default_filetype#Setting_a_default_filetype
+"         and http://marc.info/?l=vim&m=100254210012793&w=2. Instead the 
+"         variable needed to be set directly.
+"
 
 
 " Pathogen
@@ -193,10 +200,7 @@ set directory=~/.vim/backup/swap//
 set undodir=~/.vim/backup/undo//
 
 " Disable all default ftplugins
-augroup disable_default_ftplugins
-	autocmd!
-	autocmd BufEnter * let b:did_ftplugin = 1
-augroup END
+let b:did_ftplugin = 1
 
 " Enable filetype-specific settings
 filetype plugin on
