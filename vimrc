@@ -147,6 +147,7 @@
 "         http://vim.wikia.com/wiki/Default_filetype#Setting_a_default_filetype
 "         and http://marc.info/?l=vim&m=100254210012793&w=2. Instead the 
 "         variable needed to be set directly.
+"       * Move gitcommit indentation settings from vimrc to ftplugin/gitcommit
 "
 
 
@@ -480,15 +481,6 @@ command! CopyModeToggle call CopyModeToggle()
 " if has("autocmd")
 "   autocmd bufwritepost .vimrc source $MYVIMRC
 " endif
-
-
-" Indentation rules by file type
-augroup filetype_indentation
-	autocmd!
-	
-	" git commit messages
-	autocmd FileType gitcommit setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
-augroup END
 
 
 
