@@ -19,6 +19,11 @@
 "     * Manually set "Normal" ctermbg to 235 (or #262626)
 "     * Set "NonText" and "SpecialKey" to "Comment" colour
 "
+"   2014.05.23:
+"     * Set "StatusLineNC" to a dark grey. This way I get a light grey on the 
+"       currently active window and the other windows have darker statuslines. 
+"       Makes it easier to see visually where my cursor is.
+"
 
 set background=dark
 if version > 580
@@ -277,6 +282,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "Menu
     "Scrollbar
     "Tooltip
+    
+    " Added 2014.05.23: set custom statusline colour. Lighter colour for the 
+    " active window and darker colour for others.
+    call <SID>X("StatusLineNC", "c2bfa5", "000000", "reverse")
 
     " syntax highlighting groups
     call <SID>X("Comment", "828282", "", "")
