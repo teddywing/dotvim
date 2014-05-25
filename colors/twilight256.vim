@@ -24,6 +24,11 @@
 "       currently active window and the other windows have darker statuslines. 
 "       Makes it easier to see visually where my cursor is.
 "
+"   2014.05.25:
+"     * Set "CursorLine" to be a bit lighter than the background. Previously 
+"       there was no highlighting definition for this and it defaulted to an 
+"       underline.
+"
 
 set background=dark
 if version > 580
@@ -286,6 +291,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Added 2014.05.23: set custom statusline colour. Lighter colour for the 
     " active window and darker colour for others.
     call <SID>X("StatusLineNC", "c2bfa5", "000000", "reverse")
+
+    " Added 2014.05.25: set colour for cursorline
+    hi CursorLine cterm=none ctermbg=237
 
     " syntax highlighting groups
     call <SID>X("Comment", "828282", "", "")
