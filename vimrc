@@ -153,6 +153,7 @@
 "       * If in insert mode I press Ctrl-u to delete a line or Ctrl-w to 
 "         delete a word, add those changes to the undo history so that I can 
 "         go back and don't have to remember what I typed if I want to undo.
+"       * Add <leader>gu mapping to toggle Gundo
 "
 
 
@@ -358,6 +359,10 @@ if exists('g:colors_name') && g:colors_name ==# 'twilight256'
 	autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=238
 	autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
 endif
+
+
+" Gundo
+nnoremap <leader>gu :GundoToggle<cr>
 
 
 
