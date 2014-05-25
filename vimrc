@@ -154,6 +154,8 @@
 "         delete a word, add those changes to the undo history so that I can 
 "         go back and don't have to remember what I typed if I want to undo.
 "       * Add <leader>gu mapping to toggle Gundo
+"       * Set `cursorline` to highlight the current line. Shame it doesn't 
+"         play nice with soft wrapping but I'm going to try it out for now.
 "
 
 
@@ -186,6 +188,8 @@ set incsearch     " Search for text as you enter it
 
 set ruler         " Show cursor position
 set number        " Show line numbers
+
+set cursorline    " Highlight the current line
 
 set list          " Show invisibles by default
 
