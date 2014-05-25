@@ -149,6 +149,11 @@
 "         variable needed to be set directly.
 "       * Move gitcommit indentation settings from vimrc to ftplugin/gitcommit
 "
+"   2014.05.25:
+"       * If in insert mode I press Ctrl-u to delete a line or Ctrl-w to 
+"         delete a word, add those changes to the undo history so that I can 
+"         go back and don't have to remember what I typed if I want to undo.
+"
 
 
 " Pathogen
@@ -375,6 +380,11 @@ vnoremap <c-h> <esc>:update<cr>v
 inoremap <CR> <CR>x<BS>
 nnoremap o ox<BS>
 nnoremap O Ox<BS>
+
+" Allow undo of Ctrl-u and Ctrl-w in insert mode
+" http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
 
 " Show invisibles with <leader>i
 nnoremap <leader>i :set list!<cr>
