@@ -30,6 +30,7 @@ Currently requires:
 * [EasyGrep](https://github.com/vim-scripts/EasyGrep): easy find and replace in project
 * [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides): show tab stops
 * [camelcasemotion](https://github.com/vim-scripts/camelcasemotion): move inside camelcase and underscored words
+* [Gundo](http://sjl.bitbucket.org/gundo.vim/): visual view of vim's undo tree
 
 
 Disabled plugins:
