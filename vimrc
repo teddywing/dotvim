@@ -157,6 +157,10 @@
 "       * Set `cursorline` to highlight the current line. Shame it doesn't 
 "         play nice with soft wrapping but I'm going to try it out for now.
 "
+"   2014.05.26:
+"       * Add :cnext and :cprevious mappings for easier navigation in the 
+"         quickfix window. Key pairs taken from Tim Pope's unimpaired.vim.
+"
 
 
 " Pathogen
@@ -431,6 +435,11 @@ nnoremap <leader>/ :nohlsearch<cr>
 
 " Tabs
 nnoremap <leader>tn :tabnew<cr>
+
+" Quickfix
+nnoremap ]q :cnext<cr>
+nnoremap [q :cprevious<cr>
+
 
 
 " Commands
