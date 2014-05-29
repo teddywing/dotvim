@@ -163,6 +163,12 @@
 "       * Delete `Stab` command now that I moved it to its own plugin. Makes 
 "         for better code organisation and a leaner vimrc.
 "
+"   2014.05.28:
+"       * Get disabling of default ftplugins working (finally). Turns out my 
+"         prior change to get them working only worked for the first opened 
+"         buffer (obviously in retrospect). Here, use BufReadPre to set the 
+"         buffer variable for all buffers that get opened.
+"
 
 
 " Pathogen
@@ -217,10 +223,10 @@ set directory=~/.vim/backup/swap//
 set undodir=~/.vim/backup/undo//
 
 " Disable all default ftplugins
-"let b:did_ftplugin = 1
+" http://vim.wikia.com/wiki/File_type_plugins#Disabling_default_ftplugins
+" http://stackoverflow.com/questions/11337129/setting-buffer-specific-variables-in-vim#comment14956146_11351393
 augroup disable_all_default_ftplugins
 	autocmd!
-	" autocmd BufCreate *  call setbufvar(str2nr(expand("<abuf>")), "did_ftplugin", 1)
 	autocmd BufReadPre * let b:did_ftplugin = 1
 augroup END
 
