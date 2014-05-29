@@ -217,7 +217,12 @@ set directory=~/.vim/backup/swap//
 set undodir=~/.vim/backup/undo//
 
 " Disable all default ftplugins
-let b:did_ftplugin = 1
+"let b:did_ftplugin = 1
+augroup disable_all_default_ftplugins
+	autocmd!
+	" autocmd BufCreate *  call setbufvar(str2nr(expand("<abuf>")), "did_ftplugin", 1)
+	autocmd BufReadPre * let b:did_ftplugin = 1
+augroup END
 
 " Enable filetype-specific settings
 filetype plugin on
