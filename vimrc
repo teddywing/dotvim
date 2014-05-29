@@ -169,6 +169,10 @@
 "         buffer (obviously in retrospect). Here, use BufReadPre to set the 
 "         buffer variable for all buffers that get opened.
 "
+"   2014.05.29:
+"       * Add <leader>sb to set scrollbinding so I can quickly set two windows 
+"         to scroll together
+"
 
 
 " Pathogen
@@ -452,6 +456,9 @@ nnoremap <leader>tn :tabnew<cr>
 " Quickfix
 nnoremap ]q :cnext<cr>
 nnoremap [q :cprevious<cr>
+
+" Set scrollbind on a window
+nnoremap <leader>sb :setlocal scrollbind!<cr>
 
 
 
