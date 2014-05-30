@@ -177,6 +177,10 @@
 "       * Add <leader>tx to delete the current buffer and go to the previous 
 "         tab. When I use :bd it goes to the next tab but more often I want to 
 "         go back to the previous tab.
+"       * Colour even Indent Guides differently (make them slightly lighter 
+"         than the odd ones). Originally I thought it was distracting but I 
+"         just caved. Much easier to follow the line when it gets really long 
+"         if it's a different colour than its neighbors.
 "
 
 
@@ -387,7 +391,7 @@ if exists('g:colors_name') && g:colors_name ==# 'twilight256'
 	let g:indent_guides_auto_colors = 0
 	
 	autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=238
-	autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
+	autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=240
 endif
 
 
