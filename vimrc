@@ -173,6 +173,11 @@
 "       * Add <leader>sb to set scrollbinding so I can quickly set two windows 
 "         to scroll together
 "
+"   2014.05.30:
+"       * Add <leader>tx to delete the current buffer and go to the previous 
+"         tab. When I use :bd it goes to the next tab but more often I want to 
+"         go back to the previous tab.
+"
 
 
 " Pathogen
@@ -452,6 +457,7 @@ nnoremap <leader>/ :nohlsearch<cr>
 
 " Tabs
 nnoremap <leader>tn :tabnew<cr>
+nnoremap <leader>tx :bdelete \| normal! gT<cr>
 
 " Quickfix
 nnoremap ]q :cnext<cr>
