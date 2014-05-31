@@ -461,6 +461,8 @@ nnoremap <leader>/ :nohlsearch<cr>
 
 " Tabs
 nnoremap <leader>tn :tabnew<cr>
+
+" Delete buffer and go to previous tab
 nnoremap <leader>tx :bdelete \| normal! gT<cr>
 
 " Quickfix
