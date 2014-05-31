@@ -181,6 +181,8 @@
 "         than the odd ones). Originally I thought it was distracting but I 
 "         just caved. Much easier to follow the line when it gets really long 
 "         if it's a different colour than its neighbors.
+"       * Add a leader command to go to the last active tab. Make it easier to 
+"         back and forth between tabs.
 "
 
 
@@ -464,6 +466,15 @@ nnoremap <leader>tn :tabnew<cr>
 
 " Delete buffer and go to previous tab
 nnoremap <leader>tx :bdelete \| normal! gT<cr>
+
+" Go to last viewed tab
+" http://stackoverflow.com/a/2120168
+let g:last_viewed_tab = 1
+augroup last_viewed_tab
+	autocmd!
+	autocmd TabLeave * let g:last_viewed_tab = tabpagenr()
+augroup END
+nnoremap <leader>tl :execute "tabnext " . g:last_viewed_tab<cr>
 
 " Quickfix
 nnoremap ]q :cnext<cr>
