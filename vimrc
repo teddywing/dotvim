@@ -184,6 +184,9 @@
 "       * Add a leader command to go to the last active tab. Make it easier to 
 "         back and forth between tabs.
 "
+"   2014.06.02:
+"       * Change <leader>tx to <leader>td. Typing "tx" is too uncomfortable.
+"
 
 
 " Pathogen
@@ -465,7 +468,7 @@ nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>tn :tabnew<cr>
 
 " Delete buffer and go to previous tab
-nnoremap <leader>tx :bdelete \| normal! gT<cr>
+nnoremap <leader>td :bdelete \| normal! gT<cr>
 
 " Go to last viewed tab
 " http://stackoverflow.com/a/2120168
