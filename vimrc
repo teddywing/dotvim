@@ -187,6 +187,10 @@
 "   2014.06.02:
 "       * Change <leader>tx to <leader>td. Typing "tx" is too uncomfortable.
 "
+"   2014.06.03:
+"       * Ignore "vendor/" directories when searching in Command-T. Makes it 
+"         easier to search in Ruby projects.
+"
 
 
 " Pathogen
@@ -319,6 +323,9 @@ endif
 " Command-T
 " Remap Command-T from <leader>t to <leader>d (BBEdit style)
 nnoremap <leader>d :CommandT<cr>
+
+" Directories & files to ignore during Command-T searches
+let g:CommandTWildIgnore=&wildignore . ",*/vendor/*"
 
 
 " NERDTree
