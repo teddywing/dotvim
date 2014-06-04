@@ -190,6 +190,9 @@
 "   2014.06.03:
 "       * Ignore "vendor/" directories when searching in Command-T. Makes it 
 "         easier to search in Ruby projects.
+"       * Save an undo (using Ctrl-g + u) when saving in Insert mode. It didn't 
+"         appear to be doing so before and I want to make sure that an undo 
+"         entry is created every time I save.
 "
 
 
@@ -423,7 +426,7 @@ vnoremap <S-Tab> <Esc>
 " Control-h to save (Why 'h'? Because it seemed to be a non-important combo 
 " across modes, and because bash by default doesn't let me map Control-s)
 nnoremap <c-h> <esc>:update<cr>
-inoremap <c-h> <esc>:update<cr>a
+inoremap <c-h> <c-g>u<esc>:update<cr>a
 vnoremap <c-h> <esc>:update<cr>v
 
 " Preserve indentation on empty lines
