@@ -194,6 +194,10 @@
 "         appear to be doing so before and I want to make sure that an undo 
 "         entry is created every time I save.
 "
+"   2014.06.05:
+"       * Map 0 -> g0 and $ -> g$ plus the reverse. Makes it easier to get to 
+"         the beginning & end of a soft wrapped line.
+"
 
 
 " Pathogen
@@ -461,6 +465,12 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
+
+" Easier moving to the beginning & end of wrapped lines
+nnoremap 0 g0
+nnoremap $ g$
+nnoremap g0 0
+nnoremap g$ $
 
 " Easier buffer switching
 nnoremap <leader>bl :ls<cr>
