@@ -198,6 +198,10 @@
 "       * Map 0 -> g0 and $ -> g$ plus the reverse. Makes it easier to get to 
 "         the beginning & end of a soft wrapped line.
 "
+"   2014.06.06:
+"       * Add Visual mode mapping to copy selected text to the OS X clipboard 
+"         since I'm using stock vim not compiled with clipboard support.
+"
 
 
 " Pathogen
@@ -505,6 +509,10 @@ nnoremap [q :cprevious<cr>
 
 " Set scrollbind on a window
 nnoremap <leader>sb :setlocal scrollbind!<cr>
+
+" Copy to OS X clipboard from visual mode
+" http://stackoverflow.com/a/17126375
+vnoremap <leader>c !tee >(pbcopy)<cr>
 
 
 
