@@ -201,6 +201,8 @@
 "   2014.06.06:
 "       * Add Visual mode mapping to copy selected text to the OS X clipboard 
 "         since I'm using stock vim not compiled with clipboard support.
+"       * Add mapping to open the current file in TextMate. Occasionally it's 
+"         useful to open the file in a different editor.
 "
 
 
@@ -513,6 +515,9 @@ nnoremap <leader>sb :setlocal scrollbind!<cr>
 " Copy to OS X clipboard from visual mode
 " http://stackoverflow.com/a/17126375
 vnoremap <leader>c !tee >(pbcopy)<cr>
+
+" Open current file in TextMate
+nnoremap <leader>om :execute '!mate ' . expand('%:p')<cr>
 
 
 
