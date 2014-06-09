@@ -525,7 +525,7 @@ vnoremap <leader>c !tee >(pbcopy)<cr>
 nnoremap <leader>om :execute '!mate ' . expand('%:p')<cr>
 
 " Open current file in Finder
-nnoremap <leader>of :execute '!open ' . getcwd()<cr>
+nnoremap <leader>of :execute '!open ' . expand('%:p:h')<cr>
 
 
 
