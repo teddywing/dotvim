@@ -204,6 +204,11 @@
 "       * Add mapping to open the current file in TextMate. Occasionally it's 
 "         useful to open the file in a different editor.
 "
+"   2014.06.09:
+"       * Add mapping to open the current file's directory in Finder. Useful 
+"         for quickly modifying the filename or interacting with the file 
+"         directly in other ways.
+"
 
 
 " Pathogen
@@ -518,6 +523,9 @@ vnoremap <leader>c !tee >(pbcopy)<cr>
 
 " Open current file in TextMate
 nnoremap <leader>om :execute '!mate ' . expand('%:p')<cr>
+
+" Open current file in Finder
+nnoremap <leader>of :execute '!open ' . getcwd()<cr>
 
 
 
