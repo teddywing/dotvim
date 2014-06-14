@@ -31,6 +31,8 @@ Currently requires:
 * [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides): show tab stops
 * [camelcasemotion](https://github.com/vim-scripts/camelcasemotion): move inside camelcase and underscored words
 * [Gundo](http://sjl.bitbucket.org/gundo.vim/): visual view of vim's undo tree
+* [surround.vim](https://github.com/tpope/vim-surround): easier manipulation of "surrounding" characters
+* [golang](https://github.com/jnwhiteh/vim-golang): mirror of the official go vim plugins
 
 
 Disabled plugins:
