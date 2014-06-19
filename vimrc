@@ -211,6 +211,7 @@
 "
 "   2014.06.19:
 "       * Fix 'Open in TextMate' mapping: allow paths with spaces
+"       * Fix 'Open path in Finder' mapping: allow paths with spaces
 "
 
 
@@ -528,7 +529,7 @@ vnoremap <leader>c !tee >(pbcopy)<cr>
 nnoremap <leader>om :execute '!mate "' . expand('%:p') . '"'<cr>
 
 " Open current file in Finder
-nnoremap <leader>of :execute '!open ' . expand('%:p:h')<cr>
+nnoremap <leader>of :execute '!open "' . expand('%:p:h') . '"'<cr>
 
 
 
