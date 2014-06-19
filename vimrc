@@ -209,6 +209,9 @@
 "         for quickly modifying the filename or interacting with the file 
 "         directly in other ways.
 "
+"   2014.06.19:
+"       * Fix 'Open in TextMate' mapping: allow paths with spaces
+"
 
 
 " Pathogen
@@ -522,7 +525,7 @@ nnoremap <leader>sb :setlocal scrollbind!<cr>
 vnoremap <leader>c !tee >(pbcopy)<cr>
 
 " Open current file in TextMate
-nnoremap <leader>om :execute '!mate ' . expand('%:p')<cr>
+nnoremap <leader>om :execute '!mate "' . expand('%:p') . '"'<cr>
 
 " Open current file in Finder
 nnoremap <leader>of :execute '!open ' . expand('%:p:h')<cr>
