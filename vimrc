@@ -213,6 +213,11 @@
 "       * Fix 'Open in TextMate' mapping: allow paths with spaces
 "       * Fix 'Open path in Finder' mapping: allow paths with spaces
 "
+"   2014.06.25:
+"       * Add mapping to CommandTFlush. Sometimes when I switch branches I'll 
+"         have to do this and typing :co<Tab><Tab><Tab><CR> multiple times a 
+"         day adds up.
+"
 
 
 " Pathogen
@@ -345,6 +350,7 @@ endif
 " Command-T
 " Remap Command-T from <leader>t to <leader>d (BBEdit style)
 nnoremap <leader>d :CommandT<cr>
+nnoremap <leader>sf :CommandTFlush<cr>
 
 " Directories & files to ignore during Command-T searches
 let g:CommandTWildIgnore=&wildignore . ",*/vendor/*"
