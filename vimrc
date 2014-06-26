@@ -218,6 +218,10 @@
 "         have to do this and typing :co<Tab><Tab><Tab><CR> multiple times a 
 "         day adds up.
 "
+"    2014.06.26:
+"       * Update <c-h> save mapping in visual mode to reselect the last 
+"         selected area
+"
 
 
 " Pathogen
@@ -452,7 +456,7 @@ vnoremap <S-Tab> <Esc>
 " across modes, and because bash by default doesn't let me map Control-s)
 nnoremap <c-h> <esc>:update<cr>
 inoremap <c-h> <c-g>u<esc>:update<cr>a
-vnoremap <c-h> <esc>:update<cr>v
+vnoremap <c-h> <esc>:update<cr>gv
 
 " Preserve indentation on empty lines
 " http://stackoverflow.com/a/7413117
