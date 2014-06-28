@@ -222,7 +222,10 @@
 "       * Update <c-h> save mapping in visual mode to reselect the last 
 "         selected area
 "
-"   
+"   2014.06.27:
+"       * Remove the space after the file encoding in the statusline
+"       * Add a statusline item that says what line endings are used in the 
+"         current file. "LF" is used for unix, "CRLF" is used for dos.
 "
 
 
@@ -297,7 +300,8 @@ set statusline+=%y    " Filetype
 set statusline+=\     " Separator
                       " File encoding
                       " (http://vim.wikia.com/wiki/Show_fileencoding_and_bomb_in_the_status_line)
-set statusline+=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}
+set statusline+=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}
+set statusline+=%{\"[\".(&fileformat==\"unix\"?\"LF\":(&fileformat==\"dos\"?\"CRLF\":\"\")).\"]\ \"}
 set statusline+=\     " Separator
 set statusline+=%m    " File modified? flag
 set statusline+=%r    " Readonly? flag
