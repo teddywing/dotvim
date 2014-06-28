@@ -218,9 +218,11 @@
 "         have to do this and typing :co<Tab><Tab><Tab><CR> multiple times a 
 "         day adds up.
 "
-"    2014.06.26:
+"   2014.06.26:
 "       * Update <c-h> save mapping in visual mode to reselect the last 
 "         selected area
+"
+"   
 "
 
 
