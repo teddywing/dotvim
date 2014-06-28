@@ -227,6 +227,11 @@
 "       * Add a statusline item that says what line endings are used in the 
 "         current file. "LF" is used for unix, "CRLF" is used for dos.
 "
+"   2014.06.28:
+"       * Add mapping to split a line with multiple XML/HTML tags into multiple 
+"         lines. Something I have to do every now and then and it's kind of a 
+"         pain to do it manually.
+"
 
 
 " Pathogen
@@ -546,6 +551,21 @@ nnoremap <leader>om :execute '!mate "' . expand('%:p') . '"'<cr>
 
 " Open current file in Finder
 nnoremap <leader>of :execute '!open "' . expand('%:p:h') . '"'<cr>
+
+" HTML
+" Split outer tag on a single line to multiple lines
+" Example:
+"   Before:
+"     <a><span>The Land of Chocolate</span></a>
+"   After:
+"     <a>
+"         <span>The Land of Chocolate</span>
+"     </a>
+"
+" Thanks to kdlv on Freenode for helping me realise that I don't need :execute 
+" "normal! " here. Turns out in the map, things like "\<cr>" are treated 
+" literally (as in "\<lt>cr>"), which is of course not what I wanted.
+nnoremap <leader>hs $F<i<cr><esc>k0f>a<cr><tab><esc>
 
 
 
