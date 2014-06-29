@@ -235,6 +235,9 @@
 "   2014.06.29:
 "       * Remove TabBar plugin. I wasn't using it and it's been disabled for a 
 "         while, so completely removing it. Delete mappings created for TabBar.
+"       * Remove commentary.vim autocmds. After switching to tcomment these are 
+"         no longer necessary. All the languages I was targeting are have 
+"         built-in support with tcomment.
 "
 
 
@@ -382,18 +385,6 @@ let NERDTreeWinSize = 24
 
 " Toggle NERDTree with leader command
 nnoremap <leader>f :NERDTreeToggle<cr>
-
-
-" commentary.vim
-augroup commentaryvim
-	autocmd!
-	autocmd FileType ruby setlocal commentstring=#\ %s
-	autocmd FileType html setlocal commentstring=<!--\ %s\ -->
-	autocmd FileType htmldjango setlocal commentstring=<!--\ %s\ -->
-	autocmd FileType javascript setlocal commentstring=//\ %s
-	autocmd FileType scss setlocal commentstring=//\ %s
-	autocmd FileType python setlocal commentstring=#\ %s
-augroup END
 
 
 " PreserveNoEOL
