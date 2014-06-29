@@ -232,6 +232,10 @@
 "         lines. Something I have to do every now and then and it's kind of a 
 "         pain to do it manually.
 "
+"   2014.06.29:
+"       * Remove TabBar plugin. I wasn't using it and it's been disabled for a 
+"         while, so completely removing it. Delete mappings created for TabBar.
+"
 
 
 " Pathogen
@@ -378,35 +382,6 @@ let NERDTreeWinSize = 24
 
 " Toggle NERDTree with leader command
 nnoremap <leader>f :NERDTreeToggle<cr>
-
-
-" TabBar
-" j/k to switch to previous/next buffer tab
-nnoremap <leader>j :Tbbp<cr>
-nnoremap <leader>k :Tbbn<cr>
-
-" Leader+# to switch to a specific buffer tab
-nnoremap <leader>1 :TbBfSwitchTo 1<cr>:<bs>
-nnoremap <leader>2 :TbBfSwitchTo 2<cr>:<bs>
-nnoremap <leader>3 :TbBfSwitchTo 3<cr>:<bs>
-nnoremap <leader>4 :TbBfSwitchTo 4<cr>:<bs>
-nnoremap <leader>5 :TbBfSwitchTo 5<cr>:<bs>
-nnoremap <leader>6 :TbBfSwitchTo 6<cr>:<bs>
-nnoremap <leader>7 :TbBfSwitchTo 7<cr>:<bs>
-nnoremap <leader>8 :TbBfSwitchTo 8<cr>:<bs>
-nnoremap <leader>9 :TbBfSwitchTo 9<cr>:<bs>
-nnoremap <leader>0 :TbBfSwitchTo 10<cr>:<bs>
-
-inoremap <leader>1 :TbBfSwitchTo 1<cr>:<bs>a
-inoremap <leader>2 :TbBfSwitchTo 2<cr>:<bs>a
-inoremap <leader>3 :TbBfSwitchTo 3<cr>:<bs>a
-inoremap <leader>4 :TbBfSwitchTo 4<cr>:<bs>a
-inoremap <leader>5 :TbBfSwitchTo 5<cr>:<bs>a
-inoremap <leader>6 :TbBfSwitchTo 6<cr>:<bs>a
-inoremap <leader>7 :TbBfSwitchTo 7<cr>:<bs>a
-inoremap <leader>8 :TbBfSwitchTo 8<cr>:<bs>a
-inoremap <leader>9 :TbBfSwitchTo 9<cr>:<bs>a
-inoremap <leader>0 :TbBfSwitchTo 10<cr>:<bs>a
 
 
 " commentary.vim
