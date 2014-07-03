@@ -239,6 +239,11 @@
 "         no longer necessary. All the languages I was targeting are have 
 "         built-in support with tcomment.
 "
+"   2014.07.02:
+"       * Add the matchit plugin. Had a long HTML file and wanted to be able 
+"         to go back & forth between an opening tag and closing tag that 
+"         extended beyond the page. No more straining to follow a tab stop.
+"
 
 
 " Pathogen
@@ -418,6 +423,10 @@ endif
 
 " Gundo
 nnoremap <leader>gu :GundoToggle<cr>
+
+
+" Source matchit for expanded % matching
+runtime! macros/matchit.vim
 
 
 
