@@ -244,6 +244,9 @@
 "         to go back & forth between an opening tag and closing tag that 
 "         extended beyond the page. No more straining to follow a tab stop.
 "
+"   2014.07.06:
+"       * Ignore `node_modules/` directory from Command-T.
+"
 
 
 " Pathogen
@@ -380,7 +383,7 @@ nnoremap <leader>d :CommandT<cr>
 nnoremap <leader>sf :CommandTFlush<cr>
 
 " Directories & files to ignore during Command-T searches
-let g:CommandTWildIgnore=&wildignore . ",*/vendor/*"
+let g:CommandTWildIgnore=&wildignore . ",*/vendor/*,*/node_modules/*"
 
 
 " NERDTree
