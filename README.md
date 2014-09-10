@@ -25,7 +25,6 @@ Currently requires:
 * [pathogen.vim](https://github.com/tpope/vim-pathogen): plugin management
 * [Command-T](https://github.com/wincent/Command-T): easy file loading
 * [NerdTree](https://github.com/scrooloose/nerdtree): pleasant file browser
-* [commentary.vim](https://github.com/tpope/vim-commentary): easy code commenting
 * [PreserveNoEOL](https://github.com/vim-scripts/PreserveNoEOL/): preserve EOLs
 * [EasyGrep](https://github.com/vim-scripts/EasyGrep): easy find and replace in project
 * [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides): show tab stops
@@ -34,11 +33,7 @@ Currently requires:
 * [surround.vim](https://github.com/tpope/vim-surround): easier manipulation of "surrounding" characters
 * [golang](https://github.com/jnwhiteh/vim-golang): mirror of the official go vim plugins
 * [scala](https://github.com/derekwyatt/vim-scala): plugin for Scala development
-
-
-Disabled plugins:
-
-* [TabBar](https://github.com/vim-scripts/TabBar): show buffers in tabs
+* [tcomment](https://github.com/tomtom/tcomment_vim): easy code commenting
 
 
 ## License
