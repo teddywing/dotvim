@@ -247,6 +247,9 @@
 "   2014.07.06:
 "       * Ignore `node_modules/` directory from Command-T.
 "
+"   2014.09.10:
+"       * Add <leader>r mapping to reload the current file.
+"
 
 
 " Pathogen
@@ -544,6 +547,9 @@ nnoremap <leader>of :execute '!open "' . expand('%:p:h') . '"'<cr>
 " "normal! " here. Turns out in the map, things like "\<cr>" are treated 
 " literally (as in "\<lt>cr>"), which is of course not what I wanted.
 nnoremap <leader>hs $F<i<cr><esc>k0f>a<cr><tab><esc>
+
+" Reload current file (reopen to see changed made outside of vim)
+nnoremap <leader>r :edit!<cr>
 
 
 
