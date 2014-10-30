@@ -250,6 +250,10 @@
 "   2014.09.10:
 "       * Add <leader>r mapping to reload the current file.
 "
+"   2014.10.30:
+"       * Add <leader>tq to close a window and go to the previous tab. Works 
+"         like <leader>td but doesn't delete the buffer.
+"
 
 
 " Pathogen
@@ -506,6 +510,9 @@ nnoremap <leader>tn :tabnew<cr>
 
 " Delete buffer and go to previous tab
 nnoremap <leader>td :bdelete \| normal! gT<cr>
+
+" Quit buffer and go to previous tab
+nnoremap <leader>tq :quit \| normal! gT<cr>
 
 " Go to last viewed tab
 " http://stackoverflow.com/a/2120168
