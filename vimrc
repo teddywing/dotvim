@@ -254,6 +254,10 @@
 "       * Add <leader>tq to close a window and go to the previous tab. Works 
 "         like <leader>td but doesn't delete the buffer.
 "
+"   2014.11.05:
+"       * Add command mode mappings to allow movement forward and backward by 
+"         word. OS X Terminal doesn't handle the Shift & Control mappings.
+"
 
 
 " Pathogen
@@ -557,6 +561,10 @@ nnoremap <leader>hs $F<i<cr><esc>k0f>a<cr><tab><esc>
 
 " Reload current file (reopen to see changed made outside of vim)
 nnoremap <leader>r :edit!<cr>
+
+" Allow word movement in command mode
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
 
 
 
