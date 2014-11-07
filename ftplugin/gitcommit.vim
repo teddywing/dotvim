@@ -8,3 +8,7 @@ setlocal shiftwidth=2
 
 
 setlocal textwidth=72
+
+
+" Make bulleted lists with '*' not start wrapped lines with '*'
+setlocal comments-=mb:* comments+=fb:*
