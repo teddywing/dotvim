@@ -258,6 +258,10 @@
 "       * Add command mode mappings to allow movement forward and backward by 
 "         word. OS X Terminal doesn't handle the Shift & Control mappings.
 "
+"   2014.11.12:
+"       * Set sessionoptions-=options so that options and mappings are not 
+"         saved in vim sessions.
+"
 
 
 " Pathogen
@@ -304,6 +308,9 @@ set grepprg=ack   " Use ack instead of grep
 
 set ignorecase    " Case insensitive
 set smartcase     " Case insensitive unless an uppercase character is entered
+
+" Don't persist options & mappings in saved sessions
+set sessionoptions-=options
 
 " Store swap files in .vim/ directory
 " http://stackoverflow.com/a/15317146
