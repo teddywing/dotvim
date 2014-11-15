@@ -262,6 +262,10 @@
 "       * Set sessionoptions-=options so that options and mappings are not 
 "         saved in vim sessions.
 "
+"   2014.11.15:
+"       * Add <leader>p mapping to read from the OS X pasteboard. Much faster 
+"         than pasting directly if you're dealing with a lot of text.
+"
 
 
 " Pathogen
@@ -572,6 +576,9 @@ nnoremap <leader>r :edit!<cr>
 " Allow word movement in command mode
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
+
+" Read from OS X pasteboard for faster pasting
+nnoremap <leader>p :read !pbpaste<cr>
 
 
 
