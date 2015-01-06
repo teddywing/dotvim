@@ -266,6 +266,9 @@
 "       * Add <leader>p mapping to read from the OS X pasteboard. Much faster 
 "         than pasting directly if you're dealing with a lot of text.
 "
+"   2015.01.06:
+"       * Set backupcopy=yes to preserve creation dates of files.
+"
 
 
 " Pathogen
@@ -321,6 +324,9 @@ set sessionoptions-=options
 set backupdir=~/.vim/backup/backup//
 set directory=~/.vim/backup/swap//
 set undodir=~/.vim/backup/undo//
+
+" Preserve file attributes, like creation date
+set backupcopy=yes
 
 " Disable all default ftplugins
 " http://vim.wikia.com/wiki/File_type_plugins#Disabling_default_ftplugins
