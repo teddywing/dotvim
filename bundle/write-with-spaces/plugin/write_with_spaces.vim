@@ -5,4 +5,4 @@
 "
 " Provides a way to save files with spaces in their name
 
-command! -bang -nargs=* Write :call write_with_spaces#Write(<q-bang>, <q-args>)
+command! -bang -nargs=* -complete=file Write :call write_with_spaces#Write(<q-bang>, <q-args>)
