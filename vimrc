@@ -274,6 +274,8 @@
 "         which functions more like NERDTree by not going to a new "page" when 
 "         changing directories. With this change I think we can uninstall 
 "         NERDTree.
+"
+"   2015.06.04:
 "       * Add <leader>or mapping to open the current file in ranger.
 "
 
