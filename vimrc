@@ -274,6 +274,7 @@
 "         which functions more like NERDTree by not going to a new "page" when 
 "         changing directories. With this change I think we can uninstall 
 "         NERDTree.
+"       * Add <leader>or mapping to open the current file in ranger.
 "
 
 
@@ -568,6 +569,9 @@ nnoremap <leader>om :execute '!mate "' . expand('%:p') . '"'<cr>
 
 " Open current file in Finder
 nnoremap <leader>of :execute '!open "' . expand('%:p:h') . '"'<cr>
+
+" Open current file in ranger
+nnoremap <leader>or :execute '!ranger "' . expand('%:p:h') . '"'<cr>
 
 " HTML
 " Split outer tag on a single line to multiple lines
