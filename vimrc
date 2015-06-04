@@ -269,6 +269,12 @@
 "   2015.01.06:
 "       * Set backupcopy=yes to preserve creation dates of files.
 "
+"   2015.06.02:
+"       * Set g:netrw_liststyle=3 to take advantage of Netrw's tree listing, 
+"         which functions more like NERDTree by not going to a new "page" when 
+"         changing directories. With this change I think we can uninstall 
+"         NERDTree.
+"
 
 
 " Pathogen
@@ -363,6 +369,8 @@ set statusline+=%-8c  " Column number (ensure space for 8 characters)
 set statusline+=\     " Separator
 set statusline+=%4P   " Percent through file in window (ensure space for 4 characters)
 
+" Use Netrw's tree-style listing
+let g:netrw_liststyle = 3
 
 
 " Syntax highlighting (base)
