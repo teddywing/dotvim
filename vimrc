@@ -278,6 +278,9 @@
 "   2015.06.04:
 "       * Add <leader>or mapping to open the current file in ranger.
 "
+"   2015.07.06:
+"       * Remove EasyGrep configuration now that I've removed the plugin.
+"
 
 
 " Pathogen
@@ -436,14 +439,6 @@ nnoremap <leader>f :NERDTreeToggle<cr>
 
 " PreserveNoEOL
 let g:PreserveNoEOL = 1
-
-
-" EasyGrep
-let g:EasyGrepCommand = 1    " Use grep instead of vimgrep
-let g:EasyGrepRecursive = 1  " Recursive search enabled
-let g:EasyGrepEveryMatch = 1 " Multiple matches on the same line are distinct
-let g:EasyGrepIgnoreCase = 1
-let g:EasyGrepReplaceAllPerFile = 1
 
 
 " Indent Guides
