@@ -280,6 +280,7 @@
 "
 "   2015.07.06:
 "       * Remove EasyGrep configuration now that I've removed the plugin.
+"       * Remove NERDTree configuration now that I've removed the plugin.
 "
 
 
@@ -426,15 +427,6 @@ nnoremap <leader>sf :CommandTFlush<cr>
 
 " Directories & files to ignore during Command-T searches
 let g:CommandTWildIgnore=&wildignore . ",*/vendor/*,*/node_modules/*"
-
-
-" NERDTree
-" Alphabetical sort ordering
-let NERDTreeSortOrder = []
-let NERDTreeWinSize = 24
-
-" Toggle NERDTree with leader command
-nnoremap <leader>f :NERDTreeToggle<cr>
 
 
 " PreserveNoEOL
