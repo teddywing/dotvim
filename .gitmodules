@@ -11,10 +11,6 @@
 	path = bundle/PreserveNoEOL
 	url = https://github.com/vim-scripts/PreserveNoEOL.git
 	ignore = untracked
-[submodule "bundle/EasyGrep"]
-	path = bundle/EasyGrep
-	url = https://github.com/vim-scripts/EasyGrep.git
-	ignore = untracked
 [submodule "bundle/vim-indent-guides"]
 	path = bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
