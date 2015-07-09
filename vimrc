@@ -282,6 +282,16 @@
 "       * Remove EasyGrep configuration now that I've removed the plugin.
 "       * Remove NERDTree configuration now that I've removed the plugin.
 "
+"   2015.07.09:
+"       * Move Netrw settings to the Plugins section
+"       * Set g:netrw_winsize=''. This should be the default but for some 
+"         reason :Vexplore is always opening with the same width that I had 
+"         previously defined for NERD Tree even though I've removed the plugin.
+"         Turning on this setting because I can't for the life of me figure out
+"         how the vertical explorer window size is getting set.
+"       * Set g:netrw_sort_options='i' so that upper & lowercase files are 
+"         mixed together
+"
 
 
 " Pathogen
@@ -376,9 +386,6 @@ set statusline+=%-8c  " Column number (ensure space for 8 characters)
 set statusline+=\     " Separator
 set statusline+=%4P   " Percent through file in window (ensure space for 4 characters)
 
-" Use Netrw's tree-style listing
-let g:netrw_liststyle = 3
-
 
 " Syntax highlighting (base)
 " ==========================
@@ -452,6 +459,12 @@ endif
 
 " Gundo
 nnoremap <leader>gu :GundoToggle<cr>
+
+
+" Netrw
+let g:netrw_liststyle = 3         " Use Netrw's tree-style listing
+let g:netrw_winsize = ''          " Use default window size
+let g:netrw_sort_options = 'i'    " Case-insensitive sort
 
 
 " Source matchit for expanded % matching
