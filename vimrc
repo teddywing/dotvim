@@ -292,6 +292,10 @@
 "       * Set g:netrw_sort_options='i' so that upper & lowercase files are 
 "         mixed together
 "
+"   2015.07.10:
+"       * Remove <leader>bl mapping because I'm not using it and have developed 
+"         a preference for `:ls` instead.
+"
 
 
 " Pathogen
@@ -526,7 +530,6 @@ nnoremap g0 0
 nnoremap g$ $
 
 " Easier buffer switching
-nnoremap <leader>bl :ls<cr>
 nnoremap <leader>j :bnext<cr>
 nnoremap <leader>k :bprevious<cr>
 
