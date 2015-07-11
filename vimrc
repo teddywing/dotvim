@@ -300,6 +300,7 @@
 "       * Remove CopyModeToggle command since I don't use it and it doesn't 
 "         really work.
 "       * Remove Autocommands section as it's not used.
+"       * Disable auditory.vim
 "
 
 
@@ -474,6 +475,10 @@ nnoremap <leader>gu :GundoToggle<cr>
 let g:netrw_liststyle = 3         " Use Netrw's tree-style listing
 let g:netrw_winsize = ''          " Use default window size
 let g:netrw_sort_options = 'i'    " Case-insensitive sort
+
+
+" Auditory
+let g:loaded_auditory = 1
 
 
 " Source matchit for expanded % matching
