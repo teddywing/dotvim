@@ -38,7 +38,7 @@
 	url = https://github.com/rking/ag.vim.git
 [submodule "bundle/vim-auditory"]
 	path = bundle/vim-auditory
-	url = /Users/tw/Documents/Development/vim-auditory/
+	url = https://github.com/teddywing/auditory.vim.git
 [submodule "bundle/vim-ls-grep"]
 	path = bundle/vim-ls-grep
 	url = https://github.com/teddywing/vim-ls-grep.git
