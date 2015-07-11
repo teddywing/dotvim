@@ -299,6 +299,7 @@
 "   2015.07.11:
 "       * Remove CopyModeToggle command since I don't use it and it doesn't 
 "         really work.
+"       * Remove Autocommands section as it's not used.
 "
 
 
@@ -615,17 +616,6 @@ nnoremap <leader>p :read !pbpaste<cr>
 " Swap between soft wrapping and no wrapping
 " http://vimcasts.org/episodes/soft-wrapping-text/
 command! -nargs=* Wrap set wrap linebreak nolist
-
-
-
-" Autocommands
-" ============
-
-" Source the vimrc file after saving it
-" http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/
-" if has("autocmd")
-"   autocmd bufwritepost .vimrc source $MYVIMRC
-" endif
 
 
 
