@@ -296,6 +296,10 @@
 "       * Remove <leader>bl mapping because I'm not using it and have developed 
 "         a preference for `:ls` instead.
 "
+"   2015.07.11:
+"       * Remove CopyModeToggle command since I don't use it and it doesn't 
+"         really work.
+"
 
 
 " Pathogen
@@ -611,26 +615,6 @@ nnoremap <leader>p :read !pbpaste<cr>
 " Swap between soft wrapping and no wrapping
 " http://vimcasts.org/episodes/soft-wrapping-text/
 command! -nargs=* Wrap set wrap linebreak nolist
-
-
-" Remove line numbers and invisibles so that text can be selected for an OS copy
-let b:copy_mode_enabled = 0
-let b:copy_mode_number = &l:number
-let b:copy_mode_list = &l:list
-function! CopyModeToggle()
-	if b:copy_mode_enabled
-		let &l:number = b:copy_mode_number
-		let &l:list = b:copy_mode_list
-		let b:copy_mode_enabled = 0
-	else
-		let b:copy_mode_number = &l:number
-		let b:copy_mode_list = &l:list
-		set nonumber nolist
-		let b:copy_mode_enabled = 1
-	endif
-endfunction
-
-command! CopyModeToggle call CopyModeToggle()
 
 
 
