@@ -446,6 +446,26 @@ nnoremap <leader>sf :CommandTFlush<cr>
 let g:CommandTWildIgnore=&wildignore . ",*/vendor/*,*/node_modules/*"
 
 
+" Unite
+" http://stackoverflow.com/a/17387785
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+nnoremap <leader>add :<c-u>Unite -start-insert -immediately file_rec<cr>
+nnoremap <leader>abb :<c-u>Unite -start-insert -immediately buffer<cr>
+nnoremap <leader>ads :<c-u>Unite -start-insert -immediately file_rec split<cr>
+nnoremap <leader>abs :<c-u>Unite -start-insert -immediately buffer split<cr>
+nnoremap <leader>adv :<c-u>Unite -start-insert -immediately file_rec vsplit<cr>
+nnoremap <leader>abv :<c-u>Unite -start-insert -immediately buffer vsplit<cr>
+nnoremap <leader>adt :<c-u>Unite -start-insert -immediately file_rec tabopen<cr>
+nnoremap <leader>abt :<c-u>Unite -start-insert -immediately buffer tabopen<cr>
+
+
 " PreserveNoEOL
 let g:PreserveNoEOL = 1
 
