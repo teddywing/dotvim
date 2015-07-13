@@ -308,6 +308,8 @@
 "   2015.07.13:
 "       * Use `find` as our pick.vim command in order to include untracked git 
 "         files in the pick list.
+"       * Add mappings to use pick.vim for opening buffers in new splits, 
+"         vsplits, and tabs
 "
 
 
@@ -480,11 +482,20 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " pick
 let g:pick_command = "find * -type f -o -type l"
+
+function! PickBufferListCommand()
+  let bufnrs = filter(range(1, bufnr("$")), 'buflisted(v:val)')
+  let buffers = map(bufnrs, 'bufname(v:val)')
+  return 'echo "' . join(buffers, "\n") . '"'
+endfunction
+
 nnoremap <leader>xd :call PickCommand(g:pick_command, "", ":edit")<cr>
 nnoremap <leader>xs :call PickCommand(g:pick_command, "", ":split")<cr>
 nnoremap <leader>xv :call PickCommand(g:pick_command, "", ":vsplit")<cr>
 nnoremap <leader>xt :call PickCommand(g:pick_command, "", ":tabedit")<cr>
-nnoremap <leader>xb :call PickBuffer()<cr>
+nnoremap <leader>xbs :call PickCommand(PickBufferListCommand(), "", ":split")<cr>
+nnoremap <leader>xbv :call PickCommand(PickBufferListCommand(), "", ":vsplit")<cr>
+nnoremap <leader>xbt :call PickCommand(PickBufferListCommand(), "", ":tabedit")<cr>
 nnoremap <leader>x] :call PickTag()<cr>
 
 
