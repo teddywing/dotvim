@@ -466,6 +466,11 @@ nnoremap <leader>adt :<c-u>Unite -start-insert -immediately file_rec tabopen<cr>
 nnoremap <leader>abt :<c-u>Unite -start-insert -immediately buffer tabopen<cr>
 
 
+" Ctrl-P
+" http://stackoverflow.com/a/18601066
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+
 " PreserveNoEOL
 let g:PreserveNoEOL = 1
 
