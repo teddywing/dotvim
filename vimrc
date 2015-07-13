@@ -305,6 +305,10 @@
 "   2015.07.12:
 "       * Add pick mappings
 "
+"   2015.07.13:
+"       * Use `find` as our pick.vim command in order to include untracked git 
+"         files in the pick list.
+"
 
 
 " Pathogen
@@ -475,10 +479,11 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 
 " pick
-nnoremap <leader>xd :call PickFile()<cr>
-nnoremap <leader>xs :call PickFileSplit()<cr>
-nnoremap <leader>xv :call PickFileVerticalSplit()<cr>
-nnoremap <leader>xt :call PickFileTab()<cr>
+let g:pick_command = "find * -type f -o -type l"
+nnoremap <leader>xd :call PickCommand(g:pick_command, "", ":edit")<cr>
+nnoremap <leader>xs :call PickCommand(g:pick_command, "", ":split")<cr>
+nnoremap <leader>xv :call PickCommand(g:pick_command, "", ":vsplit")<cr>
+nnoremap <leader>xt :call PickCommand(g:pick_command, "", ":tabedit")<cr>
 nnoremap <leader>xb :call PickBuffer()<cr>
 nnoremap <leader>x] :call PickTag()<cr>
 
