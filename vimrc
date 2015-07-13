@@ -302,6 +302,9 @@
 "       * Remove Autocommands section as it's not used.
 "       * Disable auditory.vim
 "
+"   2015.07.12:
+"       * Add pick mappings
+"
 
 
 " Pathogen
@@ -469,6 +472,15 @@ nnoremap <leader>abt :<c-u>Unite -start-insert -immediately buffer tabopen<cr>
 " Ctrl-P
 " http://stackoverflow.com/a/18601066
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+
+" pick
+nnoremap <leader>xd :call PickFile()<cr>
+nnoremap <leader>xs :call PickFileSplit()<cr>
+nnoremap <leader>xv :call PickFileVerticalSplit()<cr>
+nnoremap <leader>xt :call PickFileTab()<cr>
+nnoremap <leader>xb :call PickBuffer()<cr>
+nnoremap <leader>x] :call PickTag()<cr>
 
 
 " PreserveNoEOL
