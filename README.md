@@ -32,6 +32,7 @@ Currently requires:
 * [scala](https://github.com/derekwyatt/vim-scala): plugin for Scala development
 * [tcomment](https://github.com/tomtom/tcomment_vim): easy code commenting
 * [ag.vim](https://github.com/rking/ag.vim): ag search integration
+* [pick.vim](https://github.com/thoughtbot/pick.vim): fast file & buffer opening
 
 
 ## License
