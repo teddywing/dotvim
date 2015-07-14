@@ -42,9 +42,6 @@
 [submodule "bundle/vim-ls-grep"]
 	path = bundle/vim-ls-grep
 	url = https://github.com/teddywing/vim-ls-grep.git
-[submodule "bundle/unite"]
-	path = bundle/unite
-	url = https://github.com/Shougo/unite.vim.git
 [submodule "bundle/pick"]
 	path = bundle/pick
 	url = https://github.com/thoughtbot/pick.vim.git
