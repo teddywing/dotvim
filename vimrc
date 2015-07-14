@@ -314,6 +314,9 @@
 "       * Update pick mappings to be more comfortable now that I've freed 
 "         <leader>d.
 "
+"   2015.07.14:
+"       * Turn on splitright
+"
 
 
 " Pathogen
@@ -360,6 +363,8 @@ set grepprg=ack   " Use ack instead of grep
 
 set ignorecase    " Case insensitive
 set smartcase     " Case insensitive unless an uppercase character is entered
+
+set splitright    " Open vertical splits to the right of the current window
 
 " Don't persist options & mappings in saved sessions
 set sessionoptions-=options
