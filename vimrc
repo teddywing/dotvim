@@ -310,6 +310,7 @@
 "         files in the pick list.
 "       * Add mappings to use pick.vim for opening buffers in new splits, 
 "         vsplits, and tabs
+"       * Remove Command-T configuration. Switching to pick.
 "
 
 
@@ -445,15 +446,6 @@ endif
 
 " Plugins
 " =======
-
-" Command-T
-" Remap Command-T from <leader>t to <leader>d (BBEdit style)
-nnoremap <leader>d :CommandT<cr>
-nnoremap <leader>sf :CommandTFlush<cr>
-
-" Directories & files to ignore during Command-T searches
-let g:CommandTWildIgnore=&wildignore . ",*/vendor/*,*/node_modules/*"
-
 
 " pick
 let g:pick_command = "find * -type f -o -type l"
