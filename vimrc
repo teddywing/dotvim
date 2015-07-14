@@ -311,6 +311,8 @@
 "       * Add mappings to use pick.vim for opening buffers in new splits, 
 "         vsplits, and tabs
 "       * Remove Command-T configuration. Switching to pick.
+"       * Update pick mappings to be more comfortable now that I've freed 
+"         <leader>d.
 "
 
 
@@ -456,14 +458,14 @@ function! PickBufferListCommand()
   return 'echo "' . join(buffers, "\n") . '"'
 endfunction
 
-nnoremap <leader>xd :call PickCommand(g:pick_command, "", ":edit")<cr>
-nnoremap <leader>xs :call PickCommand(g:pick_command, "", ":split")<cr>
-nnoremap <leader>xv :call PickCommand(g:pick_command, "", ":vsplit")<cr>
-nnoremap <leader>xt :call PickCommand(g:pick_command, "", ":tabedit")<cr>
-nnoremap <leader>xbs :call PickCommand(PickBufferListCommand(), "", ":split")<cr>
-nnoremap <leader>xbv :call PickCommand(PickBufferListCommand(), "", ":vsplit")<cr>
-nnoremap <leader>xbt :call PickCommand(PickBufferListCommand(), "", ":tabedit")<cr>
-nnoremap <leader>x] :call PickTag()<cr>
+nnoremap <leader>dd :call PickCommand(g:pick_command, "", ":edit")<cr>
+nnoremap <leader>ds :call PickCommand(g:pick_command, "", ":split")<cr>
+nnoremap <leader>dv :call PickCommand(g:pick_command, "", ":vsplit")<cr>
+nnoremap <leader>dt :call PickCommand(g:pick_command, "", ":tabedit")<cr>
+nnoremap <leader>bs :call PickCommand(PickBufferListCommand(), "", ":split")<cr>
+nnoremap <leader>bv :call PickCommand(PickBufferListCommand(), "", ":vsplit")<cr>
+nnoremap <leader>bt :call PickCommand(PickBufferListCommand(), "", ":tabedit")<cr>
+nnoremap <leader>d] :call PickTag()<cr>
 
 
 " PreserveNoEOL
