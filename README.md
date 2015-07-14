@@ -23,7 +23,6 @@ Currently requires:
 
 ## Plugins
 * [pathogen.vim](https://github.com/tpope/vim-pathogen): plugin management
-* [Command-T](https://github.com/wincent/Command-T): easy file loading
 * [PreserveNoEOL](https://github.com/vim-scripts/PreserveNoEOL/): preserve EOLs
 * [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides): show tab stops
 * [camelcasemotion](https://github.com/vim-scripts/camelcasemotion): move inside camelcase and underscored words
