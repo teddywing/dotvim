@@ -316,6 +316,7 @@
 "
 "   2015.07.14:
 "       * Turn on splitright
+"       * Add <leader>bb mapping to pick a buffer to open in the current window
 "
 
 
@@ -467,6 +468,7 @@ nnoremap <leader>dd :call PickCommand(g:pick_command, "", ":edit")<cr>
 nnoremap <leader>ds :call PickCommand(g:pick_command, "", ":split")<cr>
 nnoremap <leader>dv :call PickCommand(g:pick_command, "", ":vsplit")<cr>
 nnoremap <leader>dt :call PickCommand(g:pick_command, "", ":tabedit")<cr>
+nnoremap <leader>bb :call PickCommand(PickBufferListCommand(), "", ":edit")<cr>
 nnoremap <leader>bs :call PickCommand(PickBufferListCommand(), "", ":split")<cr>
 nnoremap <leader>bv :call PickCommand(PickBufferListCommand(), "", ":vsplit")<cr>
 nnoremap <leader>bt :call PickCommand(PickBufferListCommand(), "", ":tabedit")<cr>
