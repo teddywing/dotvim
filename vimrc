@@ -318,6 +318,9 @@
 "       * Turn on splitright
 "       * Add <leader>bb mapping to pick a buffer to open in the current window
 "
+"   2015.07.21:
+"       * Add mappings for Netrw :Explore, :Sexplore, :Vexplore, and :Rexplore
+"
 
 
 " Pathogen
@@ -504,6 +507,11 @@ nnoremap <leader>gu :GundoToggle<cr>
 let g:netrw_liststyle = 3         " Use Netrw's tree-style listing
 let g:netrw_winsize = ''          " Use default window size
 let g:netrw_sort_options = 'i'    " Case-insensitive sort
+
+nnoremap <leader>ff :Explore<cr>
+nnoremap <leader>fs :Sexplore<cr>
+nnoremap <leader>fv :Vexplore<cr>
+nnoremap <leader>fr :Rexplore<cr>
 
 
 " Auditory
