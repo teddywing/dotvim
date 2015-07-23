@@ -321,6 +321,9 @@
 "   2015.07.21:
 "       * Add mappings for Netrw :Explore, :Sexplore, :Vexplore, and :Rexplore
 "
+"   2015.07.23:
+"       * Add mapping to open a new split that `git blame`s the current file
+"
 
 
 " Pathogen
@@ -649,6 +652,11 @@ cnoremap <Esc>f <S-Right>
 
 " Read from OS X pasteboard for faster pasting
 nnoremap <leader>p :read !pbpaste<cr>
+
+" Open a new split with a `git blame` of the current file
+" Inspired by Ben Orenstein
+" https://github.com/r00k/dotfiles/blob/7874508b825fd754e4ec3259da65f324ab96c8ea/vimrc#L74
+nnoremap <leader>gb :vnew \| read !git blame <c-r>=expand('%:p')<cr><cr> \| redraw!<cr>
 
 
 
