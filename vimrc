@@ -325,6 +325,7 @@
 "       * Add mapping to open a new split that `git blame`s the current file
 "       * Modify `git blame` mapping to open in less
 "       * Modify `git blame` mapping to use custom git-blamer plugin
+"       * Change pick command from `find` to `ag` for speed
 "
 
 
@@ -464,7 +465,7 @@ endif
 " =======
 
 " pick
-let g:pick_command = "find * -type f -o -type l"
+let g:pick_command = "ag -l -a -g ''"
 
 function! PickBufferListCommand()
   let bufnrs = filter(range(1, bufnr("$")), 'buflisted(v:val)')
