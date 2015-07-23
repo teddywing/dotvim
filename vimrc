@@ -324,6 +324,7 @@
 "   2015.07.23:
 "       * Add mapping to open a new split that `git blame`s the current file
 "       * Modify `git blame` mapping to open in less
+"       * Modify `git blame` mapping to use custom git-blamer plugin
 "
 
 
@@ -657,7 +658,7 @@ nnoremap <leader>p :read !pbpaste<cr>
 " Open a new split with a `git blame` of the current file
 " Inspired by Ben Orenstein
 " https://github.com/r00k/dotfiles/blob/7874508b825fd754e4ec3259da65f324ab96c8ea/vimrc#L74
-nnoremap <leader>gb :!git blame <c-r>=expand('%:p')<cr> \| less -S<cr>
+nnoremap <leader>gb :GitBlamer<cr>
 
 
 
