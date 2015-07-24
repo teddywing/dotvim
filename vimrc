@@ -646,7 +646,7 @@ nnoremap <leader>or :execute '!ranger "' . expand('%:p:h') . '"'<cr>
 " literally (as in "\<lt>cr>"), which is of course not what I wanted.
 nnoremap <leader>hs $F<i<cr><esc>k0f>a<cr><tab><esc>
 
-" Reload current file (reopen to see changed made outside of vim)
+" Reload current file (reopen to see changes made outside of vim)
 nnoremap <leader>r :edit!<cr>
 
 " Allow word movement in command mode
