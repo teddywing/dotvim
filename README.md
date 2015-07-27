@@ -33,6 +33,7 @@ Currently requires:
 * [tcomment](https://github.com/tomtom/tcomment_vim): easy code commenting
 * [ag.vim](https://github.com/rking/ag.vim): ag search integration
 * [pick.vim](https://github.com/thoughtbot/pick.vim): fast file & buffer opening
+* [System Copy](https://github.com/christoomey/vim-system-copy): operator-pending function to copy text to the system clipboard
 
 
 ## License
