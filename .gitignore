@@ -8,7 +8,7 @@
 /backup/undo/**
 
 # Custom
-/projects/
+/projects/file-paths.vim
 
 # Defaults
 !.gitkeep

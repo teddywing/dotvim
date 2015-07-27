@@ -672,6 +672,9 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " Project Settings
 " ================
 
+" Source environment variables set to project paths
+source ~/.vim/projects/file-paths.vim
+
 " Source all files in the ~/.vim/projects directory
 " http://stackoverflow.com/a/4500936
 for f in split(glob('~/.vim/projects/*.vim'), '\n')
