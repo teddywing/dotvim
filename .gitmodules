@@ -42,3 +42,6 @@
 [submodule "bundle/pick"]
 	path = bundle/pick
 	url = https://github.com/thoughtbot/pick.vim.git
+[submodule "bundle/vim-system-copy"]
+	path = bundle/vim-system-copy
+	url = https://github.com/christoomey/vim-system-copy.git
