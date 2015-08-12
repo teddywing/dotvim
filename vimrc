@@ -660,7 +660,7 @@ cnoremap <Esc>f <S-Right>
 nnoremap <leader>p :read !pbpaste<cr>
 
 nnoremap <leader>gb :GitBlamer<cr>
-nnoremap <leader>gp :!git log -p %<cr>
+nnoremap <leader>gp :!git log -p -- %<cr>
 
 
 
