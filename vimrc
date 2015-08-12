@@ -327,6 +327,9 @@
 "       * Modify `git blame` mapping to use custom git-blamer plugin
 "       * Change pick command from `find` to `ag` for speed
 "
+"   2015.08.12:
+"       * Add <leader>gp mapping to open the git log for the current file
+"
 
 
 " Pathogen
@@ -657,6 +660,7 @@ cnoremap <Esc>f <S-Right>
 nnoremap <leader>p :read !pbpaste<cr>
 
 nnoremap <leader>gb :GitBlamer<cr>
+nnoremap <leader>gp :!git log -p %<cr>
 
 
 
