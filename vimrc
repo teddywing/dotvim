@@ -330,6 +330,10 @@
 "   2015.08.12:
 "       * Add <leader>gp mapping to open the git log for the current file
 "
+"   2015.08.16:
+"       * Remove `g:loaded_auditory` setting because Auditory sounds are off 
+"         by default starting with v0.1.0.
+"
 
 
 " Pathogen
@@ -521,10 +525,6 @@ nnoremap <leader>ff :Explore<cr>
 nnoremap <leader>fs :Sexplore<cr>
 nnoremap <leader>fv :Vexplore<cr>
 nnoremap <leader>fr :Rexplore<cr>
-
-
-" Auditory
-let g:loaded_auditory = 1
 
 
 " Source matchit for expanded % matching
