@@ -334,6 +334,9 @@
 "       * Remove `g:loaded_auditory` setting because Auditory sounds are off 
 "         by default starting with v0.1.0.
 "
+"   2015.08.18:
+"       * Add a mapping system copy the current file's path
+"
 
 
 " Pathogen
@@ -661,6 +664,9 @@ nnoremap <leader>p :read !pbpaste<cr>
 
 nnoremap <leader>gb :GitBlamer<cr>
 nnoremap <leader>gp :!git log -p -- %<cr>
+
+" Copy the current file path into the OS X pasteboard
+nnoremap <leader>cf :call system('pbcopy', expand('%'))<cr>
 
 
 
