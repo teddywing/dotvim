@@ -10,3 +10,7 @@ if exists("loaded_matchit")
     \ '<\@<=dl\>[^>]*\%(>\|$\):<\@<=d[td]\>:<\@<=/dl>,' .
     \ '<\@<=\([^/][^ \t>]*\)[^>]*\%(>\|$\):<\@<=/\1>'
 endif
+
+
+" Include hyphen in the keyword list so that CSS class names can be autocompleted
+setlocal iskeyword+=-
