@@ -17,7 +17,7 @@ function! git_blamer#Blame()
 	setlocal scrollbind cursorbind
 	
 	" Read in `git blame` output
-	execute 'read !git blame ' . l:buffer_name
+	execute 'read !git blame -w ' . l:buffer_name
 	
 	" Delete empty first line
 	1 delete
