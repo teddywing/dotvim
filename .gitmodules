@@ -45,3 +45,6 @@
 [submodule "bundle/vim-system-copy"]
 	path = bundle/vim-system-copy
 	url = https://github.com/christoomey/vim-system-copy.git
+[submodule "bundle/vim-unstack"]
+	path = bundle/vim-unstack
+	url = https://github.com/mattboehm/vim-unstack.git
