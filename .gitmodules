@@ -48,3 +48,6 @@
 [submodule "bundle/vim-unstack"]
 	path = bundle/vim-unstack
 	url = https://github.com/mattboehm/vim-unstack.git
+[submodule "bundle/vim-grappele"]
+	path = bundle/vim-grappele
+	url = https://github.com/teddywing/vim-grappele.git
