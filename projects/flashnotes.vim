@@ -3,6 +3,8 @@ augroup Flashnotes
 	autocmd!
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_FLASHNOTES/*.{scss,js,html} setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2 textwidth=100
 	
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_FLASHNOTES/*.html setlocal filetype=htmldjango
+	
 	" Generate a new ctags file for Python sources. Use tmux to run the command in the background.
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_FLASHNOTES/*.{py}
 		\ nnoremap <buffer> <leader>gc :silent! execute '!tmux new -d "ctags --languages=Python --python-kinds=-i --excmd=number -f $VIM_PROJECT_PATH_FLASHNOTES_ROOT/tags -R $VIM_PROJECT_PATH_FLASHNOTES/ $VIM_PROJECT_PATH_VIRTUALENVS"' \| redraw!<cr> |
