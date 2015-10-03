@@ -51,3 +51,6 @@
 [submodule "bundle/vim-grappele"]
 	path = bundle/vim-grappele
 	url = https://github.com/teddywing/vim-grappele.git
+[submodule "bundle/vim-scriptease"]
+	path = bundle/vim-scriptease
+	url = https://github.com/tpope/vim-scriptease.git
