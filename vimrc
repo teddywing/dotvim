@@ -337,6 +337,9 @@
 "   2015.08.18:
 "       * Add a mapping system copy the current file's path
 "
+"   2015.10.28:
+"       * Add a mapping to open the current file in Chrome
+"
 
 
 " Pathogen
@@ -636,6 +639,9 @@ nnoremap <leader>of :execute '!open "' . expand('%:p:h') . '"'<cr>
 
 " Open current file in ranger
 nnoremap <leader>or :execute '!ranger "' . expand('%:p:h') . '"'<cr>
+
+" Open the current file in Chrome
+nnoremap <leader>oc :execute '!open -a Google\ Chrome\ Canary "' . expand('%:p') . '"'<cr>
 
 " HTML
 " Split outer tag on a single line to multiple lines
