@@ -340,6 +340,10 @@
 "   2015.10.28:
 "       * Add a mapping to open the current file in Chrome
 "
+"   2015.11.12:
+"       * Output current scrollbind value after using our <leader>sb scrollbind 
+"         toggle mapping.
+"
 
 
 " Pathogen
@@ -625,7 +629,7 @@ nnoremap ]q :cnext<cr>
 nnoremap [q :cprevious<cr>
 
 " Set scrollbind on a window
-nnoremap <leader>sb :setlocal scrollbind!<cr>
+nnoremap <leader>sb :setlocal scrollbind! scrollbind?<cr>
 
 " Copy to OS X clipboard from visual mode
 " http://stackoverflow.com/a/17126375
