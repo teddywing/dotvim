@@ -16,5 +16,11 @@ nnoremap <buffer> <leader>cr :!go run %<cr>
 nnoremap <buffer> cdf :!go fmt %<cr>
 
 
+" Don't preserve indentation on empty lines
+inoremap <buffer> <CR> <CR>
+nnoremap <buffer> o o
+nnoremap <buffer> O O
+
+
 " Comment string
 setlocal commentstring=//\ %s
