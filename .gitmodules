@@ -57,3 +57,4 @@
 [submodule "bundle/slimv"]
 	path = bundle/slimv
 	url = https://github.com/kovisoft/slimv.git
+	ignore = untracked
