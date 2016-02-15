@@ -344,6 +344,10 @@
 "       * Output current scrollbind value after using our <leader>sb scrollbind 
 "         toggle mapping.
 "
+"   2016.02.15:
+"       * Add Slimv settings. Use `sbcl` Lisp interpreter and `screen` to run 
+"         the REPL.
+"
 
 
 " Pathogen
@@ -539,6 +543,11 @@ nnoremap <leader>fr :Rexplore<cr>
 
 " Source matchit for expanded % matching
 runtime! macros/matchit.vim
+
+
+" Slimv
+let g:slimv_impl = 'sbcl'
+let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp'
 
 
 
