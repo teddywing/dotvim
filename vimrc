@@ -348,6 +348,9 @@
 "       * Add Slimv settings. Use `sbcl` Lisp interpreter and `screen` to run 
 "         the REPL.
 "
+"   2016.04.18:
+"       * Remove the `Wrap` command since I never use it.
+"
 
 
 " Pathogen
@@ -686,15 +689,6 @@ nnoremap <leader>gp :!git log -p -- %<cr>
 
 " Copy the current file path into the OS X pasteboard
 nnoremap <leader>cf :call system('pbcopy', expand('%'))<cr>
-
-
-
-" Commands
-" ========
-
-" Swap between soft wrapping and no wrapping
-" http://vimcasts.org/episodes/soft-wrapping-text/
-command! -nargs=* Wrap set wrap linebreak nolist
 
 
 
