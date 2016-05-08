@@ -7,3 +7,7 @@ setlocal formatoptions+=aw
 setlocal nojoinspaces
 
 setlocal spell
+
+
+" Remove last two empty lines below signature
+nnoremap <buffer> <leader>e m`Gdk``
