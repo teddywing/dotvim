@@ -55,7 +55,7 @@
 	path = bundle/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease.git
 [submodule "bundle/slimv"]
-	path = bundle/slimv
+	path = bundle/slimv~
 	url = https://github.com/kovisoft/slimv.git
 	ignore = untracked
 [submodule "bundle/rust"]
