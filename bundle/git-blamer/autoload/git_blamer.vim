@@ -12,7 +12,7 @@ function! git_blamer#Blame()
 		\ call setwinvar(' . l:window_number . ', "&cursorbind", 0)'
 	
 	" Open new window
-	vnew
+	leftabove vnew
 	setlocal noswapfile nowrap nolist nobuflisted buftype=nofile bufhidden=wipe
 	setlocal scrollbind cursorbind
 	
