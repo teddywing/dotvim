@@ -64,3 +64,6 @@
 [submodule "bundle/vim-space-vlaze"]
 	path = bundle/vim-space-vlaze
 	url = https://github.com/teddywing/vim-space-vlaze.git
+[submodule "bundle/vim-twodo"]
+	path = bundle/vim-twodo
+	url = https://github.com/teddywing/vim-twodo.git
