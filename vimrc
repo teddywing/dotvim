@@ -351,6 +351,9 @@
 "   2016.04.18:
 "       * Remove the `Wrap` command since I never use it.
 "
+"   2017.02.17:
+"       * Add <leader>tf mapping to run current RSpec spec file.
+"
 
 
 " Pathogen
@@ -551,6 +554,10 @@ runtime! macros/matchit.vim
 " Slimv
 let g:slimv_impl = 'sbcl'
 let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp'
+
+
+" RSpec
+nnoremap <leader>tf :call RunCurrentSpecFile()<cr>
 
 
 
