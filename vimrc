@@ -354,6 +354,9 @@
 "   2017.02.17:
 "       * Add <leader>tf mapping to run current RSpec spec file.
 "
+"   2017.02.21:
+"       * Change <leader>tf mapping to <leader>z.
+"
 
 
 " Pathogen
@@ -557,7 +560,7 @@ let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/s
 
 
 " RSpec
-nnoremap <leader>tf :call RunCurrentSpecFile()<cr>
+nnoremap <leader>z :call RunCurrentSpecFile()<cr>
 
 
 
