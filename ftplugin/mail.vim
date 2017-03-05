@@ -9,5 +9,9 @@ setlocal nojoinspaces
 setlocal spell
 
 
+" Make bulleted lists with '*' not start wrapped lines with '*'
+setlocal comments-=mb:* comments+=fb:*
+
+
 " Remove last two empty lines below signature
 nnoremap <buffer> <leader>e m`Gdk``
