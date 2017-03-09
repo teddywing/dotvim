@@ -11,3 +11,8 @@ setlocal shiftwidth=2
 inoremap <buffer> <CR> <CR>
 nnoremap <buffer> o o
 nnoremap <buffer> O O
+
+
+" Debugging
+nnoremap <buffer> Zd obyebug<Esc>
+nnoremap <buffer> ZD Obyebug<Esc>
