@@ -357,6 +357,9 @@
 "   2017.02.21:
 "       * Change <leader>tf mapping to <leader>z.
 "
+"   2017.03.13:
+"       * Add <leader>Z mapping to run the nearest spec.
+"
 
 
 " Pathogen
@@ -561,6 +564,7 @@ let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/s
 
 " RSpec
 nnoremap <leader>z :call RunCurrentSpecFile()<cr>
+nnoremap <leader>Z :call RunNearestSpec()<cr>
 
 
 
