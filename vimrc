@@ -360,6 +360,9 @@
 "   2017.03.13:
 "       * Add <leader>Z mapping to run the nearest spec.
 "
+"   2017.04.07:
+"       * Make the "Ctrl-W q" command a no-op.
+"
 
 
 " Pathogen
@@ -649,6 +652,9 @@ augroup last_viewed_tab
 	autocmd TabLeave * let g:last_viewed_tab = tabpagenr()
 augroup END
 nnoremap <leader>tl :execute "tabnext " . g:last_viewed_tab<cr>
+
+" Get rid of window quit command
+nnoremap <C-w>q <nop>
 
 " Quickfix
 nnoremap ]q :cnext<cr>
