@@ -363,6 +363,9 @@
 "   2017.04.07:
 "       * Make the "Ctrl-W q" command a no-op.
 "
+"   2017.04.24:
+"       * Make "Ctrl-W Ctrl-Q" a no-op.
+"
 
 
 " Pathogen
@@ -655,6 +658,7 @@ nnoremap <leader>tl :execute "tabnext " . g:last_viewed_tab<cr>
 
 " Get rid of window quit command
 nnoremap <C-w>q <nop>
+nnoremap <C-w><C-q> <nop>
 
 " Quickfix
 nnoremap ]q :cnext<cr>
