@@ -77,3 +77,6 @@
 	path = bundle/vim-argwrap
 	url = https://github.com/FooSoft/vim-argwrap.git
 	ignore = untracked
+[submodule "bundle/vim-gitcha"]
+	path = bundle/vim-gitcha
+	url = https://github.com/teddywing/vim-gitcha.git
