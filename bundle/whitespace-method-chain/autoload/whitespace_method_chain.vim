@@ -5,8 +5,8 @@ function! whitespace_method_chain#SplitMethodChainToMultipleLines()
 	let indent = matchstr(line, '\v^\s+')
 
 	" Replace '.' with newlines and the correct amount of indentation
-	substitute/\V./\='' . indent . '.'/g
+	silent! substitute/\V./\='' . indent . '.'/g
 
 	" Indent new lines
-	'`+1,.>
+	silent! '`+1,.>
 endfunction
