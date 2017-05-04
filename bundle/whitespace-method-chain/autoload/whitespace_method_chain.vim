@@ -1,4 +1,4 @@
-function! SplitMethodChainToMultipleLines()
+function! whitespace_method_chain#SplitMethodChainToMultipleLines()
 	normal! m`
 
 	let line = getline('.')
