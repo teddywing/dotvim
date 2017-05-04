@@ -366,6 +366,9 @@
 "   2017.04.24:
 "       * Make "Ctrl-W Ctrl-Q" a no-op.
 "
+"   2017.05.04:
+"       * Add <leader>sm mapping to split chained method calls.
+"
 
 
 " Pathogen
@@ -571,6 +574,10 @@ let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/s
 " RSpec
 nnoremap <leader>z :call RunCurrentSpecFile()<cr>
 nnoremap <leader>Z :call RunNearestSpec()<cr>
+
+
+" Whitespace method chain
+nnoremap <leader>sm :call whitespace_method_chain#SplitMethodChainToMultipleLines()<cr>
 
 
 
