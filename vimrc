@@ -369,6 +369,9 @@
 "   2017.05.04:
 "       * Add <leader>sm mapping to split chained method calls.
 "
+"   2017.06.05:
+"       * Add ZA mapping to save all buffers and quit.
+"
 
 
 " Pathogen
@@ -594,6 +597,9 @@ vnoremap <S-Tab> <Esc>
 nnoremap <c-h> <esc>:update<cr>
 inoremap <c-h> <c-g>u<esc>:update<cr>a
 vnoremap <c-h> <esc>:update<cr>gv
+
+" Update all files and quit
+nnoremap ZA :xall<cr>
 
 " Preserve indentation on empty lines
 " http://stackoverflow.com/a/7413117
