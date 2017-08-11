@@ -372,6 +372,9 @@
 "   2017.06.05:
 "       * Add ZA mapping to save all buffers and quit.
 "
+"   2017.08.11:
+"       * Add window number to the statusline for quicker window movement.
+"
 
 
 " Pathogen
@@ -460,6 +463,9 @@ set statusline+=%m    " File modified? flag
 set statusline+=%r    " Readonly? flag
 set statusline+=\     " Separator
 set statusline+=-b%n- " Buffer number as -b{buffer #}-
+set statusline+=\     " Separator
+                      " Window number as -w{window #}-
+set statusline+=-w%{winnr()}-
 set statusline+=\     " Separator
 set statusline+=%=    " Switch to right side
 set statusline+=%5l   " Line number (ensure space for 5 characters)
