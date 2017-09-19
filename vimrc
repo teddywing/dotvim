@@ -375,6 +375,10 @@
 "   2017.08.11:
 "       * Add window number to the statusline for quicker window movement.
 "
+"   2017.09.19:
+"       * Set 'backspace=2' because that doesn't get set by default on some 
+"         Vims.
+"
 
 
 " Pathogen
@@ -423,6 +427,8 @@ set ignorecase    " Case insensitive
 set smartcase     " Case insensitive unless an uppercase character is entered
 
 set splitright    " Open vertical splits to the right of the current window
+
+set backspace=indent,eol,start
 
 " Don't persist options & mappings in saved sessions
 set sessionoptions-=options
