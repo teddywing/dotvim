@@ -379,6 +379,7 @@
 "       * Set 'backspace=2' because that doesn't get set by default on some 
 "         Vims.
 "       * Add <leader>mk to save a Vim session file.
+"       * Add mapping to run RSpec file with unicode U+1F573 "hole" character.
 "
 
 
@@ -590,6 +591,7 @@ let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/s
 " RSpec
 nnoremap <leader>z :call RunCurrentSpecFile()<cr>
 nnoremap <leader>Z :call RunNearestSpec()<cr>
+nnoremap 🕳 :call RunCurrentSpecFile()<cr>
 
 
 " Whitespace method chain
