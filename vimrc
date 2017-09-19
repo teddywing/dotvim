@@ -378,6 +378,7 @@
 "   2017.09.19:
 "       * Set 'backspace=2' because that doesn't get set by default on some 
 "         Vims.
+"       * Add <leader>mk to save a Vim session file.
 "
 
 
@@ -738,6 +739,9 @@ nnoremap <leader>gp :!git log -p -- %<cr>
 
 " Copy the current file path into the OS X pasteboard
 nnoremap <leader>cf :call system('pbcopy', expand('%'))<cr>
+
+" Save the current session to a file
+nnoremap <leader>mk :mksession! vimsession<cr>
 
 
 
