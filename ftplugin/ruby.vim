@@ -16,3 +16,7 @@ nnoremap <buffer> O O
 " Debugging
 nnoremap <buffer> Zd obyebug<Esc>
 nnoremap <buffer> ZD Obyebug<Esc>
+
+
+" Spring
+command! -buffer FuckSpring :!bundle exec spring stop
