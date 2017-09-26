@@ -381,6 +381,10 @@
 "       * Add <leader>mk to save a Vim session file.
 "       * Add mapping to run RSpec file with unicode U+1F573 "hole" character.
 "
+"   2017.09.26:
+"       * Add mapping to run nearest RSpec spec with unicode U+26F3 "flag in 
+"         hole" character.
+"
 
 
 " Pathogen
@@ -592,6 +596,7 @@ let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/s
 nnoremap <leader>z :call RunCurrentSpecFile()<cr>
 nnoremap <leader>Z :call RunNearestSpec()<cr>
 nnoremap 🕳 :call RunCurrentSpecFile()<cr>
+nnoremap ⛳ :call RunNearestSpec()<cr>
 
 
 " Whitespace method chain
