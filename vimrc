@@ -385,6 +385,9 @@
 "       * Add mapping to run nearest RSpec spec with unicode U+26F3 "flag in 
 "         hole" character.
 "
+"   2017.11.28:
+"       * Log statistics of RSpec commands to gather usage data.
+"
 
 
 " Pathogen
@@ -593,10 +596,10 @@ let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/s
 
 
 " RSpec
-nnoremap <leader>z :call RunCurrentSpecFile()<cr>
-nnoremap <leader>Z :call RunNearestSpec()<cr>
-nnoremap 🕳 :call RunCurrentSpecFile()<cr>
-nnoremap ⛳ :call RunNearestSpec()<cr>
+nnoremap <leader>z :call RunCurrentSpecFile() \| call system("date '+%FT%T%z: z' >> ~/.vim/spec-stats.log")<cr>
+nnoremap <leader>Z :call RunNearestSpec() \| call system("date '+%FT%T%z: Z' >> ~/.vim/spec-stats.log")<cr>
+nnoremap 🕳 :call RunCurrentSpecFile() \| call system("date '+%FT%T%z: e' >> ~/.vim/spec-stats.log")<cr>
+nnoremap ⛳ :call RunNearestSpec() \| call system("date '+%FT%T%z: E' >> ~/.vim/spec-stats.log")<cr>
 
 
 " Whitespace method chain
