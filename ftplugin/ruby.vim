@@ -18,6 +18,10 @@ nnoremap <buffer> Zd obyebug<Esc>
 nnoremap <buffer> ZD Obyebug<Esc>
 
 
+" Reset Rails test database
+nnoremap <buffer> <F7> :!RAILS_ENV=test bundle exec rake db:reset<CR>
+
+
 " Spring
 command! -buffer FuckSpring :!bundle exec spring stop
 
