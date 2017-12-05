@@ -20,3 +20,9 @@ nnoremap <buffer> ZD Obyebug<Esc>
 
 " Spring
 command! -buffer FuckSpring :!bundle exec spring stop
+
+
+" Convert from old to new hash syntax
+" Example: :%RubyNewHashSyntax gc
+command! -buffer -range -nargs=? RubyNewHashSyntax
+	\ <line1>,<line2>substitute/\v:<(\w+)> \=\>/\1:/<args>
