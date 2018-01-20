@@ -388,6 +388,9 @@
 "   2017.11.28:
 "       * Log statistics of RSpec commands to gather usage data.
 "
+"   2018.01.10:
+"       * Add <leader>sp mapping to toggle spell checking.
+"
 
 
 " Pathogen
@@ -752,6 +755,9 @@ nnoremap <leader>cf :call system('pbcopy', expand('%'))<cr>
 
 " Save the current session to a file
 nnoremap <leader>mk :mksession! vimsession<cr>
+
+" Toggle spell checking
+nnoremap <leader>sp :set spell! spell?<cr>
 
 
 
