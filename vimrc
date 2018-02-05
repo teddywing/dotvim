@@ -391,6 +391,9 @@
 "   2018.01.10:
 "       * Add <leader>sp mapping to toggle spell checking.
 "
+"   2018.02.05:
+"       * Make <leader>sp use `setlocal`.
+"
 
 
 " Pathogen
@@ -757,7 +760,7 @@ nnoremap <leader>cf :call system('pbcopy', expand('%'))<cr>
 nnoremap <leader>mk :mksession! vimsession<cr>
 
 " Toggle spell checking
-nnoremap <leader>sp :set spell! spell?<cr>
+nnoremap <leader>sp :setlocal spell! spell?<cr>
 
 
 
