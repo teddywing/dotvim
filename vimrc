@@ -394,6 +394,9 @@
 "   2018.02.05:
 "       * Make <leader>sp use `setlocal`.
 "
+"   2018.02.10:
+"       * Add <leader>w to search the word under the cursor with Ripgrep.
+"
 
 
 " Pathogen
@@ -761,6 +764,9 @@ nnoremap <leader>mk :mksession! vimsession<cr>
 
 " Toggle spell checking
 nnoremap <leader>sp :setlocal spell! spell?<cr>
+
+" Search <cword> with Ripgrep
+nnoremap <leader>w :!rg <cword><cr>
 
 
 
