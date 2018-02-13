@@ -1,5 +1,10 @@
 " Mail messages
 
+if exists('b:did_ftplugin')
+	unlet b:did_ftplugin
+endif
+
+
 " Automatically format paragraphs and set format=flowed "w" option
 setlocal formatoptions+=aw
 
