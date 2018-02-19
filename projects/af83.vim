@@ -6,7 +6,7 @@ augroup af83
 		\ let g:pick_command = "ag -l -a -p './.agignore' -g ''"
 
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AF83/*
-		\ let g:rspec_command = "!bundle exec spring rspec {spec}"
+		\ let g:rspec_command = "!NO_RCOV=1 bundle exec spring rspec {spec}"
 
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AF83/**/.git/{COMMIT_EDIT,TAG_EDIT,MERGE_,}MSG
 		\ inoreabbrev <buffer> Ouibus the socle commun
