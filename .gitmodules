@@ -80,3 +80,6 @@
 [submodule "bundle/vim-gitcha"]
 	path = bundle/vim-gitcha
 	url = https://github.com/teddywing/vim-gitcha.git
+[submodule "bundle/vim-rails-locale-alternate"]
+	path = bundle/vim-rails-locale-alternate
+	url = https://github.com/teddywing/vim-rails-locale-alternate.git
