@@ -8,13 +8,18 @@ function! git_blamer#Blame()
 	let l:buffer_name = shellescape(bufname('%'))
 	let l:buffer_number = bufnr('%')
 
-	setlocal scrollbind cursorbind
+	if &l:wrap
+		let restore = '| call setbufvar(' . l:buffer_number . ', "&wrap", 1)'
+	endif
+
+	setlocal scrollbind cursorbind nowrap
 
 	" Open new window
 	leftabove vnew
 
 	let b:git_blamer_restore = 'call setbufvar(' . l:buffer_number . ', "&scrollbind", 0) |
 		 \ call setbufvar(' . l:buffer_number . ', "&cursorbind", 0)'
+		 \ . restore
 
 	" Read in `git blame` output
 	execute 'read !git blame -w ' . l:buffer_name
