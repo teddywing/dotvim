@@ -5,16 +5,17 @@
 function! git_blamer#Blame()
 	let l:line_number = line('.')
 	let l:buffer_name = shellescape(bufname('%'))
-	let l:window_number = winnr()
+	let l:buffer_number = bufnr('%')
 	
 	setlocal scrollbind cursorbind
-	let t:git_blamer_restore = 'call setwinvar(' . l:window_number . ', "&scrollbind", 0) | 
-		\ call setwinvar(' . l:window_number . ', "&cursorbind", 0)'
 	
 	" Open new window
 	leftabove vnew
 	setlocal noswapfile nowrap nolist nobuflisted buftype=nofile bufhidden=wipe
 	setlocal scrollbind cursorbind
+	
+	let b:git_blamer_restore = 'call setbufvar(' . l:buffer_number . ', "&scrollbind", 0) | 
+		 \ call setbufvar(' . l:buffer_number . ', "&cursorbind", 0)'
 	
 	" Read in `git blame` output
 	execute 'read !git blame -w ' . l:buffer_name
@@ -28,5 +29,5 @@ function! git_blamer#Blame()
 	call setpos('.', [0, l:line_number, 0, 0])
 	
 	" Restore starting file's scrollbind on exit
-	autocmd BufWinLeave <buffer> execute t:git_blamer_restore
+	autocmd BufWinLeave <buffer> execute b:git_blamer_restore
 endfunction
