@@ -3,6 +3,7 @@
 " https://github.com/r00k/dotfiles/blob/7874508b825fd754e4ec3259da65f324ab96c8ea/vimrc#L74
 
 function! git_blamer#Blame()
+	let l:top_line = line('w0') + &scrolloff
 	let l:line_number = line('.')
 	let l:buffer_name = shellescape(bufname('%'))
 	let l:buffer_number = bufnr('%')
@@ -11,8 +12,6 @@ function! git_blamer#Blame()
 
 	" Open new window
 	leftabove vnew
-	setlocal noswapfile nowrap nolist nobuflisted buftype=nofile bufhidden=wipe
-	setlocal scrollbind cursorbind
 
 	let b:git_blamer_restore = 'call setbufvar(' . l:buffer_number . ', "&scrollbind", 0) |
 		 \ call setbufvar(' . l:buffer_number . ', "&cursorbind", 0)'
@@ -26,7 +25,12 @@ function! git_blamer#Blame()
 	setlocal nomodified nomodifiable
 
 	" Move cursor to position in starting file
+	execute l:top_line
+	normal! zt
 	call setpos('.', [0, l:line_number, 0, 0])
+
+	setlocal noswapfile nowrap nolist nobuflisted buftype=nofile bufhidden=wipe
+	setlocal scrollbind cursorbind
 
 	" Restore starting file's scrollbind on exit
 	autocmd BufWinLeave <buffer> execute b:git_blamer_restore
