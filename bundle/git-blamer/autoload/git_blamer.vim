@@ -25,9 +25,9 @@ function! git_blamer#Blame()
 	setlocal nomodified nomodifiable
 
 	" Move cursor to position in starting file
-	execute l:top_line
+	call cursor(l:top_line, 0)
 	normal! zt
-	call setpos('.', [0, l:line_number, 0, 0])
+	call cursor(l:line_number, 0)
 
 	setlocal noswapfile nowrap nolist nobuflisted buftype=nofile bufhidden=wipe
 	setlocal scrollbind cursorbind
