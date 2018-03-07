@@ -33,6 +33,8 @@ function! git_blamer#Blame()
 	setlocal scrollbind cursorbind
 	syncbind
 
+	nnoremap <buffer> q :q<CR>
+
 	" Restore starting file's scrollbind on exit
 	autocmd BufWinLeave <buffer> execute b:git_blamer_restore
 endfunction
