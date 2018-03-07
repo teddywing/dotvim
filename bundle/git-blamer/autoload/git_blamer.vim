@@ -6,28 +6,28 @@ function! git_blamer#Blame()
 	let l:line_number = line('.')
 	let l:buffer_name = shellescape(bufname('%'))
 	let l:buffer_number = bufnr('%')
-	
+
 	setlocal scrollbind cursorbind
-	
+
 	" Open new window
 	leftabove vnew
 	setlocal noswapfile nowrap nolist nobuflisted buftype=nofile bufhidden=wipe
 	setlocal scrollbind cursorbind
-	
-	let b:git_blamer_restore = 'call setbufvar(' . l:buffer_number . ', "&scrollbind", 0) | 
+
+	let b:git_blamer_restore = 'call setbufvar(' . l:buffer_number . ', "&scrollbind", 0) |
 		 \ call setbufvar(' . l:buffer_number . ', "&cursorbind", 0)'
-	
+
 	" Read in `git blame` output
 	execute 'read !git blame -w ' . l:buffer_name
-	
+
 	" Delete empty first line
 	1 delete
-	
+
 	setlocal nomodified nomodifiable
-	
+
 	" Move cursor to position in starting file
 	call setpos('.', [0, l:line_number, 0, 0])
-	
+
 	" Restore starting file's scrollbind on exit
 	autocmd BufWinLeave <buffer> execute b:git_blamer_restore
 endfunction
