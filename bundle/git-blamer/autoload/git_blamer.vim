@@ -31,6 +31,7 @@ function! git_blamer#Blame()
 
 	setlocal noswapfile nowrap nolist nobuflisted buftype=nofile bufhidden=wipe
 	setlocal scrollbind cursorbind
+	syncbind
 
 	" Restore starting file's scrollbind on exit
 	autocmd BufWinLeave <buffer> execute b:git_blamer_restore
