@@ -7,6 +7,7 @@ function! git_blamer#Blame()
 	let l:line_number = line('.')
 	let l:buffer_name = shellescape(bufname('%'))
 	let l:buffer_number = bufnr('%')
+	let restore = ''
 
 	if &l:wrap
 		let restore = '| call setbufvar(' . l:buffer_number . ', "&wrap", 1)'
