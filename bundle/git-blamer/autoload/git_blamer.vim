@@ -7,6 +7,7 @@ function! git_blamer#Blame()
 	let l:line_number = line('.')
 	let l:buffer_name = shellescape(bufname('%'))
 	let l:buffer_number = bufnr('%')
+	let t:git_blamer_window_number = winnr()
 	let restore = ''
 
 	if &l:wrap
@@ -42,5 +43,23 @@ function! git_blamer#Blame()
 	nnoremap <buffer> q :q<CR>
 
 	" Restore starting file's scrollbind on exit
-	autocmd BufWinLeave <buffer> execute b:git_blamer_restore
+	autocmd BufWinLeave <buffer>
+		\ execute b:git_blamer_restore
+		\ | call s:FocusOriginalWindow()
+endfunction
+
+function! s:FocusOriginalWindow()
+	augroup git_blamer
+		autocmd!
+
+		autocmd WinEnter *
+			\ execute t:git_blamer_window_number . 'wincmd w'
+			\ | call s:RemoveWindowFocusAutocmd()
+	augroup END
+endfunction
+
+function! s:RemoveWindowFocusAutocmd()
+	augroup git_blamer
+		autocmd!
+	augroup END
 endfunction
