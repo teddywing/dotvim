@@ -41,6 +41,7 @@ function! git_blamer#Blame()
 	syncbind
 
 	nnoremap <buffer> q :q<CR>
+	nnoremap <buffer> <Enter> :call <SID>GitShow()<CR>
 
 	" Restore starting file's scrollbind on exit
 	autocmd BufWinLeave <buffer>
@@ -62,4 +63,13 @@ function! s:RemoveWindowFocusAutocmd()
 	augroup git_blamer
 		autocmd!
 	augroup END
+endfunction
+
+function! s:GitShow()
+	execute '!git show ' . s:CommitSHAFromLine('.')
+endfunction
+
+function! s:CommitSHAFromLine(line)
+	let current_line = getline(a:line)
+	return matchstr(current_line, '\v^[0-9a-f]+')
 endfunction
