@@ -30,6 +30,10 @@ function! s:FileURL(include_lines, start_line, end_line)
 	return s:BaseRepoURL() . '/blob/' . current_sha . '/' . current_filename . lines
 endfunction
 
+" Copy the GitHub URL to the clipboard and echo it to the command line.
 function! github_url#GitHubURL(include_lines, start_line, end_line)
-	return s:FileURL(a:include_lines, a:start_line, a:end_line)
+	let url = s:FileURL(a:include_lines, a:start_line, a:end_line)
+
+	call system('pbcopy', url)
+	echo url
 endfunction

@@ -3,4 +3,4 @@ if exists('g:loaded_github_url')
 endif
 let g:loaded_github_url = 1
 
-command! -range=0 GitHubFileURL :echo github_url#GitHubURL(<count>, <line1>, <line2>)
+command! -range=0 GitHubFileURL :call github_url#GitHubURL(<count>, <line1>, <line2>)
