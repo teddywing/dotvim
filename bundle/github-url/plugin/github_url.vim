@@ -1,4 +1,5 @@
-" TODO: doc
+" Constructs a GitHub URL for the current Git repo by making substitutions to
+" the SSH location to turn it into an HTTP URL.
 function! s:BaseRepoURL()
 	let remote = system('git remote get-url origin')
 	let base_url = substitute(remote, ':', '/', '')
@@ -8,7 +9,10 @@ function! s:BaseRepoURL()
 	return base_url
 endfunction
 
-" TODO: doc
+" Constructs a GitHub URL to the current file using the current HEAD's SHA. If
+" lines are passed in, these are included in the URL. The `include_lines`
+" argument comes from a `:command`'s `<count>`, and tells the function whether
+" a range was given.
 function! s:FileURL(include_lines, start_line, end_line)
 	let current_sha = system('git show --format="format:%H"')
 	let current_sha = substitute(current_sha, '\n$', '', '')
