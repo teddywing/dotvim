@@ -397,6 +397,9 @@
 "   2018.02.10:
 "       * Add <leader>w to search the word under the cursor with Ripgrep.
 "
+"   2018.04.05:
+"       * Add z<C-]> to jump to tag in a vertical split.
+"
 
 
 " Pathogen
@@ -711,6 +714,9 @@ nnoremap [q :cprevious<cr>
 
 " Set scrollbind on a window
 nnoremap <leader>sb :setlocal scrollbind! scrollbind?<cr>
+
+" Jump to tag in a new split
+nnoremap z<C-]> :execute ':vertical stjump ' . expand('<cword>')<cr>
 
 " Copy to OS X clipboard from visual mode
 " http://stackoverflow.com/a/17126375
