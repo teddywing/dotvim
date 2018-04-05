@@ -14,7 +14,7 @@ endfunction
 " argument comes from a `:command`'s `<count>`, and tells the function whether
 " a range was given.
 function! s:FileURL(include_lines, start_line, end_line)
-	let current_sha = system('git show --format="format:%H"')
+	let current_sha = system('git show --no-patch --format="format:%H"')
 	let current_sha = substitute(current_sha, '\n$', '', '')
 	let current_filename = expand('%')
 	let lines = ''
