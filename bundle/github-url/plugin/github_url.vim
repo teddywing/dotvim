@@ -9,13 +9,13 @@ function! s:BaseRepoURL()
 endfunction
 
 " TODO: doc
-function! s:FileURL(start_line, end_line)
+function! s:FileURL(include_lines, start_line, end_line)
 	let current_sha = system('git show --format="format:%H"')
 	let current_sha = substitute(current_sha, '\n$', '', '')
 	let current_filename = expand('%')
 	let lines = ''
 
-	if a:start_line && a:end_line
+	if a:include_lines
 		let lines = '#L' . a:start_line . '-L' . a:end_line
 	endif
 
@@ -23,4 +23,4 @@ function! s:FileURL(start_line, end_line)
 endfunction
 
 " echo s:FileURL()
-command! -range GitHubFileURL :echo <SID>FileURL(<line1>, <line2>)
+command! -range=0 GitHubFileURL :echo <SID>FileURL(<count>, <line1>, <line2>)
