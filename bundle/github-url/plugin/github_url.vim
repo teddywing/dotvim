@@ -16,7 +16,11 @@ function! s:FileURL(include_lines, start_line, end_line)
 	let lines = ''
 
 	if a:include_lines
-		let lines = '#L' . a:start_line . '-L' . a:end_line
+		let lines = '#L' . a:start_line
+
+		if a:start_line != a:end_line
+			let lines = lines . '-L' . a:end_line
+		endif
 	endif
 
 	return s:BaseRepoURL() . '/blob/' . current_sha . '/' . current_filename . lines
