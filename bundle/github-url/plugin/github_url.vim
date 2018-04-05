@@ -30,5 +30,4 @@ function! s:FileURL(include_lines, start_line, end_line)
 	return s:BaseRepoURL() . '/blob/' . current_sha . '/' . current_filename . lines
 endfunction
 
-" echo s:FileURL()
 command! -range=0 GitHubFileURL :echo <SID>FileURL(<count>, <line1>, <line2>)
