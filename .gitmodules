@@ -83,3 +83,6 @@
 [submodule "bundle/vim-rails-locale-alternate"]
 	path = bundle/vim-rails-locale-alternate
 	url = https://github.com/teddywing/vim-rails-locale-alternate.git
+[submodule "bundle/vim-tabs-grep"]
+	path = bundle/vim-tabs-grep
+	url = https://github.com/teddywing/vim-tabs-grep.git
