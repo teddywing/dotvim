@@ -86,3 +86,6 @@
 [submodule "bundle/vim-tabs-grep"]
 	path = bundle/vim-tabs-grep
 	url = https://github.com/teddywing/vim-tabs-grep.git
+[submodule "bundle/vim-dome-key"]
+	path = bundle/vim-dome-key
+	url = https://github.com/teddywing/vim-dome-key.git
