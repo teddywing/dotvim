@@ -4,4 +4,4 @@ endif
 
 setlocal nocursorline
 
-highlight Statement ctermbg=220 ctermfg=235
+highlight todoUndone ctermbg=220 ctermfg=235
