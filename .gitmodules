@@ -89,3 +89,6 @@
 [submodule "bundle/vim-dome-key"]
 	path = bundle/vim-dome-key
 	url = https://github.com/teddywing/vim-dome-key.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
