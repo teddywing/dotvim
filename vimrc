@@ -400,6 +400,10 @@
 "   2018.04.05:
 "       * Add z<C-]> to jump to tag in a vertical split.
 "
+"   2019.05.04:
+"       * Use `.agignore` in Pick command. This allows us to exclude files and 
+"         folders from Pick at a project level.
+"
 
 
 " Pathogen
@@ -543,7 +547,7 @@ endif
 " =======
 
 " pick
-let g:pick_command = "ag -l -a -g ''"
+let g:pick_command = "ag -l -a -p './.agignore' -g ''"
 
 function! PickBufferListCommand()
   let bufnrs = filter(range(1, bufnr("$")), 'buflisted(v:val)')
