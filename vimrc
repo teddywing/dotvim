@@ -403,6 +403,7 @@
 "   2019.05.04:
 "       * Use `.agignore` in Pick command. This allows us to exclude files and 
 "         folders from Pick at a project level.
+"       * Tell Gundo to use Python 3 if Vim is compiled with `+python3`.
 "
 
 
@@ -589,6 +590,9 @@ endif
 
 " Gundo
 nnoremap <leader>gu :GundoToggle<cr>
+if has('python3')
+	let g:gundo_prefer_python3 = 1
+endif
 
 
 " Netrw
