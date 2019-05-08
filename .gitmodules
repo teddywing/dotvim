@@ -22,7 +22,7 @@
 	path = bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule "bundle/vim-golang"]
-	path = bundle/vim-golang
+	path = bundle/vim-golang~
 	url = https://github.com/jnwhiteh/vim-golang.git
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
