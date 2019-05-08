@@ -95,3 +95,6 @@
 [submodule "bundle/vim-fswitch"]
 	path = bundle/vim-fswitch
 	url = https://github.com/derekwyatt/vim-fswitch.git
+[submodule "bundle/vim-maildrop"]
+	path = bundle/vim-maildrop
+	url = https://github.com/sirtaj/vim-maildrop.git
