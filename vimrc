@@ -405,6 +405,11 @@
 "         folders from Pick at a project level.
 "       * Tell Gundo to use Python 3 if Vim is compiled with `+python3`.
 "
+"   2019.05.08:
+"       * Hide error message that Vim-Go displays when using a version of Vim 
+"         older than 7.4.2009.
+"       * Format Go code with `goimports`.
+"
 
 
 " Pathogen
@@ -620,6 +625,11 @@ nnoremap <leader>z :call RunCurrentSpecFile() \| call system("date '+%FT%T%z: z'
 nnoremap <leader>Z :call RunNearestSpec() \| call system("date '+%FT%T%z: Z' >> ~/.vim/spec-stats.log")<cr>
 nnoremap 🕳 :call RunCurrentSpecFile() \| call system("date '+%FT%T%z: e' >> ~/.vim/spec-stats.log")<cr>
 nnoremap ⛳ :call RunNearestSpec() \| call system("date '+%FT%T%z: E' >> ~/.vim/spec-stats.log")<cr>
+
+
+" Go
+let g:go_version_warning = 0
+let g:go_fmt_command = 'goimports'
 
 
 " Whitespace method chain
