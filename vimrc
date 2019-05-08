@@ -409,6 +409,7 @@
 "       * Hide error message that Vim-Go displays when using a version of Vim 
 "         older than 7.4.2009.
 "       * Format Go code with `goimports`.
+"       * Add next/previous shortcuts for the location list.
 "
 
 
@@ -729,6 +730,10 @@ nnoremap <C-w><C-q> <nop>
 " Quickfix
 nnoremap ]q :cnext<cr>
 nnoremap [q :cprevious<cr>
+
+" Location list
+nnoremap ]w :lnext<cr>
+nnoremap [w :lprevious<cr>
 
 " Set scrollbind on a window
 nnoremap <leader>sb :setlocal scrollbind! scrollbind?<cr>
