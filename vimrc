@@ -411,6 +411,9 @@
 "       * Format Go code with `goimports`.
 "       * Add next/previous shortcuts for the location list.
 "
+"   2019.05.10:
+"       * Use long command line options to `ag` in `g:pick_command`.
+"
 
 
 " Pathogen
@@ -554,7 +557,7 @@ endif
 " =======
 
 " pick
-let g:pick_command = "ag -l -a -p './.agignore' -g ''"
+let g:pick_command = "ag --files-with-matches --all-types --path-to-ignore './.agignore' -g ''"
 
 function! PickBufferListCommand()
   let bufnrs = filter(range(1, bufnr("$")), 'buflisted(v:val)')
