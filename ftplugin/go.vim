@@ -24,3 +24,9 @@ nnoremap <buffer> O O
 
 " Comment string
 setlocal commentstring=//\ %s
+
+
+nmap <buffer> Zr <Plug>(go-run)
+nmap <buffer> Zb <Plug>(go-build)
+nmap <buffer> <leader>z <Plug>(go-test)
+nmap <buffer> <leader>Z <Plug>(go-test-func)
