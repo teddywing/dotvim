@@ -413,6 +413,7 @@
 "
 "   2019.05.10:
 "       * Use long command line options to `ag` in `g:pick_command`.
+"       * Include hidden files in `g:pick_command`.
 "
 
 
@@ -557,7 +558,7 @@ endif
 " =======
 
 " pick
-let g:pick_command = "ag --files-with-matches --all-types --path-to-ignore './.agignore' -g ''"
+let g:pick_command = "ag --files-with-matches --all-types --hidden --path-to-ignore './.agignore' -g ''"
 
 function! PickBufferListCommand()
   let bufnrs = filter(range(1, bufnr("$")), 'buflisted(v:val)')
