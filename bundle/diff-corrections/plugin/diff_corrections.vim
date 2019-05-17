@@ -1,4 +1,4 @@
-if exists('g:loaded_diff_corrections')
+if exists('g:loaded_diff_corrections') || !has('lambda')
 	finish
 endif
 let g:loaded_diff_corrections = 1
