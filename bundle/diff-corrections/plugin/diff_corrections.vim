@@ -1,3 +1,9 @@
+if exists('g:loaded_diff_corrections')
+	finish
+endif
+let g:loaded_diff_corrections = 1
+
+
 augroup diff_corrections
 	autocmd!
 
