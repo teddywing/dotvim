@@ -29,5 +29,6 @@ setlocal commentstring=//\ %s
 nmap <buffer> Zr :GoRun .<CR>
 nmap <buffer> Zb <Plug>(go-build)
 nmap <buffer> Zc <Plug>(go-test-compile)
+nmap <buffer> Zf <Plug>(go-imports)
 nmap <buffer> <leader>z <Plug>(go-test)
 nmap <buffer> <leader>Z <Plug>(go-test-func)
