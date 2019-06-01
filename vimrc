@@ -415,6 +415,9 @@
 "       * Use long command line options to `ag` in `g:pick_command`.
 "       * Include hidden files in `g:pick_command`.
 "
+"   2019.06.01:
+"       * Add `<leader>tc` mapping to close current tab.
+"
 
 
 " Pathogen
@@ -717,6 +720,9 @@ nnoremap <leader>td :bdelete \| normal! gT<cr>
 
 " Quit buffer and go to previous tab
 nnoremap <leader>tq :quit \| normal! gT<cr>
+
+" Close tab
+nnoremap <leader>tc :tabclose<cr>
 
 " Go to last viewed tab
 " http://stackoverflow.com/a/2120168
