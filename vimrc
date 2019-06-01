@@ -417,6 +417,7 @@
 "
 "   2019.06.01:
 "       * Add `<leader>tc` mapping to close current tab.
+"       * Turn on 'undofile' for persistent undo.
 "
 
 
@@ -480,6 +481,9 @@ set undodir=~/.vim/backup/undo//
 
 " Preserve file attributes, like creation date
 set backupcopy=yes
+
+" Turn on persistent undo
+set undofile
 
 " Disable all default ftplugins
 " http://vim.wikia.com/wiki/File_type_plugins#Disabling_default_ftplugins
