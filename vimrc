@@ -421,6 +421,7 @@
 "
 "   2019.06.03:
 "       * Use Gundo when -python3 and Undotree when +python3.
+"       * Focus Undotree window when toggled.
 "
 
 
@@ -611,6 +612,8 @@ endif
 " Gundo / Undotree
 if has('python3')
 	let loaded_gundo = 1
+
+	let g:undotree_SetFocusWhenToggle = 1
 
 	nnoremap <leader>gu :UndotreeToggle<cr>
 else
