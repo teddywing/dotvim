@@ -1,4 +1,5 @@
 let s:old_cursorline = &cursorline
+let s:old_wrap = &wrap
 let s:restore_cx_mapping = ''
 
 
@@ -9,6 +10,7 @@ function! diff_corrections#Run()
 		endif
 
 		set nocursorline
+		set wrap
 
 		nnoremap cx :<C-u>tabclose<CR>
 	else
@@ -17,6 +19,7 @@ function! diff_corrections#Run()
 		endif
 
 		let &cursorline = s:old_cursorline
+		let &wrap = s:old_wrap
 
 		if strlen(s:restore_cx_mapping) > 0
 			execute s:restore_cx_mapping
