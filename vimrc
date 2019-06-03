@@ -419,6 +419,9 @@
 "       * Add `<leader>tc` mapping to close current tab.
 "       * Turn on 'undofile' for persistent undo.
 "
+"   2019.06.03:
+"       * Use Gundo when -python3 and Undotree when +python3.
+"
 
 
 " Pathogen
@@ -605,10 +608,15 @@ if exists('g:colors_name') && g:colors_name ==# 'twilight256'
 endif
 
 
-" Gundo
-nnoremap <leader>gu :GundoToggle<cr>
+" Gundo / Undotree
 if has('python3')
-	let g:gundo_prefer_python3 = 1
+	let loaded_gundo = 1
+
+	nnoremap <leader>gu :UndotreeToggle<cr>
+else
+	let g:loaded_undotree = 1
+
+	nnoremap <leader>gu :GundoToggle<cr>
 endif
 
 
