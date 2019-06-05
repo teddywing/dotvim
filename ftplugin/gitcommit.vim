@@ -15,3 +15,7 @@ setlocal spell
 
 " Make bulleted lists with '*' not start wrapped lines with '*'
 setlocal comments-=mb:* comments+=fb:*
+
+
+" Proper line wrapping for numbered lists
+setlocal formatoptions+=n
