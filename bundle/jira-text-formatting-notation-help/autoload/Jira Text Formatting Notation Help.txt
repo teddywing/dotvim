@@ -1,0 +1,339 @@
+Text Formatting Notation Help
+
+Headings
+
+To create a header, place "hn. " at the start of the line (where n can be a
+number from 1-6).
+
+      Notation           Comment
+h1. Biggest heading  Biggest heading
+
+h2. Bigger heading   Bigger heading
+
+h3. Big heading      Big heading
+
+h4. Normal heading   Normal heading
+
+h5. Small heading    Small heading
+
+h6. Smallest heading Smallest heading
+
+Text Effects
+
+Text effects are used to change the formatting of words and sentences.
+
+         Notation                                Comment
+*strong*                   Makes text strong.
+
+_emphasis_                 Makes text emphasis..
+
+??citation??               Makes text in citation.
+
+-deleted-                  Makes text as [DEL:deleted:DEL].
+
++inserted+                 Makes text as [INS:inserted:INS].
+
+^superscript^              Makes text in ^superscript.
+
+~subscript~                Makes text in [subscript].
+
+{{monospaced}}             Makes text as monospaced.
+
+                           To make an entire paragraph into a block quotation,
+                           place "bq. " before it.
+bq. Some block quoted text
+                           Example:
+
+                               Some block quoted text
+
+                           Quote a block of text that's longer than one
+{quote}                    paragraph.
+    here is quotable
+ content to be quoted      Example:
+{quote}
+                               here is quotable
+                               content to be quoted
+
+                           Changes the color of a block of text.
+{color:red}
+    look ma, red text!     Example:
+{color}
+                           look ma, red text!
+
+Text Breaks
+
+Most of the time, explicit paragraph breaks are not required - The wiki
+renderer will be able to paginate your paragraphs properly.
+
+  Notation                                Comment
+(empty line) Produces a new paragraph
+
+\\           Creates a line break. Not often needed, most of the time the wiki
+             renderer will guess new lines for you appropriately.
+----         Creates a horizontal ruler.
+
+---          Produces — symbol.
+
+--           Produces – symbol.
+
+Links
+
+Learning how to create links quickly is important.
+
+               Notation                                 Comment
+                                        Creates an internal hyperlink to the
+                                        specified anchor or attachment.
+[#anchor]                               Appending the '#' sign followed by an
+[^attachment.ext]                       anchor name will lead into a specific
+                                        bookmarked point of the desired page.
+                                        Having the '^' followed by the name of
+                                        an attachment will lead into a link to
+                                        the attachment of the current issue.
+                                        Creates a link to an external resource,
+                                        special characters that come after the
+                                        URL and are not part of it must be
+                                        separated with a space.
+
+[http://jira.atlassian.com]             The [] around external links are
+[Atlassian|http://atlassian.com]        optional in the case you do not want to
+                                        use any alias for the link.
+
+                                        Examples:
+
+                                        http://jira.atlassian.com
+                                        Atlassian
+
+                                        Creates a link to an email address,
+                                        complete with mail icon.
+[mailto:legendaryservice@atlassian.com]
+                                        Example:
+
+                                        >>legendaryservice@atlassian.com
+
+                                        Creates a download link to a file on
+                                        your computer or on a network share
+                                        that you have mapped to a drive. To
+                                        access the file, you must right click
+[file:///c:/temp/foo.txt]               on the link and choose "Save Target
+[file:///z:/file/on/network/share.txt]  As".
+
+                                        By default, this only works on Internet
+                                        Explorer but can also be enabled in
+                                        Firefox (see docs).
+
+                                        Creates a bookmark anchor inside the
+                                        page. You can then create links
+                                        directly to that anchor. So the link
+{anchor:anchorname}                     [My Page#here] will link to wherever in
+                                        "My Page" there is an {anchor:here}
+                                        macro, and the link [#there] will link
+                                        to wherever in the current page there
+                                        is an {anchor:there} macro.
+                                        Creates a link to the user profile page
+[~username]                             of a particular user, with a user icon
+                                        and the user's full name.
+
+Lists
+
+Lists allow you to present information as a series of ordered items.
+
+ Notation                                 Comment
+            A bulleted list (must be in first column). Use more (**) for deeper
+            indentations.
+* some
+* bullet    Example:
+** indented
+** bullets    • some
+* points      • bullet
+                  □ indented
+                  □ bullets
+              • points
+
+            A list item (with -), several lines create a single list.
+
+- different Example:
+- bullet
+- types       □ different
+              □ bullet
+              □ types
+
+            A numbered list (must be in first column). Use more (##, ###) for
+            deeper indentations.
+# a
+# numbered  Example:
+
+# list       1. a
+             2. numbered
+             3. list
+
+            You can even go with any kind of mixed nested lists
+
+            Example:
+# a
+# numbered   1. a
+#* with      2. numbered
+#* nested         □ with
+#* bullet         □ nested
+# list            □ bullet
+             3. list
+* a
+* bulleted  Example:
+*# with
+*# nested     • a
+*# numbered   • bulleted
+* list           1. with
+                 2. nested
+                 3. numbered
+              • list
+
+Images
+
+Images can be embedded into a wiki renderable field from attached files or
+remote sources.
+
+            Notation                                 Comment
+                                  Inserts an image into the page.
+!http://www.host.com/image.gif!
+or                                If a fully qualified URL is given the image
+!attached-image.gif!              will be displayed from the remote source,
+                                  otherwise an attached image file is
+                                  displayed.
+
+                                  Insert a thumbnail of the image into the page
+!image.jpg|thumbnail!             (only works with images that are attached to
+                                  the page).
+
+                                  For any image, you can also specify
+!image.gif|align=right, vspace=4! attributes of the image tag as a comma
+                                  separated list of name=value pairs like so.
+
+Attachments
+
+Some attachments of a specific type can be embedded into a wiki renderable
+field from attached files.
+
+              Notation                                Comment
+                                     Embeds an object in a page, taking in a
+                                     comma-separated of properties.
+
+                                     Default supported formats:
+
+                                       • Flash (.swf)
+                                       • Quicktime movies (.mov)
+                                       • Windows Media (.wma, .wmv)
+                                       • Real Media (.rm, .ram)
+                                       • MP3 files (.mp3)
+
+                                     Other types of files can be used, but may
+                                     require the specification of the
+                                     "classid", "codebase" and "pluginspage"
+                                     properties in order to be recognised by
+!quicktime.mov!                      web browsers.
+!spaceKey:pageTitle^attachment.mov!
+!quicktime.mov|width=300,height=400! Common properties are:
+!media.wmv|id=media!
+                                       • width - the width of the media file
+                                       • height - the height of the media file
+                                       • id - the ID assigned to the embedded
+                                         object
+
+                                     Due to security issues, files located on
+                                     remote servers are not permitted Styling
+                                     By default, each embedded object is
+                                     wrapped in a "div" tag. If you wish to
+                                     style the div and its contents, override
+                                     the "embeddedObject" CSS class. Specifying
+                                     an ID as a property also allows you to
+                                     style different embedded objects
+                                     differently. CSS class names in the format
+                                     "embeddedObject-ID" are used.
+
+Tables
+
+Tables allow you to organise content in a rows and columns, with a header row
+if required.
+
+             Notation                                 Comment
+                                    Makes a table. Use double bars for a table
+                                    heading row.
+
+||heading 1||heading 2||heading 3|| The code given here produces a table that
+|col A1|col A2|col A3|              looks like:
+|col B1|col B2|col B3|
+                                    heading 1 heading 2 heading 3
+                                    col A1    col A2    col A3
+                                    col B1    col B2    col B3
+
+Advanced Formatting
+
+More advanced text formatting.
+
+                                           Notation                                                                           Comment
+                                                                                                Makes a preformatted block of text with no syntax highlighting. All
+                                                                                                the optional parameters of {panel} macro are valid for {noformat}
+                                                                                                too.
+{noformat}
+preformatted piece of text                                                                        • nopanel: Embraces a block of text within a fully customizable
+ so *no* further _formatting_ is done here                                                          panel. The optional parameters you can define are the following
+{noformat}                                                                                          ones:
+
+                                                                                                Example:
+
+                                                                                                preformatted piece of text so *no* further _formatting_ is done here
+
+                                                                                                Embraces a block of text within a fully customizable panel. The
+                                                                                                optional parameters you can define are the following ones:
+{panel}
+Some text                                                                                         • title: Title of the panel
+{panel}                                                                                           • borderStyle: The style of the border this panel uses (solid,
+                                                                                                    dashed and other valid CSS border styles)
+{panel:title=My Title}                                                                            • borderColor: The color of the border this panel uses
+Some text with a title                                                                            • borderWidth: The width of the border this panel uses
+{panel}                                                                                           • bgColor: The background color of this panel
+                                                                                                  • titleBGColor: The background color of the title section of this
+{panel:title=My Title|borderStyle=dashed|borderColor=#ccc|titleBGColor=#F7D6C1|bgColor=#FFFFCE}     panel
+a block of text surrounded with a *panel*
+yet _another_ line                                                                              Example:
+{panel}
+                                                                                                My Title
+                                                                                                a block of text surrounded with a panel
+                                                                                                yet another line
+                                                                                                Makes a preformatted block of code with syntax highlighting. All the
+                                                                                                optional parameters of {panel} macro are valid for {code} too. The
+                                                                                                default language is Java but you can specify others too, including
+{code:title=Bar.java|borderStyle=solid}                                                         ActionScript, Ada, AppleScript, bash, C, C#, C++, CSS, Erlang, Go,
+// Some comments here                                                                           Groovy, Haskell, HTML, JavaScript, JSON, Lua, Nyan, Objc, Perl, PHP,
+public String getFoo()                                                                          Python, R, Ruby, Scala, SQL, Swift, VisualBasic, XML and YAML.
+{
+    return foo;                                                                                 Example:
+}
+{code}                                                                                          Bar.java
+
+{code:xml}                                                                                      // Some comments here
+    <test>                                                                                      public String getFoo()
+        <another tag="attribute"/>                                                              {
+    </test>                                                                                         return foo;
+{code}                                                                                          }
+
+                                                                                                <test>
+                                                                                                    <another tag="attribute"/>
+                                                                                                </test>
+
+Misc
+
+Various other syntax highlighting capabilities.
+
+Notation                                                              Comment
+\X       Escape special character X (i.e. {)
+
+         Graphical emoticons (smileys).
+:)
+         Notation :)      :(    :P       :D        ;)     (y)         (n)          (i)          (/)     (x)     (!)
+,         Image   [smile] [sad] [tongue] [biggrin] [wink] [thumbs_up] [thumbs_dow] [informatio] [check] [error] [warning]
+
+:(       Notation (+)   (-)         (?)       (on)         (off)       (*)          (*r)       (*g)         (*b)        (*y)         (flag)
+          Image   [add] [forbidden] [help_16] [lightbulb_] [lightbulb] [star_yello] [star_red] [star_green] [star_blue] [star_yello] [flag]
+etc
+         Notation (flagoff)
+          Image   [flag_grey]
+
