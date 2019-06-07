@@ -18,6 +18,13 @@ nnoremap <buffer> Zd obyebug<Esc>
 nnoremap <buffer> ZD Obyebug<Esc>
 
 
+" RSpec
+nnoremap <buffer> <leader>z :call RunCurrentSpecFile() \| call system("date '+%FT%T%z: z' >> ~/.vim/spec-stats.log")<cr>
+nnoremap <buffer> <leader>Z :call RunNearestSpec() \| call system("date '+%FT%T%z: Z' >> ~/.vim/spec-stats.log")<cr>
+nnoremap <buffer> 🕳 :call RunCurrentSpecFile() \| call system("date '+%FT%T%z: e' >> ~/.vim/spec-stats.log")<cr>
+nnoremap <buffer> ⛳ :call RunNearestSpec() \| call system("date '+%FT%T%z: E' >> ~/.vim/spec-stats.log")<cr>
+
+
 " Reset Rails test database
 nnoremap <buffer> <F7> :!RAILS_ENV=test bundle exec rake db:reset<CR>
 

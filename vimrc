@@ -423,6 +423,9 @@
 "       * Use Gundo when -python3 and Undotree when +python3.
 "       * Focus Undotree window when toggled.
 "
+"   2019.06.07:
+"       * Move RSpec mappings to ftplugin/ruby.vim.
+"
 
 
 " Pathogen
@@ -641,13 +644,6 @@ runtime! macros/matchit.vim
 " Slimv
 let g:slimv_impl = 'sbcl'
 let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp'
-
-
-" RSpec
-nnoremap <leader>z :call RunCurrentSpecFile() \| call system("date '+%FT%T%z: z' >> ~/.vim/spec-stats.log")<cr>
-nnoremap <leader>Z :call RunNearestSpec() \| call system("date '+%FT%T%z: Z' >> ~/.vim/spec-stats.log")<cr>
-nnoremap 🕳 :call RunCurrentSpecFile() \| call system("date '+%FT%T%z: e' >> ~/.vim/spec-stats.log")<cr>
-nnoremap ⛳ :call RunNearestSpec() \| call system("date '+%FT%T%z: E' >> ~/.vim/spec-stats.log")<cr>
 
 
 " Go
