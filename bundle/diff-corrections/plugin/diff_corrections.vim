@@ -7,7 +7,12 @@ let g:loaded_diff_corrections = 1
 augroup diff_corrections
 	autocmd!
 
-	autocmd BufEnter * call diff_corrections#Run()
+	" https://vi.stackexchange.com/questions/12847/automatically-disable-cursorline-when-in-diff-mode/12852#12852
+	if has('patch-8.0.0736')
+		autocmd OptionSet diff call diff_corrections#Run()
+	else
+		autocmd BufEnter,FilterWritePost * call diff_corrections#Run()
+	endif
 augroup END
 
 
