@@ -35,7 +35,7 @@ function! s:CommitWackoTextWidth()
 endfunction
 
 function! s:CommitWackoTextWidthMappings()
-	inoremap <buffer> <CR> <C-o>:call <SID>CommitWackoTextWidth()<CR><CR>
-	nnoremap <buffer> o :call <SID>CommitWackoTextWidth()<CR>o
-	nnoremap <buffer> O :call <SID>CommitWackoTextWidth()<CR>O
+	inoremap <silent> <buffer> <CR> <C-o>:call <SID>CommitWackoTextWidth()<CR><CR>
+	nnoremap <silent> <buffer> o :call <SID>CommitWackoTextWidth()<CR>o
+	nnoremap <silent> <buffer> O :call <SID>CommitWackoTextWidth()<CR>O
 endfunction
