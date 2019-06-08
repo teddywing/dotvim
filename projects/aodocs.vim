@@ -22,7 +22,13 @@ augroup END
 " subsequent lines.
 function! s:CommitWackoTextWidth()
 	if line('.') == 1
-		setlocal textwidth=80
+		" Match "CO-123: "
+		let matches = matchlist(getline('.'), '^\u\+-\d\+: ')
+
+		if !empty(matches)
+			let id_prefix_length = len(matches[0])
+			execute 'setlocal textwidth=' . (72 + id_prefix_length)
+		endif
 	else
 		setlocal textwidth=72
 	endif
