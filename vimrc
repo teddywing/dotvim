@@ -426,6 +426,9 @@
 "   2019.06.07:
 "       * Move RSpec mappings to ftplugin/ruby.vim.
 "
+"   2019.06.16:
+"       * Disable modelines for CVE-2019-12735.
+"
 
 
 " Pathogen
@@ -491,6 +494,10 @@ set backupcopy=yes
 
 " Turn on persistent undo
 set undofile
+
+" CVE-2019-12735
+set modelines=0
+set nomodeline
 
 " Disable all default ftplugins
 " http://vim.wikia.com/wiki/File_type_plugins#Disabling_default_ftplugins
