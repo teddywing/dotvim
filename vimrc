@@ -429,6 +429,9 @@
 "   2019.06.16:
 "       * Disable modelines for CVE-2019-12735.
 "
+"   2019.06.17:
+"       * Don't preserve indentation on empty lines.
+"
 
 
 " Pathogen
@@ -679,12 +682,6 @@ vnoremap <c-h> <esc>:update<cr>gv
 
 " Update all files and quit
 nnoremap ZA :xall<cr>
-
-" Preserve indentation on empty lines
-" http://stackoverflow.com/a/7413117
-inoremap <CR> <CR>x<BS>
-nnoremap o ox<BS>
-nnoremap O Ox<BS>
 
 " Allow undo of Ctrl-u and Ctrl-w in insert mode
 " http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
