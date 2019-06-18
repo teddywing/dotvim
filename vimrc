@@ -432,6 +432,9 @@
 "   2019.06.17:
 "       * Don't preserve indentation on empty lines.
 "
+"   2019.06.18:
+"       * Ignore `.git` directory in `g:pick_command`.
+"
 
 
 " Pathogen
@@ -582,7 +585,7 @@ endif
 " =======
 
 " pick
-let g:pick_command = "ag --files-with-matches --all-types --hidden --path-to-ignore './.agignore' -g ''"
+let g:pick_command = "ag --files-with-matches --all-types --hidden --path-to-ignore './.agignore' --ignore .git -g ''"
 
 function! PickBufferListCommand()
   let bufnrs = filter(range(1, bufnr("$")), 'buflisted(v:val)')
