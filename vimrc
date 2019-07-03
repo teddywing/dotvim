@@ -435,6 +435,9 @@
 "   2019.06.18:
 "       * Ignore `.git` directory in `g:pick_command`.
 "
+"   2019.07.03:
+"       * Use Undotree on Windows.
+"
 
 
 " Pathogen
@@ -626,7 +629,7 @@ endif
 
 
 " Gundo / Undotree
-if has('python3')
+if has('python3') || has('win32') || has('win32unix')
 	let loaded_gundo = 1
 
 	let g:undotree_SetFocusWhenToggle = 1
