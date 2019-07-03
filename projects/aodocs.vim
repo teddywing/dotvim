@@ -4,6 +4,9 @@ augroup AODocs
 	autocmd BufRead $VIM_PROJECT_PATH_AODOCS_GO/ufo-client/client/*.go
 		\ silent GoGuruScope github.com/Revevol-Apps/ufo-client/client
 
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_GO/*
+		\ call s:UFOCacheSyncClientAddMappings()
+
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
 		\ setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 
@@ -38,4 +41,11 @@ function! s:CommitWackoTextWidthMappings()
 	inoremap <silent> <buffer> <CR> <C-o>:call <SID>CommitWackoTextWidth()<CR><CR>
 	nnoremap <silent> <buffer> o :call <SID>CommitWackoTextWidth()<CR>o
 	nnoremap <silent> <buffer> O :call <SID>CommitWackoTextWidth()<CR>O
+endfunction
+
+
+function! s:UFOCacheSyncClientAddMappings()
+	nnoremap <buffer> <leader>uc :silent !ufo-cache-syncclient<CR><C-l>
+	nnoremap <buffer> <leader>ud :silent !ufo-cache-syncclient rm<CR><C-l>
+	nnoremap <buffer> <leader>ur :silent !ufo-cache-syncclient rebuild<CR><C-l>
 endfunction
