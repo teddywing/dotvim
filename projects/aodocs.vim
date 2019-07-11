@@ -13,6 +13,9 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.json
 		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.html
+		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+
 	autocmd BufNewFile,BufRead
 		\ $VIM_PROJECT_PATH_AODOCS_GO/*/.git/{COMMIT_EDIT,MERGE_,TAG_EDIT}MSG
 		\,$VIM_PROJECT_PATH_AODOCS/*/.git/{COMMIT_EDIT,MERGE_,TAG_EDIT}MSG
