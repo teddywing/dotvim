@@ -9,6 +9,7 @@ augroup AODocs
 
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
 		\ setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+			\ formatoptions+=cro
 
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.json
 		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
