@@ -7,7 +7,7 @@ compiler go
 nnoremap <buffer> <leader>cc :make<cr>
 
 " Compile file
-nnoremap <buffer> <leader>cf :make %<cr>
+nnoremap <buffer> <leader>cd :make %<cr>
 
 " Compile & run file
 nnoremap <buffer> <leader>cr :!go run %<cr>
