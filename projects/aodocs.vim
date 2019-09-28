@@ -11,6 +11,9 @@ augroup AODocs
 		\ setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 			\ formatoptions+=cro
 
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
+		\ call s:ESLintAddMappings()
+
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.json
 		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
@@ -52,4 +55,10 @@ function! s:UFOCacheSyncClientAddMappings()
 	nnoremap <buffer> <leader>uc :silent !ufo-cache-syncclient<CR><C-l>
 	nnoremap <buffer> <leader>ud :silent !ufo-cache-syncclient rm<CR><C-l>
 	nnoremap <buffer> <leader>ur :silent !ufo-cache-syncclient rebuild<CR><C-l>
+endfunction
+
+
+function! s:ESLintAddMappings()
+	nnoremap <buffer> <leader>eda :silent !eslint-yes-debugger.sh -a<CR> <Bar> :redraw!<CR>
+	nnoremap <buffer> <leader>edd :silent !eslint-yes-debugger.sh -d<CR> <Bar> :redraw!<CR>
 endfunction
