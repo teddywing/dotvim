@@ -17,7 +17,7 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.json
 		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
-	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.html
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{html,css}
 		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
 	autocmd BufNewFile,BufRead
