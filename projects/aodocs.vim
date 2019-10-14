@@ -7,6 +7,9 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_GO/*
 		\ call s:UFOCacheSyncClientAddMappings()
 
+	autocmd BufRead $VIM_PROJECT_PATH_AODOCS_GO/ufo-client/*.sh
+		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
 		\ setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 			\ formatoptions+=cro
