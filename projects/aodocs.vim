@@ -30,6 +30,9 @@ augroup AODocs
 		\ | call s:CommitWackoTextWidth()
 augroup END
 
+" Insert a path to UFO ticket folders
+cnoremap <C-x>u <C-r>=$VIM_PROJECT_PATH_AODOCS_UFO_TICKET_FOLDER<CR>
+
 
 " Enables a longer-than-72 character first line and 72 character wrapping on
 " subsequent lines.
