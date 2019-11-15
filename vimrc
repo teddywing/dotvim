@@ -438,6 +438,9 @@
 "   2019.07.03:
 "       * Use Undotree on Windows.
 "
+"   2019.11.15:
+"       * Add gS mapping to :ArgWrap.
+"
 
 
 " Pathogen
@@ -669,6 +672,10 @@ let g:go_fmt_command = 'goimports'
 
 " Whitespace method chain
 nnoremap <leader>sm :call whitespace_method_chain#SplitMethodChainToMultipleLines()<cr>
+
+
+" ArgWrap
+nnoremap gS :ArgWrap<cr>
 
 
 
