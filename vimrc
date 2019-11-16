@@ -440,6 +440,7 @@
 "
 "   2019.11.15:
 "       * Add gS mapping to :ArgWrap.
+"       * Add v_<leader>w mapping to search a visual selection with Ripgrep.
 "
 
 
@@ -834,6 +835,7 @@ nnoremap <leader>sp :setlocal spell! spell?<cr>
 
 " Search <cword> with Ripgrep
 nnoremap <leader>w :!rg <cword><cr>
+xnoremap <leader>w y:if getregtype('"') ==# 'v' \| execute '!rg --fixed-strings ' . shellescape(getreg('"')) \| endif<cr>
 
 
 
