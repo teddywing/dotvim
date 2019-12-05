@@ -442,6 +442,9 @@
 "       * Add gS mapping to :ArgWrap.
 "       * Add v_<leader>w mapping to search a visual selection with Ripgrep.
 "
+"   2019.11.29:
+"       * Set 'grepprg' to Ripgrep.
+"
 
 
 " Pathogen
@@ -511,6 +514,8 @@ set undofile
 " CVE-2019-12735
 set modelines=0
 set nomodeline
+
+set grepprg=rg\ --vimgrep
 
 " Disable all default ftplugins
 " http://vim.wikia.com/wiki/File_type_plugins#Disabling_default_ftplugins
