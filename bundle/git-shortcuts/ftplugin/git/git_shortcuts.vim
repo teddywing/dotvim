@@ -20,8 +20,8 @@ if !hasmapto('<Plug>GitShortcutsCommitForward')
 	let b:undo_ftplugin .= '| ounmap <buffer> ]]'
 endif
 
-nnoremap <buffer> <Plug>GitShortcutsCommitBackward :call git_shortcuts#CommitBackward()<CR>
-nnoremap <buffer> <Plug>GitShortcutsCommitForward :call git_shortcuts#CommitForward()<CR>
+nnoremap <silent> <buffer> <Plug>GitShortcutsCommitBackward :call git_shortcuts#CommitBackward()<CR>
+nnoremap <silent> <buffer> <Plug>GitShortcutsCommitForward :call git_shortcuts#CommitForward()<CR>
 
-onoremap <buffer> <Plug>GitShortcutsCommitBackward :call git_shortcuts#CommitBackward()<CR>
-onoremap <buffer> <Plug>GitShortcutsCommitForward :call git_shortcuts#CommitForward()<CR>
+onoremap <silent> <buffer> <Plug>GitShortcutsCommitBackward :call git_shortcuts#CommitBackward()<CR>
+onoremap <silent> <buffer> <Plug>GitShortcutsCommitForward :call git_shortcuts#CommitForward()<CR>
