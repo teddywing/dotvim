@@ -104,3 +104,6 @@
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule "bundle/vim-nohai"]
+	path = bundle/vim-nohai
+	url = https://github.com/teddywing/vim-nohai.git
