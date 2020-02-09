@@ -28,6 +28,12 @@ augroup AODocs
 		\,$VIM_PROJECT_PATH_AODOCS/*/.git/{COMMIT_EDIT,MERGE_,TAG_EDIT}MSG
 		\ call s:CommitWackoTextWidthMappings()
 		\ | call s:CommitWackoTextWidth()
+
+	" Open Jira ticket ID in the browser
+	autocmd BufRead,BufEnter
+		\ $VIM_PROJECT_PATH_AODOCS_GO/*
+		\,$VIM_PROJECT_PATH_AODOCS/*
+		\ command! JiraOpen :call system('jira-open ' . expand('<cWORD>'))
 augroup END
 
 " Insert a path to UFO ticket folders
