@@ -107,3 +107,6 @@
 [submodule "bundle/vim-nohai"]
 	path = bundle/vim-nohai
 	url = https://github.com/teddywing/vim-nohai.git
+[submodule "bundle/vim-searchop"]
+	path = bundle/vim-searchop
+	url = https://github.com/teddywing/vim-searchop.git
