@@ -445,6 +445,9 @@
 "   2019.11.29:
 "       * Set 'grepprg' to Ripgrep.
 "
+"   2020.02.12:
+"       * Turn off `gopls` in vim-go.
+"
 
 
 " Pathogen
@@ -674,6 +677,7 @@ let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/s
 " Go
 let g:go_version_warning = 0
 let g:go_fmt_command = 'goimports'
+let g:go_gopls_enabled = 0
 
 
 " Whitespace method chain
