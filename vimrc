@@ -449,6 +449,9 @@
 "       * Turn off `gopls` in vim-go.
 "       * Turn off vim-go ftplugin definition mappings.
 "
+"   2020.02.19:
+"       * Turn off vim-go fmt on save.
+"
 
 
 " Pathogen
@@ -678,6 +681,7 @@ let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/s
 " Go
 let g:go_version_warning = 0
 let g:go_fmt_command = 'goimports'
+let g:go_fmt_autosave = 0
 let g:go_gopls_enabled = 0
 let g:go_def_mapping_enabled = 0
 
