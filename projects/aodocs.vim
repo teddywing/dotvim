@@ -34,6 +34,9 @@ augroup AODocs
 		\ $VIM_PROJECT_PATH_AODOCS_GO/*
 		\,$VIM_PROJECT_PATH_AODOCS/*
 		\ command! JiraOpen :call system('jira-open ' . expand('<cWORD>'))
+
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_GO/*
+		\ let g:go_play_browser_command = 'open -a Nightly %URL% &'
 augroup END
 
 " Insert a path to UFO ticket folders
