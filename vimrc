@@ -452,6 +452,9 @@
 "   2020.02.19:
 "       * Turn off vim-go fmt on save.
 "
+"   2020.02.24:
+"       * Add `<leader>cF` mapping to copy the absolute path of a file.
+"
 
 
 " Pathogen
@@ -841,6 +844,7 @@ nnoremap <leader>gp :!git log -p -- %<cr>
 
 " Copy the current file path into the OS X pasteboard
 nnoremap <leader>cf :call system('pbcopy', expand('%'))<cr>
+nnoremap <leader>cF :call system('pbcopy', expand('%:p'))<cr>
 
 " Save the current session to a file
 nnoremap <leader>mk :mksession! vimsession<cr>
