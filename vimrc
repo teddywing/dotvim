@@ -455,6 +455,9 @@
 "   2020.02.24:
 "       * Add `<leader>cF` mapping to copy the absolute path of a file.
 "
+"   2020.02.25:
+"       * Add `<C-w>e` mapping to open the current buffer in a new tab.
+"
 
 
 " Pathogen
@@ -783,6 +786,9 @@ nnoremap <leader>tl :execute "tabnext " . g:last_viewed_tab<cr>
 " Get rid of window quit command
 nnoremap <C-w>q <nop>
 nnoremap <C-w><C-q> <nop>
+
+" Open the current buffer in a new tab
+nnoremap <C-w>e :tabedit %<cr>
 
 " Quickfix
 nnoremap ]q :cnext<cr>
