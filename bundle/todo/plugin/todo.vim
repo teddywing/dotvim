@@ -4,8 +4,8 @@ endif
 let g:loaded_todo = 1
 
 
-nnoremap <Plug>(todo-previous) :call todo#PreviousTODO()<CR>
-nnoremap <Plug>(todo-next) :call todo#NextTODO()<CR>
+nnoremap <silent> <Plug>(todo-previous) :call todo#PreviousTODO()<CR>
+nnoremap <silent> <Plug>(todo-next) :call todo#NextTODO()<CR>
 
 
 if !hasmapto('<Plug>(todo-previous)', 'n') && !maparg('[t', 'n')
