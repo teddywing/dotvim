@@ -10,10 +10,10 @@ function! s:MoveToTODO(search_flags)
 	endwhile
 endfunction
 
-function! todo#NextTODO()
+function! todo_comments#NextTODO()
 	call s:MoveToTODO('')
 endfunction
 
-function! todo#PreviousTODO()
+function! todo_comments#PreviousTODO()
 	call s:MoveToTODO('b')
 endfunction
