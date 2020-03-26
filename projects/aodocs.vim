@@ -2,7 +2,7 @@ augroup AODocs
 	autocmd!
 
 	autocmd BufRead $VIM_PROJECT_PATH_AODOCS_GO/ufo-client/client/*.go
-		\ silent GoGuruScope github.com/Revevol-Apps/ufo-client/client
+		\ silent GoGuruScope github.com/AODocs-Dev/ufo-client/client
 
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_GO/*
 		\ call s:UFOCacheSyncClientAddMappings()
