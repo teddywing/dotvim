@@ -116,3 +116,6 @@
 [submodule "bundle/vim-textobj-quote"]
 	path = bundle/vim-textobj-quote
 	url = https://github.com/reedes/vim-textobj-quote.git
+[submodule "bundle/vim-table-mode"]
+	path = bundle/vim-table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode.git
