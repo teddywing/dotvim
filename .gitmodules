@@ -110,3 +110,9 @@
 [submodule "bundle/vim-searchop"]
 	path = bundle/vim-searchop
 	url = https://github.com/teddywing/vim-searchop.git
+[submodule "bundle/vim-textobj-user"]
+	path = bundle/vim-textobj-user
+	url = https://github.com/kana/vim-textobj-user.git
+[submodule "bundle/vim-textobj-quote"]
+	path = bundle/vim-textobj-quote
+	url = https://github.com/reedes/vim-textobj-quote.git
