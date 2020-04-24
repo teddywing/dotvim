@@ -10,7 +10,7 @@ augroup AODocs
 	autocmd BufRead $VIM_PROJECT_PATH_AODOCS_GO/ufo-client/*.sh
 		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
-	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{js,ts}
 		\ setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 			\ formatoptions+=cro
 
@@ -20,7 +20,7 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.json
 		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
-	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{html,css}
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{html,css,scss}
 		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
 	autocmd BufNewFile,BufRead
