@@ -29,6 +29,10 @@
 "       there was no highlighting definition for this and it defaulted to an 
 "       underline.
 "
+"   2020.04.29:
+"     * Set "CursorLineNr" to remove the underline. This appeared after 
+"       upgrading to Vim 8.2.
+"
 
 set background=dark
 if version > 580
@@ -294,6 +298,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     " Added 2014.05.25: set colour for cursorline
     hi CursorLine cterm=none ctermbg=237
+
+    " Added 2020.04.29: remove underline on the line number of the current line
+    hi CursorLineNr cterm=none
 
     " syntax highlighting groups
     call <SID>X("Comment", "828282", "", "")
