@@ -119,3 +119,6 @@
 [submodule "bundle/vim-table-mode"]
 	path = bundle/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode.git
+[submodule "typescript-vim"]
+	path = bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
