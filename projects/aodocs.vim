@@ -37,6 +37,9 @@ augroup AODocs
 
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_GO/*
 		\ let g:go_play_browser_command = 'open -a Nightly %URL% &'
+
+	autocmd BufRead,BufEnter *.todo
+		\ nnoremap <buffer> <Leader>yy :call <SID>TodoCopyLast()<CR>
 augroup END
 
 " Insert a path to UFO ticket folders
@@ -76,4 +79,16 @@ endfunction
 function! s:ESLintAddMappings()
 	nnoremap <buffer> <leader>eda :silent !eslint-yes-debugger.sh -a<CR> <Bar> :redraw!<CR>
 	nnoremap <buffer> <leader>edd :silent !eslint-yes-debugger.sh -d<CR> <Bar> :redraw!<CR>
+endfunction
+
+
+function! s:TodoCopyLast()
+	" Copy the last entry to the bottom
+	?\n\n\d?,$t$
+
+	" Move to date line
+	?\n\n\zs\d?
+
+	" Increment day, then put the current entry at the top of the window
+	execute "normal! $h\<C-a>zt2\<C-e>"
 endfunction
