@@ -25,6 +25,10 @@ nnoremap <buffer> cdf :!go fmt %<cr>
 setlocal commentstring=//\ %s
 
 
+" Add a trailing comma when expanding elements to multiple lines
+let b:argwrap_tail_comma = 1
+
+
 nmap <buffer> Zr :GoRun .<CR>
 nmap <buffer> Zb <Plug>(go-build)
 nmap <buffer> Zc <Plug>(go-test-compile)
