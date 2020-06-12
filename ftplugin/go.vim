@@ -37,3 +37,5 @@ nmap <buffer> <leader>z <Plug>(go-test)
 nmap <buffer> <leader>Z <Plug>(go-test-func)
 nmap <buffer> z<C-^> <Plug>(go-alternate-edit)
 nmap <buffer> <C-w>z<C-^> <Plug>(go-alternate-vertical)
+
+nmap <buffer> Ze <Plug>(go-iferr)
