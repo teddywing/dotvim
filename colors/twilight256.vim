@@ -33,6 +33,10 @@
 "     * Set "CursorLineNr" to remove the underline. This appeared after 
 "       upgrading to Vim 8.2.
 "
+"   2020.06.03:
+"     * Use a lighter grey for comments to increase contrast and make text 
+"       easier to read.
+"
 
 set background=dark
 if version > 580
@@ -303,7 +307,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     hi CursorLineNr cterm=none
 
     " syntax highlighting groups
-    call <SID>X("Comment", "828282", "", "")
+
+    " Added 2020.06.03
+    hi Comment ctermfg=7
+
     call <SID>X("NonText", "828282", "", "")
     call <SID>X("SpecialKey", "828282", "", "")
     call <SID>X("Constant", "CF6A4C", "", "")
