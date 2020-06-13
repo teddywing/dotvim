@@ -122,3 +122,6 @@
 [submodule "typescript-vim"]
 	path = bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "bundle/vim-tbuffer"]
+	path = bundle/vim-tbuffer
+	url = https://github.com/teddywing/vim-tbuffer.git
