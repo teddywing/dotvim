@@ -17,3 +17,7 @@ nnoremap <buffer> <leader>gdO Oimport ipdb; ipdb.set_trace()<Esc>_
 
 " Flake8 validation
 nnoremap <buffer> <leader>gs :!flake8 %<cr>
+
+
+" Add a trailing comma when expanding elements to multiple lines
+let b:argwrap_tail_comma = 1
