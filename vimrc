@@ -458,6 +458,9 @@
 "   2020.02.25:
 "       * Add `<C-w>e` mapping to open the current buffer in a new tab.
 "
+"   2020.06.17:
+"       * Add count support to `[q`, `]q`, `[w`, `]w`.
+"
 
 
 " Pathogen
@@ -791,12 +794,12 @@ nnoremap <C-w><C-q> <nop>
 nnoremap <C-w>e :tabedit %<cr>
 
 " Quickfix
-nnoremap ]q :cnext<cr>
-nnoremap [q :cprevious<cr>
+nnoremap ]q :<C-u>execute v:count . 'cnext'<cr>
+nnoremap [q :<C-u>execute v:count . 'cprevious'<cr>
 
 " Location list
-nnoremap ]w :lnext<cr>
-nnoremap [w :lprevious<cr>
+nnoremap ]w :<C-u>execute v:count . 'next'<cr>
+nnoremap [w :<C-u>execute v:count . 'previous'<cr>
 
 " Set scrollbind on a window
 nnoremap <leader>sb :setlocal scrollbind! scrollbind?<cr>
