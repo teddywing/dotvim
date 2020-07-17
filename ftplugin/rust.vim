@@ -13,3 +13,7 @@ setlocal commentstring=//\ %s
 
 " Add a trailing comma when expanding elements to multiple lines
 let b:argwrap_tail_comma = 1
+
+
+nnoremap <buffer>Zr :!cargo run<CR>
+nnoremap <buffer>Zb :!cargo build<CR>
