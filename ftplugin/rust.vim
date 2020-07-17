@@ -9,3 +9,7 @@ setlocal shiftwidth=4
 
 " Comment string
 setlocal commentstring=//\ %s
+
+
+" Add a trailing comma when expanding elements to multiple lines
+let b:argwrap_tail_comma = 1
