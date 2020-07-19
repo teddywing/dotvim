@@ -1,5 +1,10 @@
 " Rust vim settings
 
+if exists('b:did_ftplugin')
+	unlet b:did_ftplugin
+endif
+
+
 " Indentation
 setlocal expandtab
 setlocal tabstop=4
