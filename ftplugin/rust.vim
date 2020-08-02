@@ -23,3 +23,4 @@ let b:argwrap_tail_comma = 1
 nnoremap <buffer>Zr :!cargo run<CR>
 nnoremap <buffer>Zb :!cargo build<CR>
 nnoremap <buffer>Zc :!cargo check<CR>
+nnoremap <buffer> <leader>z :!cargo test<CR>
