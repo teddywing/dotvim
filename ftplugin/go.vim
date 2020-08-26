@@ -36,7 +36,7 @@ nmap <buffer> Zf <Plug>(go-imports)
 nmap <buffer> <leader>z <Plug>(go-test)
 nmap <buffer> <leader>Z <Plug>(go-test-func)
 nnoremap <buffer> Zs :execute '!go test ' . fnameescape(expand('%:p:h'))<CR>
-nmap <buffer> z<C-^> <Plug>(go-alternate-edit)
-nmap <buffer> <C-w>z<C-^> <Plug>(go-alternate-vertical)
+nmap <buffer> z<C-^> :call go#alternate#Switch(1, 'edit')<CR>
+nmap <buffer> <C-w>z<C-^> :call go#alternate#Switch(1, 'vsplit')<CR>
 
 nmap <buffer> Ze <Plug>(go-iferr)
