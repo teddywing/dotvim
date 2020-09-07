@@ -37,6 +37,7 @@ augroup AODocs
 
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_GO/*
 		\ let g:go_play_browser_command = 'open -a Nightly %URL% &'
+		\| let g:go_addtags_transform = 'camelcase'
 
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_UFO_EXTENSION/*.js
 		\ setlocal path+=$VIM_PROJECT_PATH_AODOCS_UFO_EXTENSION_MODULE
