@@ -461,6 +461,9 @@
 "   2020.06.17:
 "       * Add count support to `[q`, `]q`, `[w`, `]w`.
 "
+"   2020.09.10:
+"       * Make the quickfix window 10 lines tall in vim-go.
+"
 
 
 " Pathogen
@@ -693,6 +696,7 @@ let g:go_fmt_command = 'goimports'
 let g:go_fmt_autosave = 0
 let g:go_gopls_enabled = 0
 let g:go_def_mapping_enabled = 0
+let g:go_list_height = 10
 
 
 " Whitespace method chain
