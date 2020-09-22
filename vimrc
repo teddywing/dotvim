@@ -464,6 +464,9 @@
 "   2020.09.10:
 "       * Make the quickfix window 10 lines tall in vim-go.
 "
+"   2020.09.22:
+"       * Add i_^r^f mapping to insert the current filename.
+"
 
 
 " Pathogen
@@ -858,6 +861,9 @@ nnoremap <leader>gp :!git log -p -- %<cr>
 " Copy the current file path into the OS X pasteboard
 nnoremap <leader>cf :call system('pbcopy', expand('%'))<cr>
 nnoremap <leader>cF :call system('pbcopy', expand('%:p'))<cr>
+
+" Insert the current file name
+inoremap <C-r><C-f> <C-r>=expand('%:t:r')<CR>
 
 " Save the current session to a file
 nnoremap <leader>mk :mksession! vimsession<cr>
