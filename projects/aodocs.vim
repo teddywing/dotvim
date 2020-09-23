@@ -17,6 +17,9 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
 		\ call s:ESLintAddMappings()
 
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
+		\ iabbrev htodo /**<CR>TODO<CR>/
+
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.json
 		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
