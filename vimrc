@@ -467,6 +467,9 @@
 "   2020.09.22:
 "       * Add i_^r^f mapping to insert the current filename.
 "
+"   2020.09.24:
+"       * Add <leader>db to open buffers with Pick and :TBuffer.
+"
 
 
 " Pathogen
@@ -636,6 +639,8 @@ nnoremap <leader>bs :call PickCommand(PickBufferListCommand(), "", ":split")<cr>
 nnoremap <leader>bv :call PickCommand(PickBufferListCommand(), "", ":vsplit")<cr>
 nnoremap <leader>bt :call PickCommand(PickBufferListCommand(), "", ":tabedit")<cr>
 nnoremap <leader>d] :call PickTag()<cr>
+nnoremap <leader>db
+	\ :call PickCommand(PickBufferListCommand(), '', ':TBuffer')<cr>
 
 
 " PreserveNoEOL
