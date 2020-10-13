@@ -470,6 +470,9 @@
 "   2020.09.24:
 "       * Add <leader>db to open buffers with Pick and :TBuffer.
 "
+"   2020.10.13:
+"       * Add command alias `T` to `TComment`.
+"
 
 
 " Pathogen
@@ -713,6 +716,10 @@ nnoremap <leader>sm :call whitespace_method_chain#SplitMethodChainToMultipleLine
 
 " ArgWrap
 nnoremap gS :ArgWrap<cr>
+
+
+" TComment
+command! -bar -bang -range -nargs=* T <line1>,<line2>TComment<bang> <args>
 
 
 
