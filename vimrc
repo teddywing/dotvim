@@ -473,6 +473,9 @@
 "   2020.10.13:
 "       * Add command alias `T` to `TComment`.
 "
+"   2020.10.19:
+"       * Make `gS` command repeatable.
+"
 
 
 " Pathogen
@@ -715,7 +718,7 @@ nnoremap <leader>sm :call whitespace_method_chain#SplitMethodChainToMultipleLine
 
 
 " ArgWrap
-nnoremap gS :ArgWrap<cr>
+nnoremap gS :call argwrap#toggle() <Bar> silent! call repeat#set('gS')<cr>
 
 
 " TComment
