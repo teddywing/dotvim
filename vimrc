@@ -476,6 +476,9 @@
 "   2020.10.19:
 "       * Make `gS` command repeatable.
 "
+"   2020.10.21:
+"       * Turn off `g:go_code_completion_enabled`.
+"
 
 
 " Pathogen
@@ -711,6 +714,7 @@ let g:go_fmt_autosave = 0
 let g:go_gopls_enabled = 0
 let g:go_def_mapping_enabled = 0
 let g:go_list_height = 10
+let g:go_code_completion_enabled = 0
 
 
 " Whitespace method chain
