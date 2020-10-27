@@ -479,6 +479,9 @@
 "   2020.10.21:
 "       * Turn off `g:go_code_completion_enabled`.
 "
+"   2020.10.27:
+"       * Make `<leader>p` command repeatable.
+"
 
 
 " Pathogen
@@ -872,7 +875,7 @@ cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 
 " Read from OS X pasteboard for faster pasting
-nnoremap <leader>p :read !pbpaste<cr>
+nnoremap <leader>p :read !pbpaste<cr>:silent! call repeat#set("\<leader>p")<cr>
 
 nnoremap <leader>gb :GitBlamer<cr>
 nnoremap <leader>gp :!git log -p -- %<cr>
