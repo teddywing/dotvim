@@ -121,3 +121,6 @@
 [submodule "bundle/vim-tbuffer"]
 	path = bundle/vim-tbuffer
 	url = https://github.com/teddywing/vim-tbuffer.git
+[submodule "bundle/vlime"]
+	path = bundle/vlime
+	url = https://github.com/vlime/vlime.git
