@@ -97,5 +97,6 @@ function! s:TodoCopyLast()
 	?\n\n\zs\d?
 
 	" Increment day, then put the current entry at the top of the window
-	execute "normal! $h\<C-a>zt2\<C-e>"
+	call setline('.', strftime('%Y.%m.%d:'))
+	execute "normal! zt2\<C-e>"
 endfunction
