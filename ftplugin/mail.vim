@@ -20,3 +20,8 @@ setlocal comments-=mb:* comments+=fb:*
 
 " Remove last two empty lines below signature
 nnoremap <buffer> <leader>e m`Gdk``
+
+
+" Toggle paragraph auto-formatting
+nnoremap <buffer> [a :setlocal formatoptions-=a<CR>
+nnoremap <buffer> ]a :setlocal formatoptions+=a<CR>
