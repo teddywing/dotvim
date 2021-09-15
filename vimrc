@@ -482,6 +482,9 @@
 "   2020.10.27:
 "       * Make `<leader>p` command repeatable.
 "
+"   2021.09.15:
+"       * Add `<C-w>N` to open a new empty buffer in a vertical split.
+"
 
 
 " Pathogen
@@ -821,6 +824,9 @@ nnoremap <C-w><C-q> <nop>
 
 " Open the current buffer in a new tab
 nnoremap <C-w>e :tabedit %<cr>
+
+" Open a new vertical split with a new empty buffer.
+nnoremap <C-w>N :vnew<CR>
 
 " Quickfix
 nnoremap ]q :<C-u>execute v:count . 'cnext'<cr>
