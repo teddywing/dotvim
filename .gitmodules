@@ -124,3 +124,6 @@
 [submodule "bundle/vlime"]
 	path = bundle/vlime
 	url = https://github.com/vlime/vlime.git
+[submodule "bundle/vim-git-todo"]
+	path = bundle/vim-git-todo
+	url = https://github.com/teddywing/vim-git-todo.git
