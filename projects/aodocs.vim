@@ -90,13 +90,24 @@ endfunction
 
 
 function! s:TodoCopyLast()
-	" Copy the last entry to the bottom
-	?\n\n\d?,$t$
+	try
+		" Copy the last entry to the bottom
+		?\n\n\d?,$t$
 
-	" Move to date line
-	?\n\n\zs\d?
+	" We only have a single entry (pattern not found error).
+	catch /^Vim\%((\a\+)\)\?:E486: .*\\n\\n\\d/
+		" Add two lines to the end of the file.
+		call append('$', ['', ''])
 
-	" Increment day, then put the current entry at the top of the window
-	call setline('.', strftime('%Y.%m.%d:'))
-	execute "normal! zt2\<C-e>"
+		" Copy the only entry to the bottom.
+		0,$-2t$
+
+	finally
+		" Move to date line
+		?\n\n\zs\d?
+
+		" Increment day, then put the current entry at the top of the window
+		call setline('.', strftime('%Y.%m.%d:'))
+		execute "normal! zt2\<C-e>"
+	endtry
 endfunction
