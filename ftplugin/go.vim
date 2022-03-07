@@ -25,6 +25,10 @@ nnoremap <buffer> cdf :!go fmt %<cr>
 setlocal commentstring=//\ %s
 
 
+" Continue comments on <Enter> and `o` `O`.
+setlocal formatoptions+=or
+
+
 " Add a trailing comma when expanding elements to multiple lines
 let b:argwrap_tail_comma = 1
 
