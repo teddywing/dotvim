@@ -46,8 +46,21 @@ nmap <buffer> <C-w>z<C-^> :call go#alternate#Switch(1, 'vsplit')<CR>
 nmap <buffer> Ze <Plug>(go-iferr)
 
 
-" TODO: if no q-args, use cword
-command! -buffer -nargs=1 GoDoc :new <Bar>
-	\ execute 'read !go doc -all ' . shellescape(<q-args>) <Bar>
-	\ set readonly nomodified <Bar>
-	\ setfiletype go
+command! -buffer -nargs=? GoDoc call s:GoDoc(<q-args>)
+
+
+if exists('*s:GoDoc')
+	finish
+endif
+
+function! s:GoDoc(search_term)
+	let search_term = a:search_term
+	if search_term == ''
+		let search_term = expand('<cword>')
+	endif
+
+	new
+	\| execute 'read !go doc -all ' . shellescape(search_term)
+	\| set readonly nomodified
+	\| setfiletype go
+endfunction
