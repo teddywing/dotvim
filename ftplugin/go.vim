@@ -44,3 +44,10 @@ nmap <buffer> z<C-^> :call go#alternate#Switch(1, 'edit')<CR>
 nmap <buffer> <C-w>z<C-^> :call go#alternate#Switch(1, 'vsplit')<CR>
 
 nmap <buffer> Ze <Plug>(go-iferr)
+
+
+" TODO: if no q-args, use cword
+command! -buffer -nargs=1 GoDoc :new <Bar>
+	\ execute 'read !go doc -all ' . shellescape(<q-args>) <Bar>
+	\ set readonly nomodified <Bar>
+	\ setfiletype go
