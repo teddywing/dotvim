@@ -60,7 +60,7 @@ function! s:GoDoc(search_term)
 	endif
 
 	new
-	\| execute 'read !go doc -all ' . shellescape(search_term)
-	\| set readonly nomodified
-	\| setfiletype go
+	execute 'read !go doc -all ' . shellescape(search_term)
+	set readonly nomodified
+	setfiletype go
 endfunction
