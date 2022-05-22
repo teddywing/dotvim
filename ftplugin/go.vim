@@ -62,5 +62,5 @@ function! s:GoDoc(search_term)
 	new
 	execute 'read !go doc -all ' . shellescape(search_term)
 	set readonly nomodified
-	setfiletype go
+	setfiletype godoc
 endfunction
