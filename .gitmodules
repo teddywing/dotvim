@@ -127,3 +127,6 @@
 [submodule "bundle/vim-git-todo"]
 	path = bundle/vim-git-todo
 	url = https://github.com/teddywing/vim-git-todo.git
+[submodule "bundle/paredit"]
+	path = bundle/paredit
+	url = https://github.com/kovisoft/paredit.git
