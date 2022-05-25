@@ -485,6 +485,9 @@
 "   2021.09.15:
 "       * Add `<C-w>N` to open a new empty buffer in a vertical split.
 "
+"   2022.05.25:
+"       * Prevent Paredit from changing filetype plugin and indent settings.
+"
 
 
 " Pathogen
@@ -711,6 +714,11 @@ runtime! macros/matchit.vim
 " Slimv
 let g:slimv_impl = 'sbcl'
 let g:slimv_swank_cmd = '! screen -d -m -t REPL-SBCL sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp'
+
+
+" Paredit
+let g:paredit_disable_ftplugin = 1
+let g:paredit_disable_ftindent = 1
 
 
 " Go
