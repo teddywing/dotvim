@@ -130,3 +130,6 @@
 [submodule "bundle/paredit"]
 	path = bundle/paredit
 	url = https://github.com/kovisoft/paredit.git
+[submodule "bundle/context.vim"]
+	path = bundle/context.vim
+	url = https://github.com/wellle/context.vim.git
