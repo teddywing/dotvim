@@ -489,6 +489,9 @@
 "       * Prevent Paredit from changing filetype plugin and indent settings.
 "       * Remove Slimv settings.
 "
+"   2022.06.01:
+"       * Add `yp` mapping to paste from the "0 register.
+"
 
 
 " Pathogen
@@ -886,6 +889,10 @@ cnoremap <Esc>f <S-Right>
 
 " Read from OS X pasteboard for faster pasting
 nnoremap <leader>p :read !pbpaste<cr>:silent! call repeat#set("\<leader>p")<cr>
+
+" Easier pasting from the previous yank.
+nnoremap yp "0p
+xnoremap yp "0p
 
 nnoremap <leader>gb :GitBlamer<cr>
 nnoremap <leader>gp :!git log -p -- %<cr>
