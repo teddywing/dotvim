@@ -491,6 +491,7 @@
 "
 "   2022.06.01:
 "       * Add `yp` mapping to paste from the "0 register.
+"       * Disable context.vim by default.
 "
 
 
@@ -740,6 +741,11 @@ nnoremap gS :call argwrap#toggle() <Bar> silent! call repeat#set('gS')<cr>
 
 " TComment
 command! -bar -bang -range -nargs=* T <line1>,<line2>TComment<bang> <args>
+
+
+" Context
+" Disable Context by default.
+let g:context_enabled = 0
 
 
 

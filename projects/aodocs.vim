@@ -45,6 +45,12 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_UFO_EXTENSION/*.js
 		\ setlocal path+=$VIM_PROJECT_PATH_AODOCS_UFO_EXTENSION_MODULE
 
+	" Turn on context.vim
+	autocmd BufRead,BufEnter
+		\ $VIM_PROJECT_PATH_AODOCS_GO/*
+		\,$VIM_PROJECT_PATH_AODOCS/*
+		\ ContextEnable
+
 	autocmd BufRead,BufEnter *.todo
 		\ nnoremap <buffer> <Leader>yy :call <SID>TodoCopyLast()<CR>
 augroup END
