@@ -493,6 +493,9 @@
 "       * Add `yp` mapping to paste from the "0 register.
 "       * Disable context.vim by default.
 "
+"   2022.06.23:
+"       * Add `m,` mapping to save a Vim session file.
+"
 
 
 " Pathogen
@@ -912,6 +915,7 @@ inoremap <C-r><C-f> <C-r>=expand('%:t:r')<CR>
 
 " Save the current session to a file
 nnoremap <leader>mk :mksession! vimsession<cr>
+nnoremap m, :mksession! vimsession<cr>
 
 " Toggle spell checking
 nnoremap <leader>sp :setlocal spell! spell?<cr>
