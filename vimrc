@@ -496,6 +496,10 @@
 "   2022.06.23:
 "       * Add `m,` mapping to save a Vim session file.
 "
+"   2022.08.09:
+"       * Add `:Co` command, alias for `:Copy`. Adding to take precedence over
+"         `:Context…` commands.
+"
 
 
 " Pathogen
@@ -749,6 +753,10 @@ command! -bar -bang -range -nargs=* T <line1>,<line2>TComment<bang> <args>
 " Context
 " Disable Context by default.
 let g:context_enabled = 0
+
+
+" Copy
+command! -range Co call copy#Copy(<line1>, <line2>)
 
 
 
