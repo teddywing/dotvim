@@ -500,6 +500,9 @@
 "       * Add `:Co` command, alias for `:Copy`. Adding to take precedence over
 "         `:Context…` commands.
 "
+"   2022.08.24:
+"       * Turn off vim-go goimports on save.
+"
 
 
 " Pathogen
@@ -732,6 +735,7 @@ let g:paredit_disable_ftindent = 1
 let g:go_version_warning = 0
 let g:go_fmt_command = 'goimports'
 let g:go_fmt_autosave = 0
+let g:go_imports_autosave = 0
 let g:go_gopls_enabled = 0
 let g:go_def_mapping_enabled = 0
 let g:go_list_height = 10
