@@ -133,3 +133,6 @@
 [submodule "bundle/context.vim"]
 	path = bundle/context.vim
 	url = https://github.com/wellle/context.vim.git
+[submodule "bundle/vim-mutt-aliases"]
+	path = bundle/vim-mutt-aliases
+	url = https://github.com/Konfekt/vim-mutt-aliases
