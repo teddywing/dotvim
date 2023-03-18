@@ -77,8 +77,11 @@ def InsertLayoutOn(layout: string): void
 	])
 enddef
 
-# TODO: Add layout completion
-command! -nargs=1 InsertLayout InsertLayoutOn(<q-args>)
+def Complete(arg_lead: string, cmd_line: string, cursor_pos: number): string
+	return join(keys(layout_names), "\n")
+enddef
+
+command! -nargs=1 -complete=custom,Complete InsertLayout InsertLayoutOn(<q-args>)
 command! InsertLayoutOff InsertLayoutOff()
 
 # SetInputLayout(layout_names['fr'])
