@@ -1,5 +1,7 @@
 vim9script
 
+# Friendly names for the ones used by 'xkbswitch'. The keys are used as
+# arguments to the `:InsertLayout` command.
 const layout_names = {
 	us: 'US',
 	qwazerty: 'QWAZERTY2',
@@ -7,6 +9,8 @@ const layout_names = {
 	dvorak: 'Dvorak',
 }
 
+# Used to store the current layout prior to insertion so it can be restored
+# when leaving insert mode.
 var normal_layout: string
 
 def IsLayoutSwitcherAvailable(): number
