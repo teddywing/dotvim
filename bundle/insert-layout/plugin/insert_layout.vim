@@ -55,8 +55,6 @@ def InsertLayoutOff(): void
 enddef
 
 def InsertLayoutOn(layout: string): void
-	# InsertLayoutOff()
-
 	# autocmd insert_layout InsertEnter <buffer> OnInsertEnter(layout)
 	# autocmd insert_layout InsertLeave <buffer> OnInsertLeave()
 	autocmd_add([
