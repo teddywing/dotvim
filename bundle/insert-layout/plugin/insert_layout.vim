@@ -37,9 +37,6 @@ def OnInsertLeave(): void
 enddef
 
 def InsertLayoutOff(): void
-	# autocmd! insert_layout InsertEnter <buffer>
-	# autocmd! insert_layout InsertLeave <buffer>
-
 	autocmd_delete([
 		{
 			group: 'insert_layout',
@@ -60,8 +57,6 @@ def InsertLayoutOn(layout: string): void
 		return
 	endif
 
-	# autocmd insert_layout InsertEnter <buffer> OnInsertEnter(layout)
-	# autocmd insert_layout InsertLeave <buffer> OnInsertLeave()
 	autocmd_add([
 		{
 			replace: true,
@@ -86,11 +81,3 @@ enddef
 
 command! -nargs=1 -complete=custom,Complete InsertLayout InsertLayoutOn(<q-args>)
 command! InsertLayoutOff InsertLayoutOff()
-
-# SetInputLayout(layout_names['fr'])
-
-# augroup frinsert
-# 	autocmd!
-# 	autocmd InsertEnter * :call system('xkbswitch -se French-numerical')
-# 	autocmd InsertLeave * :call system('xkbswitch -se US')
-# augroup END
