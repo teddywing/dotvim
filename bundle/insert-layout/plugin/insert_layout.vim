@@ -14,7 +14,7 @@ const layout_names = {
 
 var normal_layout: string
 
-def IsLayoutSwitcherAvailable(): bool
+def IsLayoutSwitcherAvailable(): number
 	return executable('xkbswitch')
 enddef
 
@@ -55,6 +55,11 @@ def InsertLayoutOff(): void
 enddef
 
 def InsertLayoutOn(layout: string): void
+	if !IsLayoutSwitcherAvailable()
+		echoerr "'xkbswitch' command not found"
+		return
+	endif
+
 	# autocmd insert_layout InsertEnter <buffer> OnInsertEnter(layout)
 	# autocmd insert_layout InsertLeave <buffer> OnInsertLeave()
 	autocmd_add([
