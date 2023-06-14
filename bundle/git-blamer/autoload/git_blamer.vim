@@ -10,7 +10,7 @@ function! git_blamer#Blame()
 	let t:git_blamer_window_number = winnr()
 	let restore = ''
 
-	if &l:wrap
+	if &wrap
 		let restore = '| call setbufvar(' . l:buffer_number . ', "&wrap", 1)'
 	endif
 
