@@ -11,3 +11,4 @@ nnoremap <buffer> Zr
 	\ :execute '!eval $(opam env) && dune exec ' . fnameescape(expand('%:p:h:h:t'))<CR>
 nnoremap <buffer> Zb :!eval $(opam env) && dune build<CR>
 nnoremap <buffer> <leader>z :!eval $(opam env) && dune test<CR>
+nnoremap <buffer> Zp :!eval $(opam env) && dune promote<CR>
