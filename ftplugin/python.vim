@@ -11,8 +11,8 @@ setlocal textwidth=79
 
 
 " Quickly add a debug line
-nnoremap <buffer> <leader>gdo oimport ipdb; ipdb.set_trace()<Esc>_
-nnoremap <buffer> <leader>gdO Oimport ipdb; ipdb.set_trace()<Esc>_
+nnoremap <buffer> Zd oimport ipdb; ipdb.set_trace()<Esc>_
+nnoremap <buffer> ZD Oimport ipdb; ipdb.set_trace()<Esc>_
 
 
 " Flake8 validation
