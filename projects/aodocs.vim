@@ -59,6 +59,12 @@ augroup END
 cnoremap <C-x>u <C-r>=$VIM_PROJECT_PATH_AODOCS_UFO_TICKET_FOLDER<CR>
 
 
+" Write to a temporary file labelled with the current time.
+command! -nargs=0 -bang WChat
+	\ execute ":write\<bang> " . $VIM_PROJECT_PATH_AODOCS_CHAT_DRAFTS
+		\. '/chat-draft-' . strftime('%FT%H.%M.%S') . '.txt'
+
+
 " Enables a longer-than-72 character first line and 72 character wrapping on
 " subsequent lines.
 function! s:CommitWackoTextWidth()
