@@ -530,7 +530,11 @@ set wrap          " Soft wrap
 set linebreak     " Don't wrap in the middle of words. Only works when nolist is set
 
 set scrolloff=3   " Scroll offset: always keep 3 lines
-set smoothscroll  " Allow scrolling wrapped screen lines.
+
+" Allow scrolling wrapped screen lines.
+if exists('+smoothscroll')
+	set smoothscroll
+endif
 
 set showmatch     " Highlight matching braces etc.
 set hlsearch      " Highlight searches
