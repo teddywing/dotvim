@@ -503,6 +503,9 @@
 "   2022.08.24:
 "       * Turn off vim-go goimports on save.
 "
+"   2023.09.25:
+"       * Turn on 'smoothscroll'.
+"
 
 
 " Pathogen
@@ -527,6 +530,7 @@ set wrap          " Soft wrap
 set linebreak     " Don't wrap in the middle of words. Only works when nolist is set
 
 set scrolloff=3   " Scroll offset: always keep 3 lines
+set smoothscroll  " Allow scrolling wrapped screen lines.
 
 set showmatch     " Highlight matching braces etc.
 set hlsearch      " Highlight searches
