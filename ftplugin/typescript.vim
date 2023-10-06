@@ -16,10 +16,15 @@ nnoremap <silent> <buffer> <C-w><C-f>
 nnoremap <silent> <buffer> <C-w>gf
 	\ :<C-u>call <SID>FindFile(v:count1, expand('<cfile>'), 'tabfind', '<C-v><C-w>gf')<CR>
 
+nnoremap <buffer> Zf
+	\ :<C-u>execute 'silent !prettier --write ' . shellescape(expand('%'))
+	\ <Bar> redraw!<CR>
+
 let b:undo_ftplugin .= 'nunmap <buffer> gf'
 let b:undo_ftplugin .= '| nunmap <buffer> <C-w>f'
 let b:undo_ftplugin .= '| nunmap <buffer> <C-w><C-f>'
 let b:undo_ftplugin .= '| nunmap <buffer> <C-w>gf'
+let b:undo_ftplugin .= '| nunmap <buffer> Zf'
 
 
 if exists('*s:FindFile')
