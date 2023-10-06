@@ -32,7 +32,7 @@ syn match diffRemoved   "^> -.*"
 
 " Define the default highlighting.
 " Only used when an item doesn't have highlighting yet
-hi def link diffAdded           Type
-hi def link diffRemoved         Statement
+hi def link diffAdded           Identifier
+hi def link diffRemoved         Special
 
 let b:current_syntax = "prr"
