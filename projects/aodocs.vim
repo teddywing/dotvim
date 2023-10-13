@@ -45,6 +45,9 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_UFO_EXTENSION/*.js
 		\ setlocal path+=$VIM_PROJECT_PATH_AODOCS_UFO_EXTENSION_MODULE
 
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_SMARTBAR/*.js
+		\ setlocal path+=extension/module
+
 	" Turn on context.vim
 	autocmd BufRead,BufEnter
 		\ $VIM_PROJECT_PATH_AODOCS_GO/*
