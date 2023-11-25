@@ -136,3 +136,6 @@
 [submodule "bundle/vim-mutt-aliases"]
 	path = bundle/vim-mutt-aliases
 	url = https://github.com/Konfekt/vim-mutt-aliases
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
