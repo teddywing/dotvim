@@ -20,6 +20,8 @@ nnoremap <silent> <buffer> <C-w>gf
 nnoremap <buffer> Zd odebugger;<Esc>
 nnoremap <buffer> ZD Odebugger;<Esc>
 
+nnoremap <buffer> Zc :make<CR>
+
 nnoremap <buffer> Zf
 	\ :<C-u>execute 'silent !prettier --write ' . shellescape(expand('%'))
 	\ <Bar> redraw!<CR>
@@ -30,6 +32,7 @@ let b:undo_ftplugin .= '| nunmap <buffer> <C-w><C-f>'
 let b:undo_ftplugin .= '| nunmap <buffer> <C-w>gf'
 let b:undo_ftplugin .= '| nunmap <buffer> Zd'
 let b:undo_ftplugin .= '| nunmap <buffer> ZD'
+let b:undo_ftplugin .= '| nunmap <buffer> Zc'
 let b:undo_ftplugin .= '| nunmap <buffer> Zf'
 
 
