@@ -860,3 +860,8 @@ function! prr_ui#RandomEmoji()
 	let l:index =  rand() % s:emoji_list_length
 	return s:emoji[l:index]
 endfunction
+
+
+" Comment on the current line.
+function! prr_ui#Comment()
+endfunction
