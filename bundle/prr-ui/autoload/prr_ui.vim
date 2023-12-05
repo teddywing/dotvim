@@ -864,4 +864,14 @@ endfunction
 
 " Comment on the current line.
 function! prr_ui#Comment()
+	let current_line = getline('.')
+
+	" Open the existing Prr review file in a new split.
+	sbuffer prr
+
+	call search(current_line)
+
+	" Put the cursor in place to add a comment on the line.
+	call append('.', ['', '', ''])
+	call cursor(line('.') + 2, 0)
 endfunction
