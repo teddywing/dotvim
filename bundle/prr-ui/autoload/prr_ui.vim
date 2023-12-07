@@ -874,4 +874,6 @@ function! prr_ui#Comment()
 	" Put the cursor in place to add a comment on the line.
 	call append('.', ['', '', ''])
 	call cursor(line('.') + 2, 0)
+
+	startinsert
 endfunction
