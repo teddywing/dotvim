@@ -866,8 +866,14 @@ endfunction
 function! prr_ui#Comment()
 	let current_line = getline('.')
 
-	" Open the existing Prr review file in a new split.
-	sbuffer prr
+	try
+		" Open the existing Prr review file in a new split.
+		sbuffer prr
+	catch
+		" TODO: Run prr-start.
+		echoerr 'PrrComment: No Prr buffer available'
+		return
+	endtry
 
 	call search(current_line)
 
