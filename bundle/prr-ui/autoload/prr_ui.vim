@@ -863,12 +863,9 @@ endfunction
 
 
 let s:prr_path = ''
-let s:active = 0
 
 function! prr_ui#Start()
 	let s:prr_path = system('prr-start --print')
-	let s:active = 1
-
 	return s:prr_path
 endfunction
 
@@ -881,27 +878,19 @@ function! prr_ui#Submit()
 	update
 
 	!prr-submit
-
-	let s:active = 0
 endfunction
 
 
 " Comment on the current line.
 function! prr_ui#Comment()
-	if !s:active
-		let prr_path = prr_ui#Start()
-		execute 'argadd ' . prr_path
-	endif
-
 	let current_line = getline('.')
 
 	try
 		" Open the existing Prr review file in a new split.
 		sbuffer prr
 	catch
-		" TODO: Run prr-start.
-		echoerr 'PrrComment: No Prr buffer available'
-		return
+		let prr_path = prr_ui#Start()
+		execute 'split ' . prr_path
 	endtry
 
 	call search(current_line)
