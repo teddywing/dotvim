@@ -3,6 +3,6 @@ if exists('g:loaded_prr_ui')
 endif
 let g:loaded_prr_ui = 1
 
-command! PrrStart execute 'vsplit ' . system('prr-start --print')
-command! PrrSubmit update | !prr-submit
+command! PrrStart call prr_ui#StartInteractive()
+command! PrrSubmit call prr_ui#Submit()
 command! PrrComment call prr_ui#Comment()
