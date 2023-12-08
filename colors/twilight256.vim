@@ -37,6 +37,11 @@
 "     * Use a lighter grey for comments to increase contrast and make text 
 "       easier to read.
 "
+"   2023.12.08:
+"     * Use darker background colours for DiffAdd, DiffChange, and DiffText to
+"       increase contrast and reduce vibration relative to the foreground
+"       text. This makes the text with diff highlighting easier to read.
+"
 
 set background=dark
 if version > 580
@@ -269,10 +274,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X("Cursor", "708090", "f0e68c", "")
     "CursorIM
     "Directory
-    "DiffAdd
-    "DiffChange
+    highlight DiffAdd term=bold ctermbg=17 guibg=DarkBlue
+    highlight DiffChange term=bold ctermbg=53 guibg=DarkMagenta
     "DiffDelete
-    "DiffText
+    highlight DiffText term=reverse cterm=bold ctermbg=1 gui=bold guibg=Red
     "ErrorMsg
     "call <SID>X("VertSplit", "c2bfa5", "7f7f7f", "reverse")
     "call <SID>X("Folded", "ffd700", "4d4d4d", "")
