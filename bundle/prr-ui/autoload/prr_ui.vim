@@ -885,13 +885,7 @@ endfunction
 function! prr_ui#Comment()
 	let current_line = getline('.')
 
-	try
-		" Open the existing Prr review file in a new split.
-		sbuffer prr
-	catch
-		let prr_path = prr_ui#Start()
-		execute 'split ' . prr_path
-	endtry
+	call prr_ui#SplitPrrBuffer()
 
 	call search(current_line)
 
@@ -900,4 +894,59 @@ function! prr_ui#Comment()
 	call cursor(line('.') + 2, 0)
 
 	startinsert
+endfunction
+
+
+function! prr_ui#Approve()
+	" If current buffer is not prr, then PrrStart.
+	if !prr_ui#IsCurrentBufferPrr()
+		call prr_ui#SplitPrrBuffer()
+	endif
+
+	call append(
+		\ 0,
+		\ [
+			\ 'Looks good ' . prr_ui#RandomEmoji(),
+			\ '',
+			\ '@prr approve',
+			\ ''
+		\ ]
+	\ )
+	call cursor(1, 0)
+endfunction
+
+function! prr_ui#Reject()
+	if !prr_ui#IsCurrentBufferPrr()
+		call prr_ui#SplitPrrBuffer()
+	endif
+
+	call append(
+		\ 0,
+		\ [
+			\ '',
+			\ '',
+			\ '@prr reject',
+			\ ''
+		\ ]
+	\ )
+	call cursor(1, 0)
+endfunction
+
+
+function! prr_ui#SplitPrrBuffer()
+	try
+		" Open the existing Prr review file in a new split.
+		sbuffer prr
+	catch
+		let prr_path = prr_ui#Start()
+		execute 'split ' . prr_path
+	endtry
+
+endfunction
+
+function! prr_ui#IsCurrentBufferPrr()
+	let current_buffer_name = bufname()
+	let pos = match(current_buffer_name, '\.prr$')
+
+	return pos != -1
 endfunction
