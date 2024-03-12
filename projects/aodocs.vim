@@ -56,6 +56,10 @@ augroup AODocs
 
 	autocmd BufRead,BufEnter *.todo
 		\ nnoremap <buffer> <Leader>yy :call <SID>TodoCopyLast()<CR>
+
+	" Read an email signature
+	autocmd FileType mail
+		\ nnoremap <buffer> <leader>s :r $XDG_CONFIG_HOME/mutt/signatures/<C-d>
 augroup END
 
 " Insert a path to UFO ticket folders
