@@ -506,6 +506,9 @@
 "   2023.09.25:
 "       * Turn on 'smoothscroll'.
 "
+"   2024.04.03:
+"       * Add `[b` and `]b` mappings for previous and next buffer.
+"
 
 
 " Pathogen
@@ -825,6 +828,8 @@ nnoremap g$ $
 " Easier buffer switching
 nnoremap <leader>j :bnext<cr>
 nnoremap <leader>k :bprevious<cr>
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprevious<cr>
 
 " Close buffer without closing split
 " http://stackoverflow.com/a/4468491
