@@ -42,6 +42,9 @@
 "       increase contrast and reduce vibration relative to the foreground
 "       text. This makes the text with diff highlighting easier to read.
 "
+"   2024.05.07:
+"     * Fix diff colours in Vim 9.1.
+"
 
 set background=dark
 if version > 580
@@ -278,6 +281,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     highlight DiffChange term=bold ctermbg=53 guibg=DarkMagenta
     "DiffDelete
     highlight DiffText term=reverse cterm=bold ctermbg=1 gui=bold guibg=Red
+
+    " Added 2024.05.07: Fix diff colours in Vim 9.1
+    highlight default link diffAdded Identifier
+    highlight default link diffRemoved Special
+
     "ErrorMsg
     "call <SID>X("VertSplit", "c2bfa5", "7f7f7f", "reverse")
     "call <SID>X("Folded", "ffd700", "4d4d4d", "")
