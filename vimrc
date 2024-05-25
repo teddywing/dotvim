@@ -509,6 +509,10 @@
 "   2024.04.03:
 "       * Add `[b` and `]b` mappings for previous and next buffer.
 "
+"   2024.05.25:
+"       * Add `[e` and `]e` mappings to switch between straight and
+"         typographic quotes.
+"
 
 
 " Pathogen
@@ -772,6 +776,11 @@ let g:context_enabled = 0
 
 " Copy
 command! -range Co call copy#Copy(<line1>, <line2>)
+
+
+" Textobj Quote
+nnoremap [e :ToggleEducate<CR>
+nnoremap ]e :ToggleEducate<CR>
 
 
 
