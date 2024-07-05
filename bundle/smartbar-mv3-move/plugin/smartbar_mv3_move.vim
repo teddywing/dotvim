@@ -55,8 +55,32 @@ function! s:ExcludeCurrentLine(matches)
 	return a:matches
 endfunction
 
-function! s:PromptMatch(matches)
-	return inputlist(a:matches)
+function! s:PromptMatch(matches, tagname)
+	" TODO: Make a prompt that looks like the g] tag prompt.
+	echohl Title
+	echo '  # tag'
+	echon repeat(' ', len(a:tagname) - 2)
+	echon 'file'
+	echohl None
+
+	let i = 1
+	for match in a:matches
+		let match_parts = split(match, ':')
+		let file_name = match_parts[0]
+		let line_content = join(match_parts[3:], '')
+
+		echon "\n  " . i . ' '
+		echohl Title
+		echon a:tagname . ' '
+		echohl Directory
+		echon file_name
+		echohl None
+		echo '   ' . line_content
+
+		let i += 1
+	endfor
+
+	return input('Type number and <Enter> (q or empty cancels): ')
 endfunction
 
 function! s:GoToMatch(match, tagname)
@@ -86,12 +110,23 @@ function! s:MessageGo()
 	" TODO: Exclude the current line
 	let matches = s:ExcludeCurrentLine(matches)
 
+	" Default to first match.
+	let choice = 0
+
 	if len(matches) > 1
-		let choice = s:PromptMatch(matches)
-		call s:GoToMatch(matches[choice - 1], cword)
+		let choice = s:PromptMatch(matches, cword)
+
+		" Exit prompt if match is not a number.
+		if match(choice, '[0-9]\+') == -1
+			return
+		endif
+
+		" Convert to array index.
+		let choice -= 1
 	endif
+
 	" let first_match = matches[0]
-	" call s:GoToMatch(first_match, cword)
+	call s:GoToMatch(matches[choice], cword)
 endfunction
 
 " TODO: Parse output:
