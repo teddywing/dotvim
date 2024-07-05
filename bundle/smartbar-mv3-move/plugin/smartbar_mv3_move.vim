@@ -56,7 +56,6 @@ function! s:ExcludeCurrentLine(matches)
 endfunction
 
 function! s:PromptMatch(matches, tagname)
-	" TODO: Make a prompt that looks like the g] tag prompt.
 	echohl Title
 	echo '  # tag'
 	echon repeat(' ', len(a:tagname) - 2)
@@ -110,7 +109,6 @@ function! s:MessageGo()
 	let cword = s:MessageCword()
 	let matches = s:MessageMatches(cword, extension_context)
 
-	" TODO: Exclude the current line
 	let matches = s:ExcludeCurrentLine(matches)
 
 	" Default to first match.
@@ -128,18 +126,8 @@ function! s:MessageGo()
 		let choice -= 1
 	endif
 
-	" let first_match = matches[0]
 	call s:GoToMatch(matches[choice], cword)
 endfunction
-
-" TODO: Parse output:
-
-" src/content-script/utils/location.utils.ts:9:23:    type: MessageType.LOCATION_CHANGED_TRIGGER,
-" src/content-script/utils/location.utils.ts:16:27:        type: MessageType.LOCATION_CHANGED_TRIGGER,
-" src/service-worker/location/location.listener.ts:10:17:    MessageType.LOCATION_CHANGED_TRIGGER,
-" src/service-worker/serviceWorker.ts:129:28:          case MessageType.LOCATION_CHANGED_TRIGGER:
-
-" TODO: Go to content script from service worker and vice versa
 
 
 nnoremap <leader>] :call <SID>MessageGo()<CR>
