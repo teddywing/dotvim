@@ -55,6 +55,10 @@ function! s:ExcludeCurrentLine(matches)
 	return a:matches
 endfunction
 
+function! s:PromptMatch(matches)
+	return inputlist(a:matches)
+endfunction
+
 function! s:GoToMatch(match, tagname)
 	" Save current position for tag stack.
 	let current_window = winnr()
@@ -82,10 +86,12 @@ function! s:MessageGo()
 	" TODO: Exclude the current line
 	let matches = s:ExcludeCurrentLine(matches)
 
-	echom matches
-
-	let first_match = matches[0]
-	call s:GoToMatch(first_match, cword)
+	if len(matches) > 1
+		let choice = s:PromptMatch(matches)
+		call s:GoToMatch(matches[choice - 1], cword)
+	endif
+	" let first_match = matches[0]
+	" call s:GoToMatch(first_match, cword)
 endfunction
 
 " TODO: Parse output:
