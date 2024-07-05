@@ -55,7 +55,12 @@ function! s:ExcludeCurrentLine(matches)
 	return a:matches
 endfunction
 
-function! s:GoToMatch(match)
+function! s:GoToMatch(match, tagname)
+	" Save current position for tag stack.
+	let current_window = winnr()
+	let pos = [bufnr()] + getcurpos()[1:]
+
+	" Get position from `match`.
 	let parts = split(a:match, ':')
 	let file = parts[0]
 	let line = parts[1]
@@ -64,7 +69,9 @@ function! s:GoToMatch(match)
 	execute 'edit ' . file
 	call cursor(line, column)
 
-	" TODO: Append to tag stack
+	" Append to tag stack
+	let tag = [{'from': pos, 'tagname': a:tagname}]
+	call settagstack(current_window, {'items': tag}, 'a')
 endfunction
 
 function! s:MessageGo()
@@ -78,7 +85,7 @@ function! s:MessageGo()
 	echom matches
 
 	let first_match = matches[0]
-	call s:GoToMatch(first_match)
+	call s:GoToMatch(first_match, cword)
 endfunction
 
 " TODO: Parse output:
