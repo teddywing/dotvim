@@ -3,6 +3,17 @@ if exists('g:loaded_smartbar_mv3_move')
 endif
 let g:loaded_smartbar_mv3_move = 1
 
+function! s:ExtensionContext()
+	let file_name = bufname()
+	if match(file_name, 'service-worker') != -1
+		return 'service-worker'
+	elseif match(file_name, 'content-script') != -1
+		return 'content-script'
+	else
+		throw "Unrecognised extension context: '" . file_name . "'"
+	endif
+endfunction
+
 function! s:MessageCword()
 	" Include "." in &iskeyword to get "MessageType.A_MESSAGE_TYPE" when the
 	" cursor is on the first "M" in "type: MessageType.A_MESSAGE_TYPE,".
@@ -16,10 +27,17 @@ function! s:MessageCword()
 	return cword
 endfunction
 
-function! s:MessageMatches(cword)
+function! s:MessageMatches(cword, extension_context)
+	let dir_filter = ''
+	if a:extension_context == 'service-worker'
+		let dir_filter = ' src/content-script'
+	elseif a:extension_context == 'content-script'
+		let dir_filter = ' src/service-worker'
+	endif
+
 	let search_command = 'rg --fixed-strings --line-number --column '
 		\ . a:cword
-		\ . ' src/content-script src/service-worker'
+		\ . dir_filter
 
 	let results = systemlist(search_command)
 
@@ -38,8 +56,9 @@ function! s:ExcludeCurrentLine(matches)
 endfunction
 
 function! s:MessageGo()
+	let extension_context = s:ExtensionContext()
 	let cword = s:MessageCword()
-	let matches = s:MessageMatches(cword)
+	let matches = s:MessageMatches(cword, extension_context)
 
 	" TODO: Exclude the current line
 	let matches = s:ExcludeCurrentLine(matches)
