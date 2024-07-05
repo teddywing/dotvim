@@ -81,7 +81,7 @@ function! s:PromptMatch(matches, tagname)
 	endfor
 
 	call inputsave()
-	let choice = input('Type number and <Enter> (q or empty cancels): ')
+	let choice = input('Type number and <Enter> (empty cancels): ')
 	call inputrestore()
 	return choice
 endfunction
