@@ -3,7 +3,7 @@ if exists('g:loaded_smartbar_mv3_move')
 endif
 let g:loaded_smartbar_mv3_move = 1
 
-function! s:MessageGo()
+function! s:MessageCword()
 	" Include "." in &iskeyword to get "MessageType.A_MESSAGE_TYPE" when the
 	" cursor is on the first "M" in "type: MessageType.A_MESSAGE_TYPE,".
 	"
@@ -13,13 +13,24 @@ function! s:MessageGo()
 	let cword = expand('<cword>')
 	let &iskeyword = isk_save
 
+	return cword
+endfunction
+
+function! s:MessageMatches(cword)
 	let search_command = 'rg --fixed-strings --line-number --column '
-		\ . cword
+		\ . a:cword
 		\ . ' src/content-script src/service-worker'
 
 	let results = systemlist(search_command)
 
-	echom results
+	return results
+endfunction
+
+function! s:MessageGo()
+	let cword = s:MessageCword()
+	let matches = s:MessageMatches(cword)
+
+	echom matches
 endfunction
 
 " TODO: Parse output:
