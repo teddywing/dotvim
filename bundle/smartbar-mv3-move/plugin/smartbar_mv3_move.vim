@@ -55,6 +55,18 @@ function! s:ExcludeCurrentLine(matches)
 	return a:matches
 endfunction
 
+function! s:GoToMatch(match)
+	let parts = split(a:match, ':')
+	let file = parts[0]
+	let line = parts[1]
+	let column = parts[2]
+
+	execute 'edit ' . file
+	call cursor(line, column)
+
+	" TODO: Append to tag stack
+endfunction
+
 function! s:MessageGo()
 	let extension_context = s:ExtensionContext()
 	let cword = s:MessageCword()
@@ -64,6 +76,9 @@ function! s:MessageGo()
 	let matches = s:ExcludeCurrentLine(matches)
 
 	echom matches
+
+	let first_match = matches[0]
+	call s:GoToMatch(first_match)
 endfunction
 
 " TODO: Parse output:
