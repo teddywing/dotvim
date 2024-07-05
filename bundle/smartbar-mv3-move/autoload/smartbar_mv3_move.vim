@@ -1,3 +1,5 @@
+" Check if the current buffer is in the service worker or content script
+" web extension context.
 function! s:ExtensionContext()
 	let file_name = bufname()
 	if match(file_name, 'service-worker') != -1
@@ -9,6 +11,7 @@ function! s:ExtensionContext()
 	endif
 endfunction
 
+" Get cword with 'iskeyword' customisations.
 function! s:MessageCword()
 	" Include "." in &iskeyword to get "MessageType.A_MESSAGE_TYPE" when the
 	" cursor is on the first "M" in "type: MessageType.A_MESSAGE_TYPE,".
@@ -22,6 +25,7 @@ function! s:MessageCword()
 	return cword
 endfunction
 
+" Get a list of locations in the project that match cword.
 function! s:MessageMatches(cword, extension_context)
 	let dir_filter = ''
 	if a:extension_context == 'service-worker'
@@ -39,6 +43,7 @@ function! s:MessageMatches(cword, extension_context)
 	return results
 endfunction
 
+" Exclude the current line from the list of matches.
 function! s:ExcludeCurrentLine(matches)
 	let file_name = bufname()
 	let current_line = line('.')
@@ -50,6 +55,7 @@ function! s:ExcludeCurrentLine(matches)
 	return a:matches
 endfunction
 
+" Prompt user to choose from a list of matches.
 function! s:PromptMatch(matches, tagname)
 	echohl Title
 	echo '  # tag'
@@ -80,6 +86,7 @@ function! s:PromptMatch(matches, tagname)
 	return choice
 endfunction
 
+" Go to the given match and add the prior location to the tag stack.
 function! s:GoToMatch(match, tagname)
 	" Save current position for tag stack.
 	let current_window = winnr()
@@ -99,6 +106,8 @@ function! s:GoToMatch(match, tagname)
 	call settagstack(current_window, {'items': tag}, 'a')
 endfunction
 
+" Get matches in the project for the message under the cursor, and go to that
+" message.
 function! smartbar_mv3_move#MessageGo()
 	let extension_context = s:ExtensionContext()
 	let cword = s:MessageCword()
