@@ -26,9 +26,23 @@ function! s:MessageMatches(cword)
 	return results
 endfunction
 
+function! s:ExcludeCurrentLine(matches)
+	let file_name = bufname()
+	let current_line = line('.')
+
+	let exclude_match = file_name . ':' . current_line
+
+	call filter(a:matches, 'match(v:val, "' . exclude_match . '")')
+
+	return a:matches
+endfunction
+
 function! s:MessageGo()
 	let cword = s:MessageCword()
 	let matches = s:MessageMatches(cword)
+
+	" TODO: Exclude the current line
+	let matches = s:ExcludeCurrentLine(matches)
 
 	echom matches
 endfunction
