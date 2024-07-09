@@ -34,7 +34,7 @@ function! s:MessageMatches(cword, extension_context)
 		let dir_filter = ' src/service-worker'
 	endif
 
-	let search_command = 'rg --fixed-strings --line-number --column '
+	let search_command = 'rg --fixed-strings --word-regexp --line-number --column '
 		\ . a:cword
 		\ . dir_filter
 
