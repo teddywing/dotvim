@@ -17,6 +17,9 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
 		\ call s:ESLintAddMappings()
 
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{js,ts}
+		\ call s:DebuggerAddMappings()
+
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
 		\ iabbrev htodo /**<CR>TODO<CR>/
 
@@ -108,6 +111,11 @@ endfunction
 function! s:ESLintAddMappings()
 	nnoremap <buffer> <leader>eda :silent !eslint-yes-debugger.sh -a<CR> <Bar> :redraw!<CR>
 	nnoremap <buffer> <leader>edd :silent !eslint-yes-debugger.sh -d<CR> <Bar> :redraw!<CR>
+endfunction
+
+function! s:DebuggerAddMappings()
+	nnoremap <buffer> Zd odebugger;<Esc>O// eslint-disable-next-line no-debugger<Esc>j
+	nnoremap <buffer> ZD Odebugger;<Esc>O// eslint-disable-next-line no-debugger<Esc>j
 endfunction
 
 
