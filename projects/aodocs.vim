@@ -114,8 +114,8 @@ function! s:ESLintAddMappings()
 endfunction
 
 function! s:DebuggerAddMappings()
-	nnoremap <buffer> Zd odebugger;<Esc>O// eslint-disable-next-line no-debugger<Esc>j
-	nnoremap <buffer> ZD Odebugger;<Esc>O// eslint-disable-next-line no-debugger<Esc>j
+	nnoremap <buffer> Zd :call append(line('.'), [repeat(' ', indent('.')) . '// eslint-disable-next-line no-debugger', repeat(' ', indent('.')) . 'debugger;']) <Bar> call cursor(line('.') + 2, col('.'))<CR>
+	nnoremap <buffer> ZD :call append(line('.') - 1, [repeat(' ', indent('.')) . '// eslint-disable-next-line no-debugger', repeat(' ', indent('.')) . 'debugger;']) <Bar> call cursor(line('.') - 1, col('.'))<CR>
 endfunction
 
 
