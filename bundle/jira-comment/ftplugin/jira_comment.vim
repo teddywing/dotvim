@@ -8,3 +8,5 @@ nnoremap <silent> <buffer> Zy :set operatorfunc=jira_comment#PostComment<CR>g@
 nnoremap <silent> <buffer> Zyy :<C-u>call jira_comment#PostOneLineComment()<CR>
 nnoremap <silent> <buffer> Zp :set operatorfunc=jira_comment#PostPublicComment<CR>g@
 nnoremap <silent> <buffer> Zpp :<C-u>call jira_comment#PostPublicOneLineComment()<CR>
+
+command! -range=% JiraPostComment <line1>,<line2>write !jira-comment
