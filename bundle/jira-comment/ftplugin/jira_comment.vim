@@ -5,3 +5,4 @@ let b:did_ftplugin = 1
 
 
 nnoremap <silent> <buffer> Zy :set operatorfunc=jira_comment#PostComment<CR>g@
+nnoremap <silent> <buffer> Zp :set operatorfunc=jira_comment#PostPublicComment<CR>g@
