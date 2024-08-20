@@ -132,3 +132,33 @@ function! smartbar_mv3_move#MessageGo()
 
 	call s:GoToMatch(matches[choice], cword)
 endfunction
+
+" TODO: Keep the same mapping and do either action depending on cword
+function! s:SelectorGo(cword)
+	" Save current position for tag stack.
+	let current_window = winnr()
+	let pos = [bufnr()] + getcurpos()[1:]
+
+	let selectors_path = 'src/selectors-configuration/selectors-configuration.const.ts'
+	execute 'edit ' . selectors_path
+
+	call search(a:cword)
+
+	" Append to tag stack.
+	let tag = [{'from': pos, 'tagname': a:cword}]
+	call settagstack(current_window, {'items': tag}, 'a')
+endfunction
+
+function! smartbar_mv3_move#Go()
+	let cword = s:MessageCword()
+
+	" Look for a selector.
+	if stridx(cword, 'SelectorsEnum') != -1
+		call s:SelectorGo(cword)
+
+	" Otherwise look for a message type.
+	else
+		" TODO: pass cword as argument
+		call smartbar_mv3_move#MessageGo()
+	endif
+endfunction
