@@ -20,6 +20,11 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{js,ts}
 		\ call s:DebuggerAddMappings()
 
+	" Look up cword in MDN.
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{js,ts}
+		\ nnoremap <buffer> K
+			\ :call system('open -a Nightly https://developer.mozilla.org/en-US/docs/Web/API/' . shellescape(expand('<cword>')))<CR>
+
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
 		\ iabbrev htodo /**<CR>TODO<CR>/
 
