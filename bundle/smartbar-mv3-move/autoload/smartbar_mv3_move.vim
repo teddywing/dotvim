@@ -108,10 +108,9 @@ endfunction
 
 " Get matches in the project for the message under the cursor, and go to that
 " message.
-function! smartbar_mv3_move#MessageGo()
+function! smartbar_mv3_move#MessageGo(cword)
 	let extension_context = s:ExtensionContext()
-	let cword = s:MessageCword()
-	let matches = s:MessageMatches(cword, extension_context)
+	let matches = s:MessageMatches(a:cword, extension_context)
 
 	let matches = s:ExcludeCurrentLine(matches)
 
@@ -119,7 +118,7 @@ function! smartbar_mv3_move#MessageGo()
 	let choice = 0
 
 	if len(matches) > 1
-		let choice = s:PromptMatch(matches, cword)
+		let choice = s:PromptMatch(matches, a:cword)
 
 		" Exit prompt if match is not a number.
 		if match(choice, '[0-9]\+') == -1
@@ -130,10 +129,10 @@ function! smartbar_mv3_move#MessageGo()
 		let choice -= 1
 	endif
 
-	call s:GoToMatch(matches[choice], cword)
+	call s:GoToMatch(matches[choice], a:cword)
 endfunction
 
-" TODO: Keep the same mapping and do either action depending on cword
+" Go to a selector definition.
 function! s:SelectorGo(cword)
 	" Save current position for tag stack.
 	let current_window = winnr()
@@ -158,7 +157,6 @@ function! smartbar_mv3_move#Go()
 
 	" Otherwise look for a message type.
 	else
-		" TODO: pass cword as argument
-		call smartbar_mv3_move#MessageGo()
+		call smartbar_mv3_move#MessageGo(cword)
 	endif
 endfunction

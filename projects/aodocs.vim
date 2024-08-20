@@ -54,9 +54,6 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_SMARTBAR_MV3/*.ts
 		\ nnoremap <leader>] :call smartbar_mv3_move#Go()<CR>
 
-	" autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_SMARTBAR_MV3/*.ts
-	" 	\ nnoremap <leader>a :call smartbar_mv3_move#Go()<CR>
-
 	" Turn on context.vim
 	autocmd BufRead,BufEnter
 		\ $VIM_PROJECT_PATH_AODOCS_GO/*
