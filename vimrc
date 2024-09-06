@@ -513,6 +513,9 @@
 "       * Add `[e` and `]e` mappings to switch between straight and
 "         typographic quotes.
 "
+"   2024.09.05:
+"       * Add <leader>gw mapping for word delimited regex search with Ripgrep.
+"
 
 
 " Pathogen
@@ -956,6 +959,7 @@ nnoremap <leader>sp :setlocal spell! spell?<cr>
 
 " Search <cword> with Ripgrep
 nnoremap <leader>w :!rg <cword><cr>
+nnoremap <leader>gw :!rg --word-regexp <cword><cr>
 xnoremap <leader>w y:if getregtype('"') ==# 'v' \| execute '!rg --fixed-strings ' . shellescape(getreg('"')) \| endif<cr>
 
 
