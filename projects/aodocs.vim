@@ -44,6 +44,7 @@ augroup AODocs
 	autocmd BufRead,BufEnter
 		\ $VIM_PROJECT_PATH_AODOCS_GO/*
 		\,$VIM_PROJECT_PATH_AODOCS/*
+		\,$VIM_PROJECT_PATH_AODOCS_ROOT/*
 		\ command! JiraOpen :call system('jira-open ' . expand('<cWORD>'))
 
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_GO/*
