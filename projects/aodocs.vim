@@ -47,6 +47,14 @@ augroup AODocs
 		\,$VIM_PROJECT_PATH_AODOCS_ROOT/*
 		\ command! JiraOpen :call system('jira-open ' . expand('<cWORD>'))
 
+	" View Jira ticket ID in the shell
+	autocmd BufRead,BufEnter
+		\ $VIM_PROJECT_PATH_AODOCS_GO/*
+		\,$VIM_PROJECT_PATH_AODOCS/*
+		\,$VIM_PROJECT_PATH_AODOCS_ROOT/*
+		\,*.todo
+		\ nnoremap <buffer> <Leader>jv :call <SID>JiraView(expand('<cWORD>'))<CR>
+
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS_GO/*
 		\ let g:go_play_browser_command = 'open -a Nightly %URL% &'
 		\| let g:go_addtags_transform = 'camelcase'
@@ -164,4 +172,10 @@ function! s:TodoCopyLast()
 		call setline('.', strftime('%Y.%m.%d:'))
 		execute "normal! zt2\<C-e>"
 	endtry
+endfunction
+
+
+function! s:JiraView(cword)
+	let ticket_id = matchstr(a:cword, "\\v([A-Z]+-[0-9]+)")
+	execute '!jira view ' . ticket_id
 endfunction
