@@ -14,6 +14,10 @@ augroup AODocs
 		\ setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 			\ formatoptions+=cro
 
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/forms-to-aodocs/*.{js,ts}
+		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+			\ formatoptions+=cro
+
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.js
 		\ call s:ESLintAddMappings()
 
