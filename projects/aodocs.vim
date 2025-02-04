@@ -38,6 +38,9 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{html,css,scss}
 		\ setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{dart}
+		\ setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+
 	autocmd BufNewFile,BufRead
 		\ $VIM_PROJECT_PATH_AODOCS_GO/*/.git/{COMMIT_EDIT,MERGE_,TAG_EDIT}MSG
 		\,$VIM_PROJECT_PATH_AODOCS/*/.git/{COMMIT_EDIT,MERGE_,TAG_EDIT}MSG
