@@ -4,6 +4,11 @@ setlocal commentstring=//\ %s
 
 nmap <buffer> Zf :!dart format %<CR>
 
+" nnoremap <buffer> Zd oimport 'dart:developer'; debugger();<Esc>
+" nnoremap <buffer> ZD Oimport 'dart:developer'; debugger();<Esc>
+nnoremap <buffer> Zd m`ggOimport 'dart:developer';<Esc>``odebugger();<Esc>
+nnoremap <buffer> ZD m`ggOimport 'dart:developer';<Esc>``Odebugger();<Esc>
+
 
 " Hot reload on save.
 autocmd BufWritePost <buffer> call <SID>HotReload()
