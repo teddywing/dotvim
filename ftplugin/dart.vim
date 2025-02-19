@@ -1,6 +1,12 @@
 " Comment string
 setlocal commentstring=//\ %s
 
+" Include "///" as a comment prefix.
+setlocal comments=s1:/*,mb:*,ex:*/,:///,://,b:#,:%,:XCOMM,n:>,fb:-
+
+" Continue comments on <Enter> and `o` `O`.
+setlocal formatoptions+=or
+
 
 nmap <buffer> Zf :!dart format %<CR>
 
