@@ -25,7 +25,9 @@ function! s:HotReload()
 		echohl WarningMsg
 		echon 'Flutter not running'
 		echohl None
-		sleep 2
+
+		" Disable as this prevented input until <C-c>.
+		" sleep 2
 
 		return
 	endif
