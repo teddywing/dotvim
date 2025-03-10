@@ -1,5 +1,5 @@
 source vimrc
 
-set backupdir=~/.nvim/backup/backup//
-set directory=~/.nvim/backup/swap//
-set undodir=~/.nvim/backup/undo//
+set backupdir=$XDG_CONFIG_HOME/nvim/backup/backup//
+set directory=$XDG_CONFIG_HOME/nvim/backup/swap//
+set undodir=$XDG_CONFIG_HOME/nvim/backup/undo//
