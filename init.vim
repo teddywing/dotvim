@@ -9,3 +9,6 @@ require'lspconfig'.dartls.setup{}
 EOF
 
 nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
+
+" Fix Neovim mappings.
+unmap Y
