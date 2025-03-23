@@ -7,6 +7,9 @@ setlocal comments=s1:/*,mb:*,ex:*/,:///,://,b:#,:%,:XCOMM,n:>,fb:-
 " Continue comments on <Enter> and `o` `O`.
 setlocal formatoptions+=or
 
+" Use LSP for ctags.
+setlocal tagfunc=lsp#lsp#TagFunc
+
 
 nmap <buffer> Zf :!dart format %<CR>
 
