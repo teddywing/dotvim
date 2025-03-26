@@ -3,7 +3,10 @@ call LspOptionsSet(#{
 	\ showDiagInPopup: v:false,
 	\ showDiagOnStatusLine: v:true,
 	\ showSignature: v:false,
-	\ hoverInPreview: v:true
+	\ hoverInPreview: v:true,
+	\ completionTextEdit: v:false,
+	\ snippetSupport: v:true,
+	\ vsnipSupport: v:true
 \ })
 
 
@@ -18,7 +21,8 @@ call LspAddServer([#{
 	\ },
 	\ workspaceConfig: #{
 		\ dart: #{
-			\ completeFunctionCalls: v:true
+			\ completeFunctionCalls: v:true,
+			\ enableSnippets: v:true
 		\ }
 	\ }
 \ }])

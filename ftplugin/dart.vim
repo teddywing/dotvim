@@ -10,6 +10,9 @@ setlocal formatoptions+=or
 " Use LSP for ctags.
 setlocal tagfunc=lsp#lsp#TagFunc
 
+" yegappan/lsp breaks with E565 when completeopt is preview instead of popup.
+setlocal completeopt=menu,popup
+
 
 nmap <buffer> Zf :!dart format %<CR>
 
