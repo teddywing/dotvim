@@ -4,6 +4,7 @@ call LspOptionsSet(#{
 	\ showDiagOnStatusLine: v:true,
 	\ showSignature: v:false,
 	\ hoverInPreview: v:true,
+	\ completionMatcher: 'icase',
 	\ completionTextEdit: v:false,
 	\ snippetSupport: v:true,
 	\ vsnipSupport: v:true
