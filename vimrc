@@ -516,6 +516,9 @@
 "   2024.09.05:
 "       * Add <leader>gw mapping for word delimited regex search with Ripgrep.
 "
+"   2025.04.01:
+"       * Turn off Vsnip plugin when Vim does not have TextChangedP autocmd.
+"
 
 
 " Pathogen
@@ -784,6 +787,13 @@ command! -range Co call copy#Copy(<line1>, <line2>)
 " Textobj Quote
 nnoremap [e :ToggleEducate<CR>
 nnoremap ]e :ToggleEducate<CR>
+
+
+" Vsnip
+" Requires the TextChangedP autocmd which was introduced in this patch.
+if !has('patch-8.0.1494')
+	let g:loaded_vsnip = 1
+endif
 
 
 
