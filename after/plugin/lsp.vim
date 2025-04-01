@@ -1,3 +1,7 @@
+if !has('patch-8.1.1876')
+	finish
+endif
+
 call LspOptionsSet(#{
 	\ autoComplete: v:false,
 	\ showDiagInPopup: v:false,
