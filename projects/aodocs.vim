@@ -24,6 +24,9 @@ augroup AODocs
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{js,ts}
 		\ call s:DebuggerAddMappings()
 
+	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.ts
+		\ call s:NoUnusedAddMappings()
+
 	" Look up cword in MDN.
 	autocmd BufRead,BufEnter $VIM_PROJECT_PATH_AODOCS/*.{js,ts}
 		\ nnoremap <buffer> K
@@ -154,6 +157,27 @@ function! s:DebuggerAddMappings()
 			\ [
 				\ repeat(' ', indent('.')) . '// eslint-disable-next-line no-debugger',
 				\ repeat(' ', indent('.')) . 'debugger;'
+			\ ]
+		\ )
+		\ <Bar>
+		\ call cursor(line('.') - 1, col('.'))<CR>
+endfunction
+
+function! s:NoUnusedAddMappings()
+	nnoremap <buffer> Zuv :
+		\ call append(
+			\ line('.'),
+			\ [
+				\ repeat(' ', indent('.')) . '// eslint-disable-next-line @typescript-eslint/no-unused-vars',
+			\ ]
+		\ )
+		\ <Bar>
+		\ call cursor(line('.') + 2, col('.'))<CR>
+	nnoremap <buffer> ZUv :
+		\ call append(
+			\ line('.') - 1,
+			\ [
+				\ repeat(' ', indent('.')) . '// eslint-disable-next-line @typescript-eslint/no-unused-vars',
 			\ ]
 		\ )
 		\ <Bar>
