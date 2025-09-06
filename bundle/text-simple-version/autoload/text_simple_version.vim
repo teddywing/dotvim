@@ -20,5 +20,6 @@ function! text_simple_version#NewVersion()
 		?\n\n\zs---?
 		call cursor(line('.') + 1, 0)
 		normal! mq
+		normal! zt
 	endtry
 endfunction
