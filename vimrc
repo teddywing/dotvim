@@ -519,6 +519,10 @@
 "   2025.04.01:
 "       * Turn off Vsnip plugin when Vim does not have TextChangedP autocmd.
 "
+"   2025.10.05:
+"       * Turn off Vsnip integration plugin when Vim does not have TextChangedP
+"         autocmd to fix errors from Vim 7.3.
+"
 
 
 " Pathogen
@@ -793,6 +797,8 @@ nnoremap ]e :ToggleEducate<CR>
 " Requires the TextChangedP autocmd which was introduced in this patch.
 if !has('patch-8.0.1494')
 	let g:loaded_vsnip = 1
+	let g:loaded_vsnip_integ = 1
+	set runtimepath-=~/.vim/bundle/vim-vsnip-integ/after
 endif
 
 
