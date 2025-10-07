@@ -8,5 +8,4 @@ function! jira_text_formatting_notation_help#Open()
 	setlocal nomodified nomodifiable noswapfile readonly
 	setlocal nolist
 	setlocal nobuflisted buftype=nofile bufhidden=wipe
-	wincmd p
 endfunction
