@@ -1,10 +1,13 @@
 let s:old_cursorline = &cursorline
 let s:old_wrap = &wrap
 let s:restore_cx_mapping = ''
+let s:should_restore = 0
 
 
 function! diff_corrections#Run()
 	if &diff
+		let s:should_restore = 1
+
 		if exists('g:colors_name') && g:colors_name ==# 'twilight256'
 			highlight Comment ctermfg=7
 		endif
@@ -13,7 +16,7 @@ function! diff_corrections#Run()
 		set wrap
 
 		nnoremap cx :<C-u>tabclose<CR>
-	else
+	elseif s:should_restore
 		if exists('g:colors_name') && g:colors_name ==# 'twilight256'
 			execute 'highlight ' . s:old_highlight_comment
 		endif
@@ -33,13 +36,13 @@ function! s:SaveCommentColor()
 	silent highlight Comment
 	redir END
 
-	let parts = split(old_highlight, ' ')
+	let lines = split(old_highlight, '\n')
+	let parts = split(lines[0], ' ')
 	call filter(parts, {_idx, val -> val !=? "" && val !=? "xxx"})
 
 	let restore = join(parts, ' ')
 
-	" Remove ^@ character from the beginning that messes up the `execute` call
-	return restore[1:]
+	return restore
 endfunction
 
 
