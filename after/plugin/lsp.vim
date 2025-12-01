@@ -15,19 +15,21 @@ call LspOptionsSet(#{
 \ })
 
 
-" Dart language server.
-call LspAddServer([#{
-	\ name: 'dartls',
-	\ filetype: ['dart'],
-	\ path: 'dart',
-	\ args: ['language-server', '--protocol=lsp', '--client-id=vim'],
-	\ initializationOptions: #{
-		\ suggestFromUnimportedLibraries: v:true
-	\ },
-	\ workspaceConfig: #{
-		\ dart: #{
-			\ completeFunctionCalls: v:true,
-			\ enableSnippets: v:true
+if executable('dart') == 1
+	" Dart language server.
+	call LspAddServer([#{
+		\ name: 'dartls',
+		\ filetype: ['dart'],
+		\ path: 'dart',
+		\ args: ['language-server', '--protocol=lsp', '--client-id=vim'],
+		\ initializationOptions: #{
+			\ suggestFromUnimportedLibraries: v:true
+		\ },
+		\ workspaceConfig: #{
+			\ dart: #{
+				\ completeFunctionCalls: v:true,
+				\ enableSnippets: v:true
+			\ }
 		\ }
-	\ }
-\ }])
+	\ }])
+endif
