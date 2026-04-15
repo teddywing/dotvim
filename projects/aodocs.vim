@@ -84,6 +84,7 @@ augroup AODocs
 	" Turn on context.vim
 	autocmd BufRead,BufEnter
 		\ $VIM_PROJECT_PATH_AODOCS_GO/*
+		\,$VIM_PROJECT_PATH_AODOCS_GO2/*
 		\,$VIM_PROJECT_PATH_AODOCS/*
 		\ ContextEnable
 
