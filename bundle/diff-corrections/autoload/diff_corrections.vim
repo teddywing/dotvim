@@ -16,6 +16,10 @@ function! diff_corrections#Run()
 		set wrap
 
 		nnoremap cx :<C-u>tabclose<CR>
+
+		" Toggle diffopt iwhite to ignore whitespace.
+		nnoremap [s :set diffopt-=iwhite<CR>
+		nnoremap ]s :set diffopt+=iwhite<CR>
 	elseif s:should_restore
 		if exists('g:colors_name') && g:colors_name ==# 'twilight256'
 			execute 'highlight ' . s:old_highlight_comment
