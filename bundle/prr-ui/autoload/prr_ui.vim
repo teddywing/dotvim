@@ -861,6 +861,15 @@ function! prr_ui#RandomEmoji()
 	return s:emoji[l:index]
 endfunction
 
+function! prr_ui#IdentifyEmoji()
+	if !executable('uni')
+		echoerr "prr_ui: error: command 'uni' not found"
+		return
+	endif
+
+	execute '!uni identify ' . shellescape(expand('<cword>'))
+endfunction
+
 
 let s:prr_path = ''
 
