@@ -896,7 +896,9 @@ function! prr_ui#Comment()
 
 	call prr_ui#SplitPrrBuffer()
 
-	call search(current_line)
+	" Search with "\V" so that lines with brackets ("[", "]") don't fail
+	" matching and cause the cursor to stay on the current line.
+	call search('\V' . current_line)
 
 	" Put the cursor in place to add a comment on the line.
 	call append('.', ['', '', ''])
